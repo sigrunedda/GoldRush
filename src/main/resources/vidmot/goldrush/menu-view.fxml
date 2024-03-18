@@ -11,13 +11,13 @@
           <RadioMenuItem fx:id="lokaGlugga" onAction="#onLokaPressed" text="Loka" />
     </items>
   </Menu>
-  <Menu fx:id="BreytaValmynd" mnemonicParsing="false" onAction="#onBreytaErfidleika" text="Breyta">
+  <Menu fx:id="BreytaValmynd" mnemonicParsing="false"  text="Breyta">
     <items>
          <Menu mnemonicParsing="false" text="Erfiðleikastig">
            <items>
-                <RadioMenuItem fx:id="audvelt" mnemonicParsing="false" text="Auðvelt" selected="true"/>
-                <RadioMenuItem fx:id="midlungs" mnemonicParsing="false" text="Miðlungs" />
-                <RadioMenuItem fx:id="erfitt" mnemonicParsing="false" text="Erfitt" />
+                <RadioMenuItem fx:id="audvelt" onAction="#onBreytaErfidleika" mnemonicParsing="false" text="Auðvelt" selected="true"/>
+                <RadioMenuItem fx:id="midlungs" onAction="#onBreytaErfidleika" mnemonicParsing="false" text="Miðlungs" />
+                <RadioMenuItem fx:id="erfitt" onAction="#onBreytaErfidleika" mnemonicParsing="false" text="Erfitt" />
            </items>
          </Menu>
          <Menu mnemonicParsing="false" text="Persónur">

@@ -49,6 +49,12 @@ public class MenuController {
         midlungs.setToggleGroup(erfidleikastig);
         erfitt.setToggleGroup(erfidleikastig);
 
+        personur = new ToggleGroup();
+        mario.setToggleGroup(personur);
+        luigi.setToggleGroup(personur);
+        peach.setToggleGroup(personur);
+        daisy.setToggleGroup(personur);
+
         countdownTimeline = new Timeline();
         countdownTimeline.setCycleCount(Timeline.INDEFINITE);
 
@@ -59,12 +65,6 @@ public class MenuController {
             }
         });
         countdownTimeline.getKeyFrames().add(keyFrame);
-
-        personur = new ToggleGroup();
-        mario.setToggleGroup(personur);
-        luigi.setToggleGroup(personur);
-        peach.setToggleGroup(personur);
-        daisy.setToggleGroup(personur);
     }
 
     @FXML
@@ -141,9 +141,9 @@ public class MenuController {
     public void onPersonur(ActionEvent actionEvent) {
         grafari = new Grafari();
         if (personur.getSelectedToggle() != null) {
-            RadioMenuItem valid = (RadioMenuItem) personur.getSelectedToggle();
-            grafari.setFill(new ImagePattern(new Image(getClass().getResourceAsStream("myndir/" + valid.getText() + ".png"))));
-            System.out.println("Persóna: " + valid.getText() + " valin!");
+            RadioMenuItem item = (RadioMenuItem) personur.getSelectedToggle();
+            grafari.setFill(new ImagePattern(new Image(getClass().getResourceAsStream("myndir/" + item.getText() + ".png"))));
+            System.out.println("Persóna: " + item.getText() + " valin!");
         } else {
             System.out.println("Engin persóna valin!");
         }
