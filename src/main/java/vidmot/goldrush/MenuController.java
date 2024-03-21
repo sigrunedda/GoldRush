@@ -6,6 +6,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.paint.ImagePattern;
 import javafx.util.Duration;
 
 import java.io.FileDescriptor;
@@ -17,11 +19,22 @@ public class MenuController {
     private RadioMenuItem midlungs;
     @FXML
     private RadioMenuItem erfitt;
+    @FXML
+    private RadioMenuItem mario;
+    @FXML
+    private RadioMenuItem luigi;
+    @FXML
+    private RadioMenuItem peach;
+    @FXML
+    private RadioMenuItem daisy;
     private ToggleGroup erfidleikastig;
+    private ToggleGroup personur;
     @FXML
     private GoldController goldController;
     @FXML
     private Label fxTimi;
+    @FXML
+    private Grafari grafari;
     private Timeline countdownTimeline;
     private int initialTimeInSeconds = 300;
 
@@ -35,6 +48,12 @@ public class MenuController {
         audvelt.setToggleGroup(erfidleikastig);
         midlungs.setToggleGroup(erfidleikastig);
         erfitt.setToggleGroup(erfidleikastig);
+
+        personur = new ToggleGroup();
+        mario.setToggleGroup(personur);
+        luigi.setToggleGroup(personur);
+        peach.setToggleGroup(personur);
+        daisy.setToggleGroup(personur);
 
         countdownTimeline = new Timeline();
         countdownTimeline.setCycleCount(Timeline.INDEFINITE);
@@ -117,5 +136,17 @@ public class MenuController {
         alert.setHeaderText(null);
         alert.setContentText("Þetta er leikurinn Gold Rush. \nHöfundur: Sigrún Edda \nÁrtal: 2024");
         alert.showAndWait();
+    }
+
+    public void onPersonur(ActionEvent actionEvent) {
+        grafari = new Grafari();
+        if (personur.getSelectedToggle() != null) {
+            RadioMenuItem item = (RadioMenuItem) personur.getSelectedToggle();
+            grafari.setFill(new ImagePattern(new Image(getClass().getResourceAsStream("myndir/" + item.getText() + ".png"))));
+            System.out.println("Persóna: " + item.getText() + " valin!");
+        } else {
+            System.out.println("Engin persóna valin!");
+        }
+
     }
 }

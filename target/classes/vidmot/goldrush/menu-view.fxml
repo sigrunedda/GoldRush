@@ -3,7 +3,6 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.RadioMenuItem?>
-<?import javafx.scene.layout.VBox?>
 
 <MenuBar xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.goldrush.MenuController">
   <Menu text="Skrá">
@@ -12,18 +11,28 @@
           <RadioMenuItem fx:id="lokaGlugga" onAction="#onLokaPressed" text="Loka" />
     </items>
   </Menu>
-  <Menu fx:id="BreytaValmynd" mnemonicParsing="false" onAction="#onBreytaErfidleika" text="Breyta">
+  <Menu fx:id="BreytaValmynd" mnemonicParsing="false"  text="Breyta">
     <items>
-          <RadioMenuItem fx:id="audvelt" mnemonicParsing="false" text="Auðvelt" />
-          <RadioMenuItem fx:id="midlungs" mnemonicParsing="false" text="Miðlungs" />
-          <RadioMenuItem fx:id="erfitt" mnemonicParsing="false" text="Erfitt" />
+         <Menu mnemonicParsing="false" text="Erfiðleikastig">
+           <items>
+                <RadioMenuItem fx:id="audvelt" onAction="#onBreytaErfidleika" mnemonicParsing="false" text="Auðvelt" selected="true"/>
+                <RadioMenuItem fx:id="midlungs" onAction="#onBreytaErfidleika" mnemonicParsing="false" text="Miðlungs" />
+                <RadioMenuItem fx:id="erfitt" onAction="#onBreytaErfidleika" mnemonicParsing="false" text="Erfitt" />
+           </items>
+         </Menu>
+         <Menu mnemonicParsing="false" text="Persónur">
+           <items>
+               <RadioMenuItem fx:id="mario" mnemonicParsing="false"  onAction="#onPersonur" text="Mario" selected="true"/>
+               <RadioMenuItem fx:id="luigi" mnemonicParsing="false"  onAction="#onPersonur" text="Luigi" />
+               <RadioMenuItem fx:id="daisy" mnemonicParsing="false"  onAction="#onPersonur" text="Daisy" />
+               <RadioMenuItem fx:id="peach" mnemonicParsing="false"  onAction="#onPersonur" text="Peach" />
+           </items>
+         </Menu>
     </items>
   </Menu>
   <Menu mnemonicParsing="false" text="Hjálp">
        <items>
-          <RadioMenuItem fx:id="umforrit" onAction="#onUmForritid" mnemonicParsing="false" text="Um Forritið" />
+          <RadioMenuItem fx:id="umforrit" mnemonicParsing="false" onAction="#onUmForritid" text="Um Forritið" />
        </items>
   </Menu>
 </MenuBar>
-
-

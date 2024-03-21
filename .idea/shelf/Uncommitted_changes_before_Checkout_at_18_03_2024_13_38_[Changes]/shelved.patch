@@ -1,0 +1,162 @@
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"CheckStyle-IDEA-workspace\">\r\n    <option name=\"configuration\">\r\n      <map>\r\n        <entry key=\"last-active-plugin-version\" value=\"5.22.1\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"CodeInsightWorkspaceSettings\">\r\n    <option name=\"optimizeImportsOnTheFly\" value=\"true\" />\r\n  </component>\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" project-jdk-name=\"19\" project-jdk-type=\"JavaSDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision b352ce88b4342d2928fd576fe52d7fd0627eb62e)
++++ b/.idea/misc.xml	(date 1710768977047)
+@@ -18,5 +18,5 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="19" project-jdk-type="JavaSDK" />
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="temurin-21" project-jdk-type="JavaSDK" />
+ </project>
+\ No newline at end of file
+Index: target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>C:\\Users\\Sigrun\\Desktop\\GoldRush\\src\\main\\java\\vidmot\\goldrush\\AdvorunDialog.java\r\nC:\\Users\\Sigrun\\Desktop\\GoldRush\\src\\main\\java\\vidmot\\goldrush\\Gull.java\r\nC:\\Users\\Sigrun\\Desktop\\GoldRush\\src\\main\\java\\vidmot\\goldrush\\Stefna.java\r\nC:\\Users\\Sigrun\\Desktop\\GoldRush\\src\\main\\java\\vidmot\\goldrush\\GoldApplication.java\r\nC:\\Users\\Sigrun\\Desktop\\GoldRush\\src\\main\\java\\vinnsla\\goldrush\\Klukka.java\r\nC:\\Users\\Sigrun\\Desktop\\GoldRush\\src\\main\\java\\module-info.java\r\nC:\\Users\\Sigrun\\Desktop\\GoldRush\\src\\main\\java\\vidmot\\goldrush\\GoldController.java\r\nC:\\Users\\Sigrun\\Desktop\\GoldRush\\src\\main\\java\\vidmot\\goldrush\\Grafari.java\r\nC:\\Users\\Sigrun\\Desktop\\GoldRush\\src\\main\\java\\vinnsla\\goldrush\\Leikur.java\r\nC:\\Users\\Sigrun\\Desktop\\GoldRush\\src\\main\\java\\vidmot\\goldrush\\Leikbord.java\r\nC:\\Users\\Sigrun\\Desktop\\GoldRush\\src\\main\\java\\vidmot\\goldrush\\MenuController.java\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst b/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+--- a/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst	(revision b352ce88b4342d2928fd576fe52d7fd0627eb62e)
++++ b/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst	(date 1710769032647)
+@@ -1,11 +1,9 @@
+-C:\Users\Sigrun\Desktop\GoldRush\src\main\java\vidmot\goldrush\AdvorunDialog.java
+-C:\Users\Sigrun\Desktop\GoldRush\src\main\java\vidmot\goldrush\Gull.java
+-C:\Users\Sigrun\Desktop\GoldRush\src\main\java\vidmot\goldrush\Stefna.java
+-C:\Users\Sigrun\Desktop\GoldRush\src\main\java\vidmot\goldrush\GoldApplication.java
+-C:\Users\Sigrun\Desktop\GoldRush\src\main\java\vinnsla\goldrush\Klukka.java
+-C:\Users\Sigrun\Desktop\GoldRush\src\main\java\module-info.java
+-C:\Users\Sigrun\Desktop\GoldRush\src\main\java\vidmot\goldrush\GoldController.java
+-C:\Users\Sigrun\Desktop\GoldRush\src\main\java\vidmot\goldrush\Grafari.java
+-C:\Users\Sigrun\Desktop\GoldRush\src\main\java\vinnsla\goldrush\Leikur.java
+-C:\Users\Sigrun\Desktop\GoldRush\src\main\java\vidmot\goldrush\Leikbord.java
+-C:\Users\Sigrun\Desktop\GoldRush\src\main\java\vidmot\goldrush\MenuController.java
++C:\Users\sylvi\OneDrive\Desktop\Viðmótsforritun\Lokaverkefni\src\main\java\vidmot\goldrush\GoldApplication.java
++C:\Users\sylvi\OneDrive\Desktop\Viðmótsforritun\Lokaverkefni\src\main\java\vinnsla\goldrush\Klukka.java
++C:\Users\sylvi\OneDrive\Desktop\Viðmótsforritun\Lokaverkefni\src\main\java\vidmot\goldrush\Gull.java
++C:\Users\sylvi\OneDrive\Desktop\Viðmótsforritun\Lokaverkefni\src\main\java\vidmot\goldrush\Leikbord.java
++C:\Users\sylvi\OneDrive\Desktop\Viðmótsforritun\Lokaverkefni\src\main\java\module-info.java
++C:\Users\sylvi\OneDrive\Desktop\Viðmótsforritun\Lokaverkefni\src\main\java\vidmot\goldrush\Grafari.java
++C:\Users\sylvi\OneDrive\Desktop\Viðmótsforritun\Lokaverkefni\src\main\java\vidmot\goldrush\MenuController.java
++C:\Users\sylvi\OneDrive\Desktop\Viðmótsforritun\Lokaverkefni\src\main\java\vidmot\goldrush\GoldController.java
++C:\Users\sylvi\OneDrive\Desktop\Viðmótsforritun\Lokaverkefni\src\main\java\vinnsla\goldrush\Leikur.java
+Index: target/classes/vidmot/goldrush/grafari-view.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.shape.*?>\r\n\r\n<fx:root style=\"-fx-background-color: red\" height=\"30\" width=\"30\" x=\"50\" y=\"50\" type=\"javafx.scene.shape.Rectangle\" xmlns=\"http://javafx.com/javafx/17.0.2-ea\" xmlns:fx=\"http://javafx.com/fxml/1\">\r\n\r\n</fx:root>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/vidmot/goldrush/grafari-view.fxml b/target/classes/vidmot/goldrush/grafari-view.fxml
+--- a/target/classes/vidmot/goldrush/grafari-view.fxml	(revision b352ce88b4342d2928fd576fe52d7fd0627eb62e)
++++ b/target/classes/vidmot/goldrush/grafari-view.fxml	(date 1710768952290)
+@@ -1,7 +1,8 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+-<?import javafx.scene.shape.*?>
++<?import javafx.scene.shape.Rectangle?>
++<fx:root style="-fx-background-color: red" height="30" width="30" layoutX="50" layoutY="50"
++         type="javafx.scene.shape.Rectangle" xmlns="http://javafx.com/javafx/17.0.2-ea"
++         xmlns:fx="http://javafx.com/fxml/1">
+ 
+-<fx:root style="-fx-background-color: red" height="30" width="30" x="50" y="50" type="javafx.scene.shape.Rectangle" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+-
+-</fx:root>
+\ No newline at end of file
++</fx:root>
+Index: target/classes/vidmot/goldrush/leikbord-view.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.layout.Pane?>\r\n<?import vidmot.goldrush.Grafari?>\r\n\r\n<fx:root fx:id=\"leikbord\" layoutY=\"27.0\" prefHeight=\"300.0\" prefWidth=\"600.0\" style=\"-fx-background-color: pink;\" type=\"javafx.scene.layout.Pane\" xmlns=\"http://javafx.com/javafx/21\" xmlns:fx=\"http://javafx.com/fxml/1\">\r\n\r\n</fx:root>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/vidmot/goldrush/leikbord-view.fxml b/target/classes/vidmot/goldrush/leikbord-view.fxml
+--- a/target/classes/vidmot/goldrush/leikbord-view.fxml	(revision b352ce88b4342d2928fd576fe52d7fd0627eb62e)
++++ b/target/classes/vidmot/goldrush/leikbord-view.fxml	(date 1710768952291)
+@@ -1,8 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+ <?import javafx.scene.layout.Pane?>
+-<?import vidmot.goldrush.Grafari?>
+-
+-<fx:root fx:id="leikbord" layoutY="27.0" prefHeight="300.0" prefWidth="600.0" style="-fx-background-color: pink;" type="javafx.scene.layout.Pane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
++<fx:root fx:id="leikbord" prefHeight="300.0" prefWidth="600.0" style="-fx-background-color: pink;"
++         type="javafx.scene.layout.Pane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+ 
+ </fx:root>
+Index: target/classes/vidmot/goldrush/gold-rush-view.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.layout.BorderPane?>\r\n\r\n<?import vidmot.goldrush.Leikbord?>\r\n\r\n<?import javafx.scene.layout.BorderPane?>\r\n<?import javafx.scene.control.Separator?>\r\n<?import javafx.scene.layout.HBox?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.geometry.Insets?>\r\n<?import javafx.scene.text.Font?>\r\n<?import vidmot.goldrush.Grafari?>\r\n<BorderPane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"400.0\" prefWidth=\"600.0\"\r\n            xmlns=\"http://javafx.com/javafx/21\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"vidmot.goldrush.GoldController\">\r\n    <top>\r\n        <fx:include source=\"menu-view.fxml\" fx:id=\"menustyring\"/>\r\n    </top>\r\n\r\n    <center>\r\n        <Leikbord fx:id=\"leikbord\"/>\r\n    </center>\r\n\r\n    <bottom>\r\n        <Separator layoutY=\"369.0\" prefHeight=\"0.0\" prefWidth=\"600.0\" />\r\n        <HBox layoutY=\"370.0\" prefHeight=\"32.0\" prefWidth=\"600.0\">\r\n            <Label alignment=\"CENTER\" prefHeight=\"34.0\" prefWidth=\"77.0\" text=\"Stigin þín:\">\r\n                <HBox.margin>\r\n                    <Insets left=\"50.0\" right=\"50.0\" />\r\n                </HBox.margin>\r\n            </Label>\r\n            <Label fx:id=\"fxStig\" alignment=\"CENTER\" prefHeight=\"34.0\" prefWidth=\"77.0\" text=\"0\">\r\n                <HBox.margin>\r\n                    <Insets right=\"100.0\" />\r\n                </HBox.margin>\r\n            </Label>\r\n            <Label alignment=\"CENTER\" prefHeight=\"34.0\" prefWidth=\"77.0\" text=\"Tími eftir:\">\r\n                <HBox.margin>\r\n                    <Insets right=\"50.0\" />\r\n                </HBox.margin>\r\n            </Label>\r\n            <Label fx:id=\"fxTimi\" alignment=\"CENTER\" prefHeight=\"34.0\" prefWidth=\"77.0\">\r\n                <HBox.margin>\r\n                    <Insets right=\"50.0\" />\r\n                </HBox.margin>\r\n            </Label>\r\n        </HBox>\r\n    </bottom>\r\n</BorderPane>\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/vidmot/goldrush/gold-rush-view.fxml b/target/classes/vidmot/goldrush/gold-rush-view.fxml
+--- a/target/classes/vidmot/goldrush/gold-rush-view.fxml	(revision b352ce88b4342d2928fd576fe52d7fd0627eb62e)
++++ b/target/classes/vidmot/goldrush/gold-rush-view.fxml	(date 1710768952289)
+@@ -1,18 +1,13 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+-<?import javafx.scene.layout.BorderPane?>
+-
+-<?import vidmot.goldrush.Leikbord?>
+-
+-<?import javafx.scene.layout.BorderPane?>
+-<?import javafx.scene.control.Separator?>
+-<?import javafx.scene.layout.HBox?>
+-<?import javafx.scene.control.Label?>
+ <?import javafx.geometry.Insets?>
+-<?import javafx.scene.text.Font?>
+-<?import vidmot.goldrush.Grafari?>
+-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+-            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.goldrush.GoldController">
++<?import javafx.scene.control.*?>
++<?import javafx.scene.layout.*?>
++<?import vidmot.goldrush.Leikbord?>
++<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
++            prefWidth="600.0"
++            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
++            fx:controller="vidmot.goldrush.GoldController">
+     <top>
+         <fx:include source="menu-view.fxml" fx:id="menustyring"/>
+     </top>
+@@ -22,26 +17,26 @@
+     </center>
+ 
+     <bottom>
+-        <Separator layoutY="369.0" prefHeight="0.0" prefWidth="600.0" />
++        <Separator layoutY="369.0" prefHeight="0.0" prefWidth="600.0"/>
+         <HBox layoutY="370.0" prefHeight="32.0" prefWidth="600.0">
+             <Label alignment="CENTER" prefHeight="34.0" prefWidth="77.0" text="Stigin þín:">
+                 <HBox.margin>
+-                    <Insets left="50.0" right="50.0" />
++                    <Insets left="50.0" right="50.0"/>
+                 </HBox.margin>
+             </Label>
+             <Label fx:id="fxStig" alignment="CENTER" prefHeight="34.0" prefWidth="77.0" text="0">
+                 <HBox.margin>
+-                    <Insets right="100.0" />
++                    <Insets right="100.0"/>
+                 </HBox.margin>
+             </Label>
+             <Label alignment="CENTER" prefHeight="34.0" prefWidth="77.0" text="Tími eftir:">
+                 <HBox.margin>
+-                    <Insets right="50.0" />
++                    <Insets right="50.0"/>
+                 </HBox.margin>
+             </Label>
+             <Label fx:id="fxTimi" alignment="CENTER" prefHeight="34.0" prefWidth="77.0">
+                 <HBox.margin>
+-                    <Insets right="50.0" />
++                    <Insets right="50.0"/>
+                 </HBox.margin>
+             </Label>
+         </HBox>
