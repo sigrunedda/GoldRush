@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.goldrush.Leikreglur">
+   <children>
+      <Label alignment="CENTER" layoutX="196.0" layoutY="14.0" prefHeight="56.0" prefWidth="208.0" text="Leikreglur">
+         <font>
+            <Font name="Lucida Console" size="19.0" />
+         </font>
+      </Label>
+      <Text layoutX="133.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1. Þegar leikur hefst þá birtast stjörnur ein i einu yfir leikborðið. Það sem þú þarft að gera hér er að passa þig á að rekast ekki í óvini, og að safna störnum þar til hurð yfir í næsta borð birtist. " wrappingWidth="320.8033752441406" />
+      <Text layoutX="133.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2. Þegar hurð opnast þá getur þú farið á hana og færst í næsta borð." wrappingWidth="320.8033752441406" />
+      <Button layoutX="272.0" layoutY="299.0" mnemonicParsing="false" onAction="#onHeim" text="Til baka" />
+   </children>
+</Pane>

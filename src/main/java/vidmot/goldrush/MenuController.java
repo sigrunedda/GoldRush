@@ -99,15 +99,7 @@ public class MenuController {
     }
 
     public void onLokaPressed(ActionEvent event) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Staðfesting til að hætta leik");
-        alert.setHeaderText("Ertu viss um að þú viljir hætta?");
-        alert.setContentText("Veldu OK til að hætta, eða Cancel til að halda áfram");
-        alert.showAndWait().ifPresent(response -> {
-            if (response == ButtonType.OK){
-                System.exit(0);
-            }
-        });
+        ViewSwitcher.switchTo(View.START);
     }
 
     @FXML

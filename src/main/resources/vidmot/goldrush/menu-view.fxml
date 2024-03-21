@@ -9,7 +9,7 @@
   <Menu text="Skrá">
     <items>
           <RadioMenuItem fx:id="nyrLeikur" onAction="#onNyrLeikur" text="Nýr Leikur" />
-          <RadioMenuItem fx:id="lokaGlugga" onAction="#onLokaPressed" text="Loka" />
+          <RadioMenuItem fx:id="lokaGlugga" onAction="#onLokaPressed" text="Heim" />
     </items>
   </Menu>
   <Menu fx:id="BreytaValmynd" mnemonicParsing="false" onAction="#onBreytaErfidleika" text="Breyta">
