@@ -13,9 +13,12 @@ import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 public class Leikbord extends Pane {
+
     @FXML
     private GoldController goldController;
     private Grafari grafari;
@@ -165,7 +168,7 @@ public class Leikbord extends Pane {
     }
 
     private boolean erLoglegt(double x, double y) {
-        return x >= 0 && y >= 0 && x <= 600 && y < 330;
+        return x >= 0 && y >= 0 && x <= 570 && y < 315;
     }
 
     private void updateGrafariPosition() {
