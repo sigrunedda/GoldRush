@@ -3,7 +3,6 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.RadioMenuItem?>
-<?import javafx.scene.layout.VBox?>
 
 <MenuBar xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.goldrush.MenuController">
   <Menu text="Skrá">
@@ -21,9 +20,8 @@
   </Menu>
   <Menu mnemonicParsing="false" text="Hjálp">
        <items>
-          <RadioMenuItem fx:id="umforrit" onAction="#onUmForritid" mnemonicParsing="false" text="Um Forritið" />
+          <RadioMenuItem fx:id="umforrit" mnemonicParsing="false" onAction="#onUmForritid" text="Um Forritið" />
+         <RadioMenuItem mnemonicParsing="false" onAction="#onLeikreglur" text="Leiðbeiningar" />
        </items>
   </Menu>
 </MenuBar>
-
-

@@ -5,10 +5,11 @@ import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
+import javafx.scene.control.RadioMenuItem;
+import javafx.scene.control.ToggleGroup;
 import javafx.util.Duration;
-
-import java.io.FileDescriptor;
 
 public class MenuController {
     @FXML
@@ -109,5 +110,11 @@ public class MenuController {
         alert.setHeaderText(null);
         alert.setContentText("Þetta er leikurinn Gold Rush. \nHöfundur: Sigrún Edda \nÁrtal: 2024");
         alert.showAndWait();
+    }
+
+    @FXML
+    private void onLeikreglur(ActionEvent event){
+        System.out.println("Leikreglur display!");
+        ViewSwitcher.switchTo(View.LEIKREGLUR);
     }
 }

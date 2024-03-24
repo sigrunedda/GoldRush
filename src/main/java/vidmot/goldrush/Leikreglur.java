@@ -9,4 +9,9 @@ public class Leikreglur {
     private void onHeim(ActionEvent event){
         ViewSwitcher.switchTo(View.START);
     }
+
+    @FXML
+    private void onAframILeik(ActionEvent event){
+        ViewSwitcher.switchTo(View.LEIKBORD);
+    }
 }

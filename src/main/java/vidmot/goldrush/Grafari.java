@@ -22,6 +22,7 @@ public class Grafari extends Rectangle {
 
         setLayoutX(50);
         setLayoutY(50);
+
         setImage("myndir/Luigi.png");
     }
 
