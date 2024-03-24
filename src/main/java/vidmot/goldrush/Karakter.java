@@ -2,41 +2,35 @@ package vidmot.goldrush;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ToggleGroup;
-import javafx.scene.image.Image;
 
 public class Karakter {
 
-    private ToggleGroup leikmadur;
     @FXML
-    private Button daisy;
-    @FXML
-    private Button mario;
-    @FXML
-    private Button peach;
-    @FXML
-    private Button luigi;
-
+    private Grafari grafari = new Grafari();
 
     @FXML
     private void onDaisy(ActionEvent event){
         System.out.println("Daisy valin!");
-        ViewSwitcher.switchTo(View.LEIKBORD);
+        grafari.setImage("myndir/Daisy.png");
     }
     @FXML
     private void onMario(ActionEvent event){
         System.out.println("Mario valin!");
-        ViewSwitcher.switchTo(View.LEIKBORD);
+        grafari.setImage("myndir/Mario.png");
     }
     @FXML
     private void onPeach(ActionEvent event){
         System.out.println("Peach valin!");
-        ViewSwitcher.switchTo(View.LEIKBORD);
+        grafari.setImage("myndir/Peach.png");
     }
     @FXML
     private void onLuigi(ActionEvent event){
         System.out.println("Luigi valin!");
+        grafari.setImage("myndir/Luigi.png");
+    }
+
+    @FXML
+    private void onAfram(ActionEvent event){
         ViewSwitcher.switchTo(View.LEIKBORD);
     }
 
