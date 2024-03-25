@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.goldrush.Leikreglur">
+   <children>
+      <Label alignment="CENTER" layoutX="196.0" layoutY="14.0" prefHeight="56.0" prefWidth="208.0" text="Leiðbeiningar">
+         <font>
+            <Font name="Lucida Console" size="19.0" />
+         </font>
+      </Label>
+      <Button layoutX="139.0" layoutY="349.0" mnemonicParsing="false" onAction="#onHeim" text="Til baka" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5f5f500" height="115.0" layoutX="27.0" layoutY="70.0" stroke="BLACK" strokeType="INSIDE" width="169.0" />
+      <Text layoutX="34.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1. Til að byrja á leik þá byrjar þú á því að velja þér Karakter, og ýtir svo á áfram." wrappingWidth="154.33334350585938">
+         <font>
+            <Font name="Lucida Console" size="12.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5f5f500" height="115.0" layoutX="216.0" layoutY="70.0" stroke="BLACK" strokeType="INSIDE" width="169.0" />
+      <Text layoutX="223.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2. Þú kemur þá á Leikborð þar sem Karakterinn þinn sýnist. Þú hreyfir hann um með því að nota örvatakkana" wrappingWidth="154.33334350585938">
+         <font>
+            <Font name="Lucida Console" size="12.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5f5f500" height="115.0" layoutX="404.0" layoutY="70.0" stroke="BLACK" strokeType="INSIDE" width="169.0" />
+      <Text layoutX="411.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3. Þegar leik byrjar þá birtist óvinur á borðinu mismunandi margir eftir borði sem þú hefur komist í. Ef óvinurinn rekst á þig þá er leik lokið." wrappingWidth="154.33334350585938">
+         <font>
+            <Font name="Lucida Console" size="12.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5f5f500" height="115.0" layoutX="27.0" layoutY="210.0" stroke="BLACK" strokeType="INSIDE" width="169.0" />
+      <Text layoutX="34.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4. Markmið leiksins er að safna öllum stjörnum sem birtast þar til að hurð yfir í næsta borð birtist." wrappingWidth="154.33334350585938">
+         <font>
+            <Font name="Lucida Console" size="12.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5f5f500" height="115.0" layoutX="216.0" layoutY="210.0" stroke="BLACK" strokeType="INSIDE" width="169.0" />
+      <Text layoutX="222.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5. Þegar hurðin birtist þá getur þú farið að henni og færst þannig yfir í næsta borð." wrappingWidth="154.33334350585938">
+         <font>
+            <Font name="Lucida Console" size="12.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5f5f500" height="115.0" layoutX="404.0" layoutY="210.0" stroke="BLACK" strokeType="INSIDE" width="169.0" />
+      <Text layoutX="411.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6. Á milli hvers borðs þá kemur Alert gluggi svo að þú getur haldið áfram eða hætt í leik." wrappingWidth="154.33334350585938">
+         <font>
+            <Font name="Lucida Console" size="12.0" />
+         </font>
+      </Text>
+      <Button layoutX="404.0" layoutY="349.0" mnemonicParsing="false" onAction="#onAframILeik" text="Halda áfram með leik " />
+   </children>
+</Pane>

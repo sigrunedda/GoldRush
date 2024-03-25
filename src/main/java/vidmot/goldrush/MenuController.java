@@ -5,12 +5,17 @@ import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+<<<<<<< HEAD
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
+=======
+import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
+import javafx.scene.control.RadioMenuItem;
+import javafx.scene.control.ToggleGroup;
+>>>>>>> Sigrún
 import javafx.util.Duration;
-
-import java.io.FileDescriptor;
 
 public class MenuController {
     @FXML
@@ -118,15 +123,7 @@ public class MenuController {
     }
 
     public void onLokaPressed(ActionEvent event) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Staðfesting til að hætta leik");
-        alert.setHeaderText("Ertu viss um að þú viljir hætta?");
-        alert.setContentText("Veldu OK til að hætta, eða Cancel til að halda áfram");
-        alert.showAndWait().ifPresent(response -> {
-            if (response == ButtonType.OK){
-                System.exit(0);
-            }
-        });
+        ViewSwitcher.switchTo(View.START);
     }
 
     @FXML
@@ -138,6 +135,7 @@ public class MenuController {
         alert.showAndWait();
     }
 
+<<<<<<< HEAD
     public void onPersonur(ActionEvent actionEvent) {
         grafari = new Grafari();
         if (personur.getSelectedToggle() != null) {
@@ -148,5 +146,11 @@ public class MenuController {
             System.out.println("Engin persóna valin!");
         }
 
+=======
+    @FXML
+    private void onLeikreglur(ActionEvent event){
+        System.out.println("Leikreglur display!");
+        ViewSwitcher.switchTo(View.LEIKREGLUR);
+>>>>>>> Sigrún
     }
 }

@@ -8,7 +8,7 @@
   <Menu text="Skrá">
     <items>
           <RadioMenuItem fx:id="nyrLeikur" onAction="#onNyrLeikur" text="Nýr Leikur" />
-          <RadioMenuItem fx:id="lokaGlugga" onAction="#onLokaPressed" text="Loka" />
+          <RadioMenuItem fx:id="lokaGlugga" onAction="#onLokaPressed" text="Heim" />
     </items>
   </Menu>
   <Menu fx:id="BreytaValmynd" mnemonicParsing="false"  text="Breyta">
@@ -33,6 +33,10 @@
   <Menu mnemonicParsing="false" text="Hjálp">
        <items>
           <RadioMenuItem fx:id="umforrit" mnemonicParsing="false" onAction="#onUmForritid" text="Um Forritið" />
+<<<<<<< HEAD
+=======
+         <RadioMenuItem mnemonicParsing="false" onAction="#onLeikreglur" text="Leiðbeiningar" />
+>>>>>>> Sigrún
        </items>
   </Menu>
 </MenuBar>
