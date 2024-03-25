@@ -2,11 +2,6 @@ package vidmot.goldrush;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.image.Image;
-<<<<<<< HEAD
-import javafx.scene.input.KeyEvent;
-import javafx.scene.paint.Color;
-=======
->>>>>>> Sigrún
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
@@ -27,12 +22,6 @@ public class Grafari extends Rectangle {
 
         setLayoutX(50);
         setLayoutY(50);
-<<<<<<< HEAD
-//        setFill(Color.BLUEVIOLET);
-
-        Image mario = new Image(getClass().getResourceAsStream("myndir/Mario.png"));
-        this.setFill(new ImagePattern(mario));
-=======
 
         setImage("myndir/Peach.png");
     }
@@ -40,7 +29,6 @@ public class Grafari extends Rectangle {
     public void setImage(String imagePath){
         Image image = new Image(getClass().getResourceAsStream(imagePath));
         setFill(new ImagePattern(image));
->>>>>>> Sigrún
     }
 }
 
