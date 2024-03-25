@@ -6,11 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import javafx.scene.paint.ImagePattern;
 import javafx.util.Duration;
-
-import java.io.FileDescriptor;
 
 public class MenuController {
     @FXML
@@ -19,22 +15,13 @@ public class MenuController {
     private RadioMenuItem midlungs;
     @FXML
     private RadioMenuItem erfitt;
-    @FXML
-    private RadioMenuItem mario;
-    @FXML
-    private RadioMenuItem luigi;
-    @FXML
-    private RadioMenuItem peach;
-    @FXML
-    private RadioMenuItem daisy;
+
     private ToggleGroup erfidleikastig;
     private ToggleGroup personur;
     @FXML
     private GoldController goldController;
     @FXML
     private Label fxTimi;
-    @FXML
-    private Grafari grafari;
     private Timeline countdownTimeline;
     private int initialTimeInSeconds = 300;
 
@@ -48,12 +35,6 @@ public class MenuController {
         audvelt.setToggleGroup(erfidleikastig);
         midlungs.setToggleGroup(erfidleikastig);
         erfitt.setToggleGroup(erfidleikastig);
-
-        personur = new ToggleGroup();
-        mario.setToggleGroup(personur);
-        luigi.setToggleGroup(personur);
-        peach.setToggleGroup(personur);
-        daisy.setToggleGroup(personur);
 
         countdownTimeline = new Timeline();
         countdownTimeline.setCycleCount(Timeline.INDEFINITE);
@@ -118,15 +99,7 @@ public class MenuController {
     }
 
     public void onLokaPressed(ActionEvent event) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Staðfesting til að hætta leik");
-        alert.setHeaderText("Ertu viss um að þú viljir hætta?");
-        alert.setContentText("Veldu OK til að hætta, eða Cancel til að halda áfram");
-        alert.showAndWait().ifPresent(response -> {
-            if (response == ButtonType.OK){
-                System.exit(0);
-            }
-        });
+        ViewSwitcher.switchTo(View.START);
     }
 
     @FXML
@@ -138,15 +111,9 @@ public class MenuController {
         alert.showAndWait();
     }
 
-    public void onPersonur(ActionEvent actionEvent) {
-        grafari = new Grafari();
-        if (personur.getSelectedToggle() != null) {
-            RadioMenuItem item = (RadioMenuItem) personur.getSelectedToggle();
-            grafari.setFill(new ImagePattern(new Image(getClass().getResourceAsStream("myndir/" + item.getText() + ".png"))));
-            System.out.println("Persóna: " + item.getText() + " valin!");
-        } else {
-            System.out.println("Engin persóna valin!");
-        }
-
+    @FXML
+    private void onLeikreglur(ActionEvent event){
+        System.out.println("Leikreglur display!");
+        ViewSwitcher.switchTo(View.LEIKREGLUR);
     }
 }
