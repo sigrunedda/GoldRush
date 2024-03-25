@@ -23,7 +23,7 @@ public class Grafari extends Rectangle {
         setLayoutX(50);
         setLayoutY(50);
 
-        setImage("myndir/Luigi.png");
+        setImage("myndir/Peach.png");
     }
 
     public void setImage(String imagePath){
