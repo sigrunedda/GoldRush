@@ -8,8 +8,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.util.Duration;
 
-import java.io.FileDescriptor;
-
 public class MenuController {
     @FXML
     private RadioMenuItem audvelt;
@@ -17,7 +15,9 @@ public class MenuController {
     private RadioMenuItem midlungs;
     @FXML
     private RadioMenuItem erfitt;
+
     private ToggleGroup erfidleikastig;
+    private ToggleGroup personur;
     @FXML
     private GoldController goldController;
     @FXML
@@ -99,15 +99,7 @@ public class MenuController {
     }
 
     public void onLokaPressed(ActionEvent event) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Staðfesting til að hætta leik");
-        alert.setHeaderText("Ertu viss um að þú viljir hætta?");
-        alert.setContentText("Veldu OK til að hætta, eða Cancel til að halda áfram");
-        alert.showAndWait().ifPresent(response -> {
-            if (response == ButtonType.OK){
-                System.exit(0);
-            }
-        });
+        ViewSwitcher.switchTo(View.START);
     }
 
     @FXML
@@ -117,5 +109,11 @@ public class MenuController {
         alert.setHeaderText(null);
         alert.setContentText("Þetta er leikurinn Gold Rush. \nHöfundur: Sigrún Edda \nÁrtal: 2024");
         alert.showAndWait();
+    }
+
+    @FXML
+    private void onLeikreglur(ActionEvent event){
+        System.out.println("Leikreglur display!");
+        ViewSwitcher.switchTo(View.LEIKREGLUR);
     }
 }

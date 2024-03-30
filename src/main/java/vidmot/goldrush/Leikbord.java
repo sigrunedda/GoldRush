@@ -13,9 +13,11 @@ import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
-public class Leikbord extends Pane{
+public class Leikbord extends Pane {
 
     @FXML
     private GoldController goldController;
@@ -34,14 +36,14 @@ public class Leikbord extends Pane{
         this.goldController = goldController;
     }
 
-    public Leikbord(){
+    public Leikbord() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leikbord-view.fxml"));
         fxmlLoader.setClassLoader(getClass().getClassLoader());
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
         try {
             fxmlLoader.load();
-        } catch (IOException e){
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
@@ -71,7 +73,7 @@ public class Leikbord extends Pane{
         startGullDropper();
     }
 
-    public void startGullDropper(){
+    public void startGullDropper() {
         Duration gullDropInterval = Duration.seconds(2);
         Timeline gullDropper = new Timeline(new KeyFrame(gullDropInterval, event -> dropGull()));
         gullDropper.setCycleCount(Timeline.INDEFINITE);
@@ -86,7 +88,7 @@ public class Leikbord extends Pane{
         gameLoop.start();
     }
 
-    private  void dropGull(){
+    private void dropGull() {
         Gull gull = new Gull();
         gulls.add(gull);
         getChildren().add(gull);
@@ -98,22 +100,22 @@ public class Leikbord extends Pane{
         double maxY = getHeight() - gull.getHeight();
 
 
-        double initialX = Math.random()*(maxX - minX)+minX;
-        double initialY = Math.random()*(maxY - minY)+minY;
+        double initialX = Math.random() * (maxX - minX) + minX;
+        double initialY = Math.random() * (maxY - minY) + minY;
 
         gull.setLayoutX(initialX);
         gull.setLayoutY(initialY);
     }
 
-    public void grafaGull(){
+    public void grafaGull() {
         Bounds grafariBounds = grafari.getBoundsInParent();
 
         Iterator<Gull> iterator = gulls.iterator();
-        while(iterator.hasNext()){
+        while (iterator.hasNext()) {
             Gull gull = iterator.next();
             Bounds gullBounds = gull.getBoundsInParent();
 
-            if (grafariBounds.intersects(gullBounds)){
+            if (grafariBounds.intersects(gullBounds)) {
                 iterator.remove();
                 getChildren().remove(gull);
                 goldController.updatePoints(1);
@@ -123,14 +125,14 @@ public class Leikbord extends Pane{
         updateGrafariPosition();
     }
 
-    private void handleKeyPress(KeyEvent event){
+    private void handleKeyPress(KeyEvent event) {
         long currentTime = System.nanoTime();
-        if (currentTime - lastUpdateTime < UPDATE_INTERVAL){
+        if (currentTime - lastUpdateTime < UPDATE_INTERVAL) {
             return;
         }
         switch (event.getCode()) {
             case UP:
-                isMovingUp=true;
+                isMovingUp = true;
                 break;
             case DOWN:
                 isMovingDown = true;
@@ -148,7 +150,7 @@ public class Leikbord extends Pane{
     }
 
     private void handleKeyRelease(KeyEvent event) {
-        switch (event.getCode()){
+        switch (event.getCode()) {
             case UP:
                 isMovingUp = false;
                 break;
@@ -165,20 +167,32 @@ public class Leikbord extends Pane{
         }
     }
 
-    private void updateGrafariPosition(){
+    private boolean erLoglegt(double x, double y) {
+        return x >= 0 && y >= 0 && x <= 570 && y < 315;
+    }
+
+    private void updateGrafariPosition() {
         double speed = 5.0;
 
-        if (isMovingUp){
-            grafari.setLayoutY(grafari.getLayoutY()-speed);
+        if (isMovingUp) {
+            if (erLoglegt(grafari.getLayoutX(), grafari.getLayoutY() - speed)) {
+                grafari.setLayoutY(grafari.getLayoutY() - speed);
+            }
         }
-        if (isMovingDown){
-            grafari.setLayoutY(grafari.getLayoutY()+speed);
+        if (isMovingDown) {
+            if (erLoglegt(grafari.getLayoutX(), grafari.getLayoutY() + speed)) {
+                grafari.setLayoutY(grafari.getLayoutY() + speed);
+            }
         }
-        if (isMovingLeft){
-            grafari.setLayoutX(grafari.getLayoutX()-speed);
+        if (isMovingLeft) {
+            if (erLoglegt(grafari.getLayoutX() - speed, grafari.getLayoutY())) {
+                grafari.setLayoutX(grafari.getLayoutX() - speed);
+            }
         }
-        if (isMovingRight){
-            grafari.setLayoutX(grafari.getLayoutX()+speed);
+        if (isMovingRight) {
+            if (erLoglegt(grafari.getLayoutX() + speed, grafari.getLayoutY())) {
+                grafari.setLayoutX(grafari.getLayoutX() + speed);
+            }
         }
     }
 
@@ -186,4 +200,3 @@ public class Leikbord extends Pane{
         hreinsaBord();
     }
 }
-

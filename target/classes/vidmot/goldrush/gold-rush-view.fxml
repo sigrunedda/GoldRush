@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.BorderPane?>
-
-<?import vidmot.goldrush.Leikbord?>
-
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.control.Label?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.text.Font?>
-<?import vidmot.goldrush.Grafari?>
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
-            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.goldrush.GoldController">
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import vidmot.goldrush.Leikbord?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="vidmot.goldrush.GoldController">
     <top>
         <fx:include source="menu-view.fxml" fx:id="menustyring"/>
     </top>
@@ -22,29 +17,28 @@
     </center>
 
     <bottom>
-        <Separator layoutY="369.0" prefHeight="0.0" prefWidth="600.0" />
+        <Separator layoutY="369.0" prefHeight="0.0" prefWidth="600.0"/>
         <HBox layoutY="370.0" prefHeight="32.0" prefWidth="600.0">
             <Label alignment="CENTER" prefHeight="34.0" prefWidth="77.0" text="Stigin þín:">
                 <HBox.margin>
-                    <Insets left="50.0" right="50.0" />
+                    <Insets left="50.0" right="50.0"/>
                 </HBox.margin>
             </Label>
             <Label fx:id="fxStig" alignment="CENTER" prefHeight="34.0" prefWidth="77.0" text="0">
                 <HBox.margin>
-                    <Insets right="100.0" />
+                    <Insets right="100.0"/>
                 </HBox.margin>
             </Label>
-            <Label alignment="CENTER" prefHeight="34.0" prefWidth="77.0" text="Tími eftir:">
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="77.0" text="Tíminn þinn :">
                 <HBox.margin>
-                    <Insets right="50.0" />
+                    <Insets right="50.0"/>
                 </HBox.margin>
             </Label>
             <Label fx:id="fxTimi" alignment="CENTER" prefHeight="34.0" prefWidth="77.0">
                 <HBox.margin>
-                    <Insets right="50.0" />
+                    <Insets right="50.0"/>
                 </HBox.margin>
             </Label>
         </HBox>
     </bottom>
 </BorderPane>
-

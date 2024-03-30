@@ -1,16 +1,15 @@
 package vidmot.goldrush;
 
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.paint.Color;
+import javafx.scene.image.Image;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
-import vinnsla.goldrush.Leikur;
 
 import java.io.IOException;
 
 public class Grafari extends Rectangle {
 
+    private KarakterController karController = KarakterController.getInstance();
 
     public Grafari(){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("grafari-view.fxml"));
@@ -25,6 +24,20 @@ public class Grafari extends Rectangle {
 
         setLayoutX(50);
         setLayoutY(50);
-        setFill(Color.BLUEVIOLET);
+
+        setImage();
+    }
+
+    public void setImage(){
+        String selectedCharacter = karController.getSelectedCharacter();
+        if (selectedCharacter != null) {
+            Image image = new Image(getClass().getResourceAsStream("myndir/" + selectedCharacter + ".png"));
+            setFill(new ImagePattern(image));
+            System.out.println(selectedCharacter + " valin!");
+        } else {
+            System.out.println("Enginn karakter valinn :(");
+            System.out.println(selectedCharacter + " valin!");
+        }
     }
 }
+
