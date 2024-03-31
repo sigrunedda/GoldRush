@@ -32,6 +32,8 @@ public class Leikbord extends Pane {
     public MenuBar menustyring;
     private List<Gull> gulls = new ArrayList<>();
 
+    private Ovinur ovinurinn;
+
     public void setGoldController(GoldController goldController) {
         this.goldController = goldController;
     }
@@ -71,6 +73,22 @@ public class Leikbord extends Pane {
         requestFocus();
 
         startGullDropper();
+        startOvinur();
+    }
+
+    public void startOvinur(){
+        Duration ovinurInterval = Duration.seconds(1);
+        Timeline ovinurDropper = new Timeline(new KeyFrame(ovinurInterval, event -> dropOvinur()));
+        ovinurDropper.play();
+
+    }
+
+    private void dropOvinur() {
+        Ovinur ovinur = new Ovinur();
+
+        getChildren().add(ovinur);
+
+
     }
 
     public void startGullDropper() {
