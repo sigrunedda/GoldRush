@@ -4,11 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e7fbf34-9b44-47f2-87e8-9b9e2d45d50f" name="Changes" comment="prufa" />
+    <list default="true" id="8e7fbf34-9b44-47f2-87e8-9b9e2d45d50f" name="Changes" comment="pull frá main í Elma">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/ovinur-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Leikbord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Leikbord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Ovinur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Ovinur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <excluded-from-favorite>
@@ -56,14 +75,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Elma&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.GoldRush [org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile].executor": "Run",
+    "Maven.GoldRush [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Elma",
+    "kotlin-language-version-configured": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Documents\Viðmótsforritun\GoldRush2\src\main\resources\vidmot\goldrush" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -88,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710764353841</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="pull frá main í Elma">
+      <option name="closed" value="true" />
+      <created>1711824694970</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1711824694970</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -116,6 +150,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="prufa" />
-    <option name="LAST_COMMIT_MESSAGE" value="prufa" />
+    <MESSAGE value="pull frá main í Elma" />
+    <option name="LAST_COMMIT_MESSAGE" value="pull frá main í Elma" />
   </component>
 </project>
