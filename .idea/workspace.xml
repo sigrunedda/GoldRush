@@ -4,16 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e7fbf34-9b44-47f2-87e8-9b9e2d45d50f" name="Changes" comment="pull frá main í Elma">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/ovinur-view.fxml" afterDir="false" />
+    <list default="true" id="8e7fbf34-9b44-47f2-87e8-9b9e2d45d50f" name="Changes" comment="óvinur birtist en hreyfist ekkert">
+      <change afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/AdvorunDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/GoldController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/GoldController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Grafari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Grafari.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Leikbord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Leikbord.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Ovinur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Ovinur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinnsla/goldrush/Leikur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinnsla/goldrush/Leikur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/GoldController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/GoldController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Grafari.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Grafari.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinnsla/goldrush/Leikur.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinnsla/goldrush/Leikur.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
@@ -26,6 +32,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -78,11 +85,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Maven.GoldRush [org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile].executor": "Run",
+    "Maven.GoldRush [org.openjfx:javafx-maven-plugin:0.0.8:jlink].executor": "Run",
     "Maven.GoldRush [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "Elma",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Administrator/OneDrive - Menntaský/Documents/HBV201G-Verkefni-main (2)/HBV201G-Verkefni-main/HBV201G-Verkefni-main/2022"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -122,7 +131,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711824694970</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="óvinur birtist en hreyfist ekkert">
+      <option name="closed" value="true" />
+      <created>1711910678287</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1711910678287</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -151,6 +168,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="prufa" />
     <MESSAGE value="pull frá main í Elma" />
-    <option name="LAST_COMMIT_MESSAGE" value="pull frá main í Elma" />
+    <MESSAGE value="óvinur birtist en hreyfist ekkert" />
+    <option name="LAST_COMMIT_MESSAGE" value="óvinur birtist en hreyfist ekkert" />
   </component>
 </project>

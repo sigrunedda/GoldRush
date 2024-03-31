@@ -3,6 +3,8 @@ package vidmot.goldrush;
 import javafx.animation.AnimationTimer;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,9 +33,9 @@ public class Leikbord extends Pane {
     @FXML
     public MenuBar menustyring;
     private List<Gull> gulls = new ArrayList<>();
-
     private Ovinur ovinurinn;
-
+    private final ObservableList<Ovinur> ovinur = FXCollections.observableArrayList();
+    public static final String VARST_DREPINN = "Þú varst drepinn. Leik lokið";
     public void setGoldController(GoldController goldController) {
         this.goldController = goldController;
     }
@@ -81,16 +83,30 @@ public class Leikbord extends Pane {
         Timeline ovinurDropper = new Timeline(new KeyFrame(ovinurInterval, event -> dropOvinur()));
         ovinurDropper.play();
 
+        AnimationTimer gameLoop = new AnimationTimer() {
+            @Override
+            public void handle(long l) {
+                ovinurDrepur();
+            }
+        };
+        gameLoop.start();
+
     }
 
     private void dropOvinur() {
         Ovinur ovinur = new Ovinur();
-
         getChildren().add(ovinur);
-
-
     }
 
+    public void ovinurDrepur(){
+        for (Ovinur o: ovinur){
+            o.afram();
+            if (grafari.erAresktur(o)){
+                goldController.leikLokid(VARST_DREPINN);
+                return;
+            }
+        }
+    }
     public void startGullDropper() {
         Duration gullDropInterval = Duration.seconds(2);
         Timeline gullDropper = new Timeline(new KeyFrame(gullDropInterval, event -> dropGull()));

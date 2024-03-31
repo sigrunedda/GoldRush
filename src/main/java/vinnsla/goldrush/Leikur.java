@@ -21,4 +21,8 @@ public class Leikur {
     public void nyrLeikur(){
         stigin.setValue(0);
     }
+
+    public void leikLokid(){
+        stigin.setValue(0);
+    }
 }
