@@ -2,6 +2,7 @@ package vidmot.goldrush;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -10,6 +11,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
 import javafx.util.Duration;
+import vinnsla.goldrush.Leikur;
 
 import java.util.Optional;
 
@@ -26,6 +28,8 @@ public class GoldController {
     private int initialTimeInSeconds = 300;
     @FXML
     private Leikbord leikbord;
+    private Leikur leikur;
+    private Timeline t;
 
     public GoldController(){
         this.leikbord=leikbord;
@@ -85,6 +89,24 @@ public class GoldController {
         } else {
             fxStig.setText("0");
             fxTimi.setText("0");
+        }
+    }
+
+    public void leikLokid(String varstDrepinn) {
+        leikur.leikLokid();
+        t.stop();
+        Platform.runLater( () -> synaAlert("Leik lokid: " + varstDrepinn) );
+    }
+
+    private void synaAlert(String s){
+        Alert alert = new AdvorunDialog("Titill", s, "Viltu hætta?");
+        Optional<ButtonType> u = alert.showAndWait();
+
+        //ætti mögulega að vera frekar að velja ef
+        // ekkicancelbutton on þá er farið í nýjan
+        // leik en það er þá bara seinna
+        if (u.get().getButtonData().isCancelButton()){
+            System.exit(0);
         }
     }
 }

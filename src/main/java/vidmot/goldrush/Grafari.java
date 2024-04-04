@@ -39,5 +39,9 @@ public class Grafari extends Rectangle {
             System.out.println(selectedCharacter + " valin!");
         }
     }
+
+    public boolean erAresktur(Ovinur o){
+        return getBoundsInParent().intersects(o.getBoundsInParent());
+    }
 }
 

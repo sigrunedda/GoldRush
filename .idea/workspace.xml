@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8e7fbf34-9b44-47f2-87e8-9b9e2d45d50f" name="Changes" comment="óvinur birtist en hreyfist ekkert">
+      <change afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/AdvorunDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/GoldController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/GoldController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Grafari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Grafari.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Leikbord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Leikbord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Ovinur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Ovinur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vinnsla/goldrush/Leikur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vinnsla/goldrush/Leikur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/GoldController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/GoldController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Grafari.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Grafari.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vinnsla/goldrush/Leikur.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinnsla/goldrush/Leikur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="Elma" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2drRatTQ63cD43ggrdfNMZz6Rra" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.GoldRush [org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile].executor": "Run",
+    "Maven.GoldRush [org.openjfx:javafx-maven-plugin:0.0.8:jlink].executor": "Run",
+    "Maven.GoldRush [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Elma",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Administrator/OneDrive - Menntaský/Documents/HBV201G-Verkefni-main (2)/HBV201G-Verkefni-main/HBV201G-Verkefni-main/2022"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Documents\Viðmótsforritun\GoldRush2\src\main\resources\vidmot\goldrush" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-19.0.2-corretto-19.0.2-4caba194b151-48ba4555" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8e7fbf34-9b44-47f2-87e8-9b9e2d45d50f" name="Changes" comment="" />
+      <created>1710764278084</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710764278084</updated>
+    </task>
+    <task id="LOCAL-00001" summary="prufa">
+      <option name="closed" value="true" />
+      <created>1710764353841</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1710764353841</updated>
+    </task>
+    <task id="LOCAL-00002" summary="pull frá main í Elma">
+      <option name="closed" value="true" />
+      <created>1711824694970</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1711824694970</updated>
+    </task>
+    <task id="LOCAL-00003" summary="óvinur birtist en hreyfist ekkert">
+      <option name="closed" value="true" />
+      <created>1711910678287</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1711910678287</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/Elma" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="prufa" />
+    <MESSAGE value="pull frá main í Elma" />
+    <MESSAGE value="óvinur birtist en hreyfist ekkert" />
+    <option name="LAST_COMMIT_MESSAGE" value="óvinur birtist en hreyfist ekkert" />
+  </component>
+</project>

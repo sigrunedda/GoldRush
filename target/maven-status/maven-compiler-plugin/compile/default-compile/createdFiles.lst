@@ -1,8 +1,11 @@
 vidmot\goldrush\KarakterController.class
 vidmot\goldrush\ViewSwitcher.class
 vidmot\goldrush\KarakterTest.class
+vidmot\goldrush\AdvorunDialog.class
 vidmot\goldrush\Karakter.class
 vidmot\goldrush\View.class
 vidmot\goldrush\Leikreglur.class
 vidmot\goldrush\StartController.class
+vidmot\goldrush\Ovinur$1.class
+vidmot\goldrush\Leikbord$5.class
 vidmot\goldrush\Ovinur.class
