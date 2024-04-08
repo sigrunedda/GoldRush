@@ -6,7 +6,7 @@ public enum View {
     LEIKREGLUR("leikreglur-view.fxml"),
     LEIKBORD("gold-rush-view.fxml");
 
-    private String fileName;
+    private final String fileName;
 
     View(String fileName){
         this.fileName = fileName;

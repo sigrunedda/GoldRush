@@ -5,20 +5,19 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
+import java.util.Objects;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class Ovinur extends Rectangle {
-    private Random random;
-    private Timer timer;
-    private double hradi = 100;
-
+    private final Random random;
+    private final Timer timer;
 
     public Ovinur() {
         setWidth(50);
         setHeight(80);
-        Image Star = new Image(getClass().getResourceAsStream("myndir/Ovinur.png"));
+        Image Star = new Image(Objects.requireNonNull(getClass().getResourceAsStream("myndir/Ovinur.png")));
         setFill(new ImagePattern(Star));
         random = new Random();
         timer = new Timer();
@@ -42,10 +41,10 @@ public class Ovinur extends Rectangle {
         return ovinurBounds.intersects(grafariBounds);
     }
 
-
     public void afram(){
-        double newX = getLayoutX() + (random.nextDouble() -0.5) *hradi*2;
-        double newY = getLayoutY() + (random.nextDouble() -0.5) *hradi*2;
+        double hradi = 100;
+        double newX = getLayoutX() + (random.nextDouble() -0.5) * hradi *2;
+        double newY = getLayoutY() + (random.nextDouble() -0.5) * hradi *2;
 
         Leikbord l = (Leikbord) this.getParent();
         if (l != null) {

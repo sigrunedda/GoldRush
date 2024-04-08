@@ -50,10 +50,6 @@ public class Leikbord extends Pane {
         }
 
         setOnKeyPressed(this::handleKeyPress);
-
-        setOnKeyReleased(this::handleKeyRelease);
-
-        setOnKeyPressed(this::handleKeyPress);
         setOnKeyReleased(this::handleKeyRelease);
 
         grafari = new Grafari();
@@ -115,6 +111,7 @@ public class Leikbord extends Pane {
             }
         }
     }
+
     public void startGullDropper() {
         AnimationTimer gameLoop = new AnimationTimer() {
             @Override
@@ -125,6 +122,9 @@ public class Leikbord extends Pane {
         gameLoop.start();
     }
 
+    /**
+     * Birtir eina stjörnu á handahófskennda staðsetningu á leikborðinu
+     */
     private void dropGull() {
         Gull gull = new Gull();
         gulls.add(gull);
@@ -143,6 +143,10 @@ public class Leikbord extends Pane {
         gull.setLayoutY(initialY);
     }
 
+    /**
+     * Hækkar stigafjölda um 1, lætur stjörnu hverfa og kallar á
+     * dropGull() ef leikmaður snertir stjörnu
+     */
     public void grafaGull() {
         Bounds grafariBounds = grafari.getBoundsInParent();
         boolean gullGrafid = false;
@@ -194,6 +198,12 @@ public class Leikbord extends Pane {
         }
     }
 
+    /**
+     * Athugar hvort staðsetning sé lögleg, þ.e. innan leikborðsins
+     * @param x x-hnit
+     * @param y y-hnit
+     * @return true eða false hvort sé innan löglegra marka
+     */
     private boolean erLoglegt(double x, double y) {
         return x >= 0 && y >= 0 && x <= getWidth() - grafari.getWidth() && y < getHeight() - grafari.getHeight();
     }

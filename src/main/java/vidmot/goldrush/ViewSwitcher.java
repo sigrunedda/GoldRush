@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class ViewSwitcher {
 
@@ -32,7 +33,7 @@ public class ViewSwitcher {
                 root = cache.get(view);
             } else {
                 System.out.println("Loading from FXML");
-                root = FXMLLoader.load(ViewSwitcher.class.getResource(view.getFileName()));
+                root = FXMLLoader.load(Objects.requireNonNull(ViewSwitcher.class.getResource(view.getFileName())));
                 cache.put(view, root);
             }
             lastView = currentView;
