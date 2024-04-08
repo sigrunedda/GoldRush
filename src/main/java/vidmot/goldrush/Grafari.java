@@ -6,10 +6,11 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class Grafari extends Rectangle {
 
-    private KarakterController karController = KarakterController.getInstance();
+    private final KarakterController karController = KarakterController.getInstance();
 
     public Grafari(){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("grafari-view.fxml"));
@@ -31,17 +32,13 @@ public class Grafari extends Rectangle {
     public void setImage(){
         String selectedCharacter = karController.getSelectedCharacter();
         if (selectedCharacter != null) {
-            Image image = new Image(getClass().getResourceAsStream("myndir/" + selectedCharacter + ".png"));
+            Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream("myndir/" + selectedCharacter + ".png")));
             setFill(new ImagePattern(image));
             System.out.println(selectedCharacter + " valin!");
         } else {
             System.out.println("Enginn karakter valinn :(");
             System.out.println(selectedCharacter + " valin!");
         }
-    }
-
-    public boolean erAresktur(Ovinur o){
-        return getBoundsInParent().intersects(o.getBoundsInParent());
     }
 }
 

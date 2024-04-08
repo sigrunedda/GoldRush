@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e7fbf34-9b44-47f2-87e8-9b9e2d45d50f" name="Changes" comment="Smá villumeðhöndlun fyrir óvin">
+    <list default="true" id="8e7fbf34-9b44-47f2-87e8-9b9e2d45d50f" name="Changes" comment="Að rekast í óvin endar leik">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/GoldController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/GoldController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Grafari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Grafari.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Gull.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Gull.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Karakter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Karakter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/KarakterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/KarakterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Leikbord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Leikbord.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Leikreglur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Leikreglur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/ViewSwitcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/ViewSwitcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/leikreglur-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/leikreglur-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,6 +169,8 @@
     <MESSAGE value="óvinur birtist en hreyfist ekkert" />
     <MESSAGE value="Ein stjarna birtist í einu" />
     <MESSAGE value="Smá villumeðhöndlun fyrir óvin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Smá villumeðhöndlun fyrir óvin" />
+    <MESSAGE value="Til baka takki í leiðbeiningum fer í lastView" />
+    <MESSAGE value="Að rekast í óvin endar leik" />
+    <option name="LAST_COMMIT_MESSAGE" value="Að rekast í óvin endar leik" />
   </component>
 </project>

@@ -5,7 +5,6 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Bounds;
@@ -23,7 +22,7 @@ public class Leikbord extends Pane {
 
     @FXML
     private GoldController goldController;
-    private Grafari grafari;
+    private final Grafari grafari;
     private long lastUpdateTime = 0;
     private static final long UPDATE_INTERVAL = 16_666_666;
     private boolean isMovingUp = false;
@@ -32,8 +31,7 @@ public class Leikbord extends Pane {
     private boolean isMovingRight = false;
     @FXML
     public MenuBar menustyring;
-    private List<Gull> gulls = new ArrayList<>();
-    private Ovinur ovinurinn;
+    private final List<Gull> gulls = new ArrayList<>();
     private final ObservableList<Ovinur> ovinur = FXCollections.observableArrayList();
     public static final String VARST_DREPINN = "Þú varst drepinn. Leik lokið";
     public void setGoldController(GoldController goldController) {
@@ -51,19 +49,9 @@ public class Leikbord extends Pane {
             throw new RuntimeException(e);
         }
 
-        setOnKeyPressed(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent event) {
-                handleKeyPress(event);
-            }
-        });
+        setOnKeyPressed(this::handleKeyPress);
 
-        setOnKeyReleased(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent event) {
-                handleKeyRelease(event);
-            }
-        });
+        setOnKeyReleased(this::handleKeyRelease);
 
         setOnKeyPressed(this::handleKeyPress);
         setOnKeyReleased(this::handleKeyRelease);
@@ -95,25 +83,39 @@ public class Leikbord extends Pane {
     }
 
     private void dropOvinur() {
-        Ovinur ovinur = new Ovinur();
-        getChildren().add(ovinur);
+        Ovinur ovinur1 = new Ovinur();
+        ovinur.add(ovinur1);
+        getChildren().add(ovinur1);
+
+        double minX = 0;
+        double maxX = getWidth() - ovinur1.getWidth();
+
+        double minY = menustyring != null ? menustyring.getHeight() : 0;
+        double maxY = getHeight() - ovinur1.getHeight();
+
+        double initialX = Math.random() * (maxX - minX) + minX;
+        double initialY = Math.random() * (maxY - minY) + minY;
+
+        ovinur1.setLayoutX(initialX);
+        ovinur1.setLayoutY(initialY);
     }
 
     public void ovinurDrepur(){
-        for (Ovinur o: ovinur){
-            o.afram();
-            if (grafari.erAresktur(o)){
+        Bounds grafariBounds = grafari.getBoundsInParent();
+
+        Iterator<Ovinur> iterator = ovinur.iterator();
+        while (iterator.hasNext()) {
+            Ovinur ovinur = iterator.next();
+            Bounds gullBounds = ovinur.getBoundsInParent();
+
+            if (grafariBounds.intersects(gullBounds)) {
+                iterator.remove();
                 goldController.leikLokid(VARST_DREPINN);
-                return;
+                System.out.println("Óvinur drap þig");
             }
         }
     }
     public void startGullDropper() {
-        /*Duration gullDropInterval = Duration.seconds(2);
-        Timeline gullDropper = new Timeline(new KeyFrame(gullDropInterval, event -> dropGull()));
-        gullDropper.setCycleCount(Timeline.INDEFINITE);
-        gullDropper.play();*/
-
         AnimationTimer gameLoop = new AnimationTimer() {
             @Override
             public void handle(long l) {
@@ -170,19 +172,12 @@ public class Leikbord extends Pane {
             return;
         }
         switch (event.getCode()) {
-            case UP:
-                isMovingUp = true;
-                break;
-            case DOWN:
-                isMovingDown = true;
-                break;
-            case LEFT:
-                isMovingLeft = true;
-                break;
-            case RIGHT:
-                isMovingRight = true;
-                break;
-            default:
+            case UP -> isMovingUp = true;
+            case DOWN -> isMovingDown = true;
+            case LEFT -> isMovingLeft = true;
+            case RIGHT -> isMovingRight = true;
+            default -> {
+            }
         }
         updateGrafariPosition();
         lastUpdateTime = currentTime;
@@ -190,19 +185,12 @@ public class Leikbord extends Pane {
 
     private void handleKeyRelease(KeyEvent event) {
         switch (event.getCode()) {
-            case UP:
-                isMovingUp = false;
-                break;
-            case DOWN:
-                isMovingDown = false;
-                break;
-            case LEFT:
-                isMovingLeft = false;
-                break;
-            case RIGHT:
-                isMovingRight = false;
-                break;
-            default:
+            case UP -> isMovingUp = false;
+            case DOWN -> isMovingDown = false;
+            case LEFT -> isMovingLeft = false;
+            case RIGHT -> isMovingRight = false;
+            default -> {
+            }
         }
     }
 
@@ -236,6 +224,6 @@ public class Leikbord extends Pane {
     }
 
     private void hreinsaBord() {
-        hreinsaBord();
+
     }
 }

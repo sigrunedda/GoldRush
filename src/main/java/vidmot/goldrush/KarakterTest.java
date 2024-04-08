@@ -1,6 +1,5 @@
 package vidmot.goldrush;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioMenuItem;
 import javafx.scene.control.ToggleGroup;
@@ -27,7 +26,7 @@ public class KarakterTest {
     }
 
     @FXML
-    private void onVeljaLeikmann(ActionEvent actionEvent){
+    private void onVeljaLeikmann(){
         if (leikmadur.getSelectedToggle() != null){
             RadioMenuItem valinn = (RadioMenuItem) leikmadur.getSelectedToggle();
             System.out.println("Þú valdir " + valinn.getText());

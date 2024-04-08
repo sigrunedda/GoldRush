@@ -3,8 +3,6 @@ package vidmot.goldrush;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -28,11 +26,13 @@ public class GoldController {
     private int initialTimeInSeconds = 300;
     @FXML
     private Leikbord leikbord;
-    private Leikur leikur;
-    private Timeline t;
+    private final Leikur leikur;
+    private final Timeline t;
 
     public GoldController(){
-        this.leikbord=leikbord;
+        this.leikbord = new Leikbord();
+        this.leikur = new Leikur();
+        this.t = new Timeline();
     }
 
 
@@ -44,12 +44,7 @@ public class GoldController {
         countdownTimeline = new Timeline();
         countdownTimeline.setCycleCount(Timeline.INDEFINITE);
 
-        KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                updateCountdown();
-            }
-        });
+        KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), event -> updateCountdown());
         countdownTimeline.getKeyFrames().add(keyFrame);
 
     }

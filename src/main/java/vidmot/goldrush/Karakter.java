@@ -1,47 +1,46 @@
 package vidmot.goldrush;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 public class Karakter {
 
-    private KarakterController karController = KarakterController.getInstance();
+    private final KarakterController karController = KarakterController.getInstance();
 
     @FXML
-    private Grafari grafari = new Grafari();
+    private final Grafari grafari = new Grafari();
 
     @FXML
-    private void onDaisy(ActionEvent event){
+    private void onDaisy(){
         System.out.println("Daisy valin!");
         karController.setSelectedCharacter("Daisy");
 //        grafari.setImage("myndir/Daisy.png");
     }
     @FXML
-    private void onMario(ActionEvent event){
+    private void onMario(){
         System.out.println("Mario valin!");
         karController.setSelectedCharacter("Mario");
 //        grafari.setImage("myndir/Mario.png");
     }
     @FXML
-    private void onPeach(ActionEvent event){
+    private void onPeach(){
         System.out.println("Peach valin!");
         karController.setSelectedCharacter("Peach");
 //        grafari.setImage("myndir/Peach.png");
     }
     @FXML
-    private void onLuigi(ActionEvent event){
+    private void onLuigi(){
         System.out.println("Luigi valin!");
         karController.setSelectedCharacter("Luigi");
 //        grafari.setImage("myndir/Luigi.png");
     }
 
     @FXML
-    private void onAfram(ActionEvent event){
+    private void onAfram(){
         ViewSwitcher.switchTo(View.LEIKBORD);
     }
 
     @FXML
-    private void onTilbaka(ActionEvent event){
+    private void onTilbaka(){
         ViewSwitcher.switchTo(View.START);
     }
 }
