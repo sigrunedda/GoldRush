@@ -48,13 +48,12 @@ public class Ovinur extends Rectangle {
         double newY = getLayoutY() + (random.nextDouble() -0.5) *hradi*2;
 
         Leikbord l = (Leikbord) this.getParent();
-        newX = Math.min(Math.max(newX,0), l.getWidth() - getWidth());
-        newY= Math.min(Math.max(newY,0), l.getHeight() - getHeight());
-        setLayoutX(newX);
-        setLayoutY(newY);
-
-
-
+        if (l != null) {
+            newX = Math.min(Math.max(newX, 0), l.getWidth() - getWidth());
+            newY = Math.min(Math.max(newY, 0), l.getHeight() - getHeight());
+            setLayoutX(newX);
+            setLayoutY(newY);
+        }
     }
 
 }
