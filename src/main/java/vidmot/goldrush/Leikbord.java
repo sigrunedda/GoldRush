@@ -75,6 +75,7 @@ public class Leikbord extends Pane {
         requestFocus();
 
         startGullDropper();
+        dropGull();
         startOvinur();
     }
 
@@ -108,10 +109,10 @@ public class Leikbord extends Pane {
         }
     }
     public void startGullDropper() {
-        Duration gullDropInterval = Duration.seconds(2);
+        /*Duration gullDropInterval = Duration.seconds(2);
         Timeline gullDropper = new Timeline(new KeyFrame(gullDropInterval, event -> dropGull()));
         gullDropper.setCycleCount(Timeline.INDEFINITE);
-        gullDropper.play();
+        gullDropper.play();*/
 
         AnimationTimer gameLoop = new AnimationTimer() {
             @Override
@@ -133,7 +134,6 @@ public class Leikbord extends Pane {
         double minY = menustyring != null ? menustyring.getHeight() : 0;
         double maxY = getHeight() - gull.getHeight();
 
-
         double initialX = Math.random() * (maxX - minX) + minX;
         double initialY = Math.random() * (maxY - minY) + minY;
 
@@ -143,6 +143,7 @@ public class Leikbord extends Pane {
 
     public void grafaGull() {
         Bounds grafariBounds = grafari.getBoundsInParent();
+        boolean gullGrafid = false;
 
         Iterator<Gull> iterator = gulls.iterator();
         while (iterator.hasNext()) {
@@ -153,8 +154,12 @@ public class Leikbord extends Pane {
                 iterator.remove();
                 getChildren().remove(gull);
                 goldController.updatePoints(1);
+                gullGrafid = true;
                 System.out.println("grafari grefur");
             }
+        }
+        if (gullGrafid) {
+            dropGull();
         }
         updateGrafariPosition();
     }
@@ -202,7 +207,7 @@ public class Leikbord extends Pane {
     }
 
     private boolean erLoglegt(double x, double y) {
-        return x >= 0 && y >= 0 && x <= 570 && y < 315;
+        return x >= 0 && y >= 0 && x <= getWidth() - grafari.getWidth() && y < getHeight() - grafari.getHeight();
     }
 
     private void updateGrafariPosition() {
