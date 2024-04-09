@@ -6,10 +6,10 @@ Leikur var uppáhalds verkefnið hjá öllum þar sem hann gefur marga möguleik
 - Hægt er að velja mismunandi persónur sem uppfylla hlutverk grafarans.
 - Óvinur sem endar leikinn ef grafarinn rekst á hann.
   
-**Mavaen uppsetning**
-   ## Maven Compiler Plugin:
+## **Mavaen uppsetning**
+   ###Maven Compiler Plugin:
   Við notuðum Maven source 21, version 3.11.0. (Group ID: org.apache.maven.plugins)
-  ## JavaFX Maven Plugin:
+  ### JavaFX Maven Plugin:
   Við notuðum version 0.0.8. (Group ID: org.openjfx)
   [Sjá nánar í pom.xml](https://github.com/sigrunedda/GoldRush/blob/main/pom.xml)
   
