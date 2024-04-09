@@ -93,13 +93,39 @@ public class MenuController {
     }
 
     @FXML
-    private void onNyrLeikur(ActionEvent event){
+    private void onNyrLeikur(ActionEvent event) {
         System.out.println("Nýr Leikur");
-        goldController.updatePoints(0);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Byrja upp á nýtt");
+        alert.setHeaderText("Ertu viss um að þú viljir byrja upp á nýtt?");
+        alert.setContentText("Veldu OK til að hætta, eða Cancel til að halda áfram");
+
+        ButtonType buttonOK = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
+        alert.getButtonTypes().setAll(buttonOK, ButtonType.CANCEL);
+        alert.showAndWait().ifPresent(response -> {
+            if (response == buttonOK){
+                ViewSwitcher.switchTo(View.KARAKTER);
+                goldController.hreinsabord();
+                goldController.updateCountdownLabel(0);
+                goldController.updatePoints(0);
+            }
+        });
     }
 
     public void onLokaPressed(ActionEvent event) {
-        ViewSwitcher.switchTo(View.START);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Staðfesting til að hætta leik");
+        alert.setHeaderText("Ertu viss um að þú viljir hætta?");
+        alert.setContentText("Veldu OK til að hætta, eða Cancel til að halda áfram");
+
+        ButtonType buttonOK = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
+        alert.getButtonTypes().setAll(buttonOK, ButtonType.CANCEL);
+
+        alert.showAndWait().ifPresent(response -> {
+            if (response == buttonOK){
+                ViewSwitcher.switchTo(View.START);
+            }
+        });
     }
 
     @FXML

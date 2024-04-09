@@ -22,18 +22,21 @@ public class Leikbord extends Pane {
 
     @FXML
     private GoldController goldController;
-    private final Grafari grafari;
+    private Grafari grafari;
     private long lastUpdateTime = 0;
     private static final long UPDATE_INTERVAL = 16_666_666;
     private boolean isMovingUp = false;
     private boolean isMovingDown = false;
     private boolean isMovingLeft = false;
     private boolean isMovingRight = false;
+    private AnimationTimer gameLoop;
+    private Timeline ovinurDropper;
     @FXML
     public MenuBar menustyring;
     private final List<Gull> gulls = new ArrayList<>();
     private final ObservableList<Ovinur> ovinur = FXCollections.observableArrayList();
     public static final String VARST_DREPINN = "Þú varst drepinn. Leik lokið";
+
     public void setGoldController(GoldController goldController) {
         this.goldController = goldController;
     }
@@ -48,30 +51,18 @@ public class Leikbord extends Pane {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-        setOnKeyPressed(this::handleKeyPress);
-
-        setOnKeyReleased(this::handleKeyRelease);
-
         setOnKeyPressed(this::handleKeyPress);
         setOnKeyReleased(this::handleKeyRelease);
-
-        grafari = new Grafari();
-        getChildren().add(grafari);
-
+        setOnKeyPressed(this::handleKeyPress);
+        setOnKeyReleased(this::handleKeyRelease);
         setFocusTraversable(true);
         requestFocus();
-
-        startGullDropper();
-        dropGull();
-        startOvinur();
     }
 
-    public void startOvinur(){
+    public void startOvinur() {
         Duration ovinurInterval = Duration.seconds(1);
-        Timeline ovinurDropper = new Timeline(new KeyFrame(ovinurInterval, event -> dropOvinur()));
+        ovinurDropper = new Timeline(new KeyFrame(ovinurInterval, event -> dropOvinur()));
         ovinurDropper.play();
-
         AnimationTimer gameLoop = new AnimationTimer() {
             @Override
             public void handle(long l) {
@@ -79,8 +70,8 @@ public class Leikbord extends Pane {
             }
         };
         gameLoop.start();
-
     }
+
 
     private void dropOvinur() {
         Ovinur ovinur1 = new Ovinur();
@@ -100,7 +91,7 @@ public class Leikbord extends Pane {
         ovinur1.setLayoutY(initialY);
     }
 
-    public void ovinurDrepur(){
+    public void ovinurDrepur() {
         Bounds grafariBounds = grafari.getBoundsInParent();
 
         Iterator<Ovinur> iterator = ovinur.iterator();
@@ -115,14 +106,28 @@ public class Leikbord extends Pane {
             }
         }
     }
+
     public void startGullDropper() {
-        AnimationTimer gameLoop = new AnimationTimer() {
+        gameLoop = new AnimationTimer() {
             @Override
             public void handle(long l) {
                 grafaGull();
             }
         };
         gameLoop.start();
+    }
+
+
+    public void stopGullDropper() {
+        if (gameLoop != null) {
+            gameLoop.stop();
+        }
+    }
+
+    public void stopOvinur() {
+        if (ovinurDropper != null) {
+            ovinurDropper.stop();
+        }
     }
 
     private void dropGull() {
@@ -223,7 +228,22 @@ public class Leikbord extends Pane {
         }
     }
 
-    private void hreinsaBord() {
+    void hreinsaBord() {
+        stopGullDropper();
+        stopOvinur();
+        getChildren().removeAll(gulls);
+        gulls.clear();
+        getChildren().removeAll(ovinur);
+        ovinur.clear();
+        getChildren().remove(grafari);
+    }
 
+    public void hefjaAfram(){
+        grafari = new Grafari();
+        getChildren().add(grafari);
+
+        startGullDropper();
+        dropGull();
+        startOvinur();
     }
 }
