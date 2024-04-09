@@ -13,7 +13,7 @@ Leikur var uppáhalds verkefnið hjá öllum þar sem hann gefur marga möguleik
   Við notuðum version 0.0.8. (Group ID: org.openjfx) <br>
   [Sjá nánar í pom.xml](https://github.com/sigrunedda/GoldRush/blob/main/pom.xml)
   
-**Til þess að keyra forritið** <br>
+**Til þess að keyra forritið** <br><br>
   Til þess að keyra forritið með Maven þá fer einstaklingur í Maven -> Plugins -> javafx -> javafx:run
   annars er hægt að keyra það í gegnum GoldApplication og ýta á run current file. 
   _GoldApplication er mainClass-inn_
