@@ -12,6 +12,8 @@ public class ViewSwitcher {
 
     private static final Map<View, Parent> cache = new HashMap<>();
     private static Scene scene;
+    private static View lastView = View.START;
+    private static View currentView;
 
     public static void setScene(Scene scene){
         ViewSwitcher.scene = scene;
@@ -33,9 +35,15 @@ public class ViewSwitcher {
                 root = FXMLLoader.load(ViewSwitcher.class.getResource(view.getFileName()));
                 cache.put(view, root);
             }
+            lastView = currentView;
+            currentView = view;
             scene.setRoot(root);
         }catch (IOException e){
             e.printStackTrace();
         }
+    }
+
+    public static View getLastView() {
+        return lastView;
     }
 }

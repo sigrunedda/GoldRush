@@ -2,14 +2,14 @@ package vidmot.goldrush;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
 import javafx.util.Duration;
+import vinnsla.goldrush.Leikur;
 
 import java.util.Optional;
 
@@ -26,9 +26,13 @@ public class GoldController {
     private int initialTimeInSeconds = 300;
     @FXML
     private Leikbord leikbord;
+    private final Leikur leikur;
+    private final Timeline t;
 
     public GoldController(){
-        this.leikbord=leikbord;
+        this.leikbord = new Leikbord();
+        this.leikur = new Leikur();
+        this.t = new Timeline();
     }
 
 
@@ -40,12 +44,7 @@ public class GoldController {
         countdownTimeline = new Timeline();
         countdownTimeline.setCycleCount(Timeline.INDEFINITE);
 
-        KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                updateCountdown();
-            }
-        });
+        KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), event -> updateCountdown());
         countdownTimeline.getKeyFrames().add(keyFrame);
 
     }
@@ -85,6 +84,24 @@ public class GoldController {
         } else {
             fxStig.setText("0");
             fxTimi.setText("0");
+        }
+    }
+
+    public void leikLokid(String varstDrepinn) {
+        leikur.leikLokid();
+        t.stop();
+        Platform.runLater( () -> synaAlert("Leik lokid: " + varstDrepinn) );
+    }
+
+    private void synaAlert(String s){
+        Alert alert = new AdvorunDialog("Titill", s, "Viltu hætta?");
+        Optional<ButtonType> u = alert.showAndWait();
+
+        //ætti mögulega að vera frekar að velja ef
+        // ekkicancelbutton on þá er farið í nýjan
+        // leik en það er þá bara seinna
+        if (u.get().getButtonData().isCancelButton()){
+            System.exit(0);
         }
     }
 }

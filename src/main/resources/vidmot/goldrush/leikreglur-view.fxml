@@ -51,6 +51,5 @@
             <Font name="Lucida Console" size="12.0" />
          </font>
       </Text>
-      <Button layoutX="404.0" layoutY="349.0" mnemonicParsing="false" onAction="#onAframILeik" text="Halda áfram með leik " />
    </children>
 </Pane>
