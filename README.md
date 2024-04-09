@@ -16,4 +16,4 @@ Leikur var uppáhalds verkefnið hjá öllum þar sem hann gefur marga möguleik
 ## **Til þess að keyra forritið:** <br>
   Til þess að keyra forritið með Maven þá fer einstaklingur í Maven -> Plugins -> javafx -> javafx:run
   <br> annars er hægt að keyra það í gegnum GoldApplication og ýta á run current file. 
-  _GoldApplication er mainClass-inn_
+  <br> _GoldApplication er mainClass-inn_
