@@ -85,7 +85,7 @@ public class MenuController {
         }
     }
 
-    private void updateCountdownLabel(int timeInSeconds){
+    public void updateCountdownLabel(int timeInSeconds){
         int minutes = timeInSeconds / 60;
         int seconds = timeInSeconds % 60;
 
