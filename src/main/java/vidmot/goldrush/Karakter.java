@@ -1,5 +1,6 @@
 package vidmot.goldrush;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 public class Karakter {
@@ -35,8 +36,10 @@ public class Karakter {
     }
 
     @FXML
-    private void onAfram(){
+    private void onAfram(ActionEvent event){
         ViewSwitcher.switchTo(View.LEIKBORD);
+        GoldController goldController = (GoldController) ViewSwitcher.lookup(View.LEIKBORD);
+        goldController.getLeikbord().hefjaAfram();
     }
 
     @FXML

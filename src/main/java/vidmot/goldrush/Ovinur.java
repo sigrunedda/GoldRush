@@ -31,7 +31,7 @@ public class Ovinur extends Rectangle {
             public void run() {
                 afram();
             }
-        },0,1000);
+        },0,100);
     }
 
     public boolean isCollidingWithGrafari(Grafari grafari) {
@@ -42,7 +42,7 @@ public class Ovinur extends Rectangle {
     }
 
     public void afram(){
-        double hradi = 100;
+        double hradi = 30;
         double newX = getLayoutX() + (random.nextDouble() -0.5) * hradi *2;
         double newY = getLayoutY() + (random.nextDouble() -0.5) * hradi *2;
 

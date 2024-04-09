@@ -2,6 +2,8 @@ package vidmot.goldrush;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.util.Duration;
@@ -37,12 +39,17 @@ public class MenuController {
         countdownTimeline = new Timeline();
         countdownTimeline.setCycleCount(Timeline.INDEFINITE);
 
-        KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), event -> updateCountdown());
+        KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                updateCountdown();
+            }
+        });
         countdownTimeline.getKeyFrames().add(keyFrame);
     }
 
     @FXML
-    private void onBreytaErfidleika(){
+    private void onBreytaErfidleika(ActionEvent actionEvent){
         if (erfidleikastig.getSelectedToggle() != null){
             RadioMenuItem valid = (RadioMenuItem) erfidleikastig.getSelectedToggle();
             System.out.println("Erfiðleikastigið " + valid.getText() + " valið!");
@@ -57,12 +64,16 @@ public class MenuController {
     }
 
     private int getInitialTime(String difficulty){
-        return switch (difficulty) {
-            case "Auðvelt" -> 90;
-            case "Miðlungs" -> 60;
-            case "Erfitt" -> 30;
-            default -> 0;
-        };
+        switch (difficulty){
+            case "Auðvelt":
+                return 90;
+            case "Miðlungs":
+                return 60;
+            case "Erfitt":
+                return 30;
+            default:
+                return 0;
+        }
     }
 
     private void updateCountdown(){
@@ -74,7 +85,7 @@ public class MenuController {
         }
     }
 
-    private void updateCountdownLabel(int timeInSeconds){
+    public void updateCountdownLabel(int timeInSeconds){
         int minutes = timeInSeconds / 60;
         int seconds = timeInSeconds % 60;
 
@@ -82,26 +93,52 @@ public class MenuController {
     }
 
     @FXML
-    private void onNyrLeikur(){
+    private void onNyrLeikur(ActionEvent event) {
         System.out.println("Nýr Leikur");
-        goldController.updatePoints(0);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Byrja upp á nýtt");
+        alert.setHeaderText("Ertu viss um að þú viljir byrja upp á nýtt?");
+        alert.setContentText("Veldu OK til að hætta, eða Cancel til að halda áfram");
+
+        ButtonType buttonOK = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
+        alert.getButtonTypes().setAll(buttonOK, ButtonType.CANCEL);
+        alert.showAndWait().ifPresent(response -> {
+            if (response == buttonOK){
+                ViewSwitcher.switchTo(View.KARAKTER);
+                goldController.hreinsabord();
+                goldController.updateCountdownLabel(0);
+                goldController.updatePoints(0);
+            }
+        });
     }
 
-    public void onLokaPressed() {
-        ViewSwitcher.switchTo(View.START);
+    public void onLokaPressed(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Staðfesting til að hætta leik");
+        alert.setHeaderText("Ertu viss um að þú viljir hætta?");
+        alert.setContentText("Veldu OK til að hætta, eða Cancel til að halda áfram");
+
+        ButtonType buttonOK = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
+        alert.getButtonTypes().setAll(buttonOK, ButtonType.CANCEL);
+
+        alert.showAndWait().ifPresent(response -> {
+            if (response == buttonOK){
+                ViewSwitcher.switchTo(View.START);
+            }
+        });
     }
 
     @FXML
-    private void onUmForritid(){
+    private void onUmForritid(ActionEvent event){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Um Forritið");
         alert.setHeaderText(null);
-        alert.setContentText("Þetta er leikurinn Gold Rush. \nVerkefnið var unnið af: Sigrún Edda, Helga Björg, Kristín Fríða, Elma Karen, Sylvía Hanna \nÁrtal: 2024");
+        alert.setContentText("Þetta er leikurinn Gold Rush. \nHöfundur: Sigrún Edda \nÁrtal: 2024");
         alert.showAndWait();
     }
 
     @FXML
-    private void onLeikreglur(){
+    private void onLeikreglur(ActionEvent event){
         System.out.println("Leikreglur display!");
         ViewSwitcher.switchTo(View.LEIKREGLUR);
     }

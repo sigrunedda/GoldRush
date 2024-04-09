@@ -67,7 +67,7 @@ public class GoldController {
         }
     }
 
-    private void updateCountdownLabel(int timeInSeconds) {
+    protected void updateCountdownLabel(int timeInSeconds) {
         int minutes = timeInSeconds / 60;
         int seconds = timeInSeconds % 60;
 
@@ -103,5 +103,12 @@ public class GoldController {
         if (u.get().getButtonData().isCancelButton()){
             System.exit(0);
         }
+    }
+
+    public void hreinsabord() {
+        leikbord.hreinsaBord();
+    }
+    public Leikbord getLeikbord() {
+        return leikbord;
     }
 }
