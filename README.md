@@ -7,7 +7,7 @@ Leikur var uppáhalds verkefnið hjá öllum þar sem hann gefur marga möguleik
 - Óvinur sem endar leikinn ef grafarinn rekst á hann.
   
 ## **Mavaen uppsetning**
-   ###Maven Compiler Plugin:
+   ### Maven Compiler Plugin:
   Við notuðum Maven source 21, version 3.11.0. (Group ID: org.apache.maven.plugins)
   ### JavaFX Maven Plugin:
   Við notuðum version 0.0.8. (Group ID: org.openjfx)
