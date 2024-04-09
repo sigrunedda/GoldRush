@@ -241,9 +241,9 @@ public class Leikbord extends Pane {
     public void hefjaAfram(){
         grafari = new Grafari();
         getChildren().add(grafari);
-
         startGullDropper();
         dropGull();
         startOvinur();
+        goldController.updateCountdownLabel(0);
     }
 }
