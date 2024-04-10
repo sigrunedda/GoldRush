@@ -93,7 +93,7 @@ public class GoldController {
     }
 
     private void synaAlert(String s){
-        Alert alert = new AdvorunDialog("Leik lokið", s, "Myndirðu vilja hefja nýjan leik?");
+        Alert alert = new AdvorunDialog("Leik lokið", s, "Stigin þín: " + fxStig.getText());
         Optional<ButtonType> u = alert.showAndWait();
 
         // ætti mögulega að vera frekar að velja ef
