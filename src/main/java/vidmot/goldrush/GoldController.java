@@ -102,13 +102,17 @@ public class GoldController {
         // leik en það er þá bara seinna
         if (u.get().getButtonData().isCancelButton()){
             System.exit(0);
+        } else if (u.get().getButtonData().isDefaultButton()) {
+            hreinsaBord();
+            leikbord.hefjaAfram();
+            updatePoints(0);
         }
-    }
-
-    public void hreinsabord() {
-        leikbord.hreinsaBord();
     }
     public Leikbord getLeikbord() {
         return leikbord;
+    }
+
+    public void hreinsaBord() {
+        leikbord.hreinsaBord();
     }
 }

@@ -22,6 +22,8 @@ public class Leikbord extends Pane {
 
     @FXML
     private GoldController goldController;
+    @FXML
+    private MenuController menuController;
     private Grafari grafari;
     private long lastUpdateTime = 0;
     private static final long UPDATE_INTERVAL = 16_666_666;
@@ -39,6 +41,10 @@ public class Leikbord extends Pane {
 
     public void setGoldController(GoldController goldController) {
         this.goldController = goldController;
+    }
+
+    public void setMenuController(MenuController menuController) {
+        this.menuController = menuController;
     }
 
     public Leikbord() {
@@ -74,35 +80,37 @@ public class Leikbord extends Pane {
 
 
     private void dropOvinur() {
-        Ovinur ovinur1 = new Ovinur();
-        ovinur.add(ovinur1);
-        getChildren().add(ovinur1);
+        int fjoldiOvina = 1;
+        for (int i = 0; i < fjoldiOvina; i++) {
+            Ovinur ovinur1 = new Ovinur();
+            ovinur.add(ovinur1);
+            getChildren().add(ovinur1);
 
-        double minX = 0;
-        double maxX = getWidth() - ovinur1.getWidth();
+            double minX = 0;
+            double maxX = getWidth() - ovinur1.getWidth();
 
-        double minY = menustyring != null ? menustyring.getHeight() : 0;
-        double maxY = getHeight() - ovinur1.getHeight();
+            double minY = menustyring != null ? menustyring.getHeight() : 0;
+            double maxY = getHeight() - ovinur1.getHeight();
 
-        double initialX = Math.random() * (maxX - minX) + minX;
-        double initialY = Math.random() * (maxY - minY) + minY;
+            double initialX = Math.random() * (maxX - minX) + minX;
+            double initialY = Math.random() * (maxY - minY) + minY;
 
-        ovinur1.setLayoutX(initialX);
-        ovinur1.setLayoutY(initialY);
+            ovinur1.setLayoutX(initialX);
+            ovinur1.setLayoutY(initialY);
+        }
     }
 
     public void ovinurDrepur() {
         Bounds grafariBounds = grafari.getBoundsInParent();
-
         Iterator<Ovinur> iterator = ovinur.iterator();
         while (iterator.hasNext()) {
-            Ovinur ovinur = iterator.next();
-            Bounds gullBounds = ovinur.getBoundsInParent();
-
-            if (grafariBounds.intersects(gullBounds)) {
-                iterator.remove();
+            Ovinur o = iterator.next();
+            Bounds ovinurBounds = o.getBoundsInParent();
+            if (grafariBounds.intersects(ovinurBounds)) {
                 goldController.leikLokid(VARST_DREPINN);
                 System.out.println("Óvinur drap þig");
+                iterator.remove();
+                o.stop();
             }
         }
     }
@@ -116,7 +124,6 @@ public class Leikbord extends Pane {
         };
         gameLoop.start();
     }
-
 
     public void stopGullDropper() {
         if (gameLoop != null) {
@@ -228,12 +235,16 @@ public class Leikbord extends Pane {
         }
     }
 
-    void hreinsaBord() {
+    public void hreinsaBord() {
+        System.out.println("hreinsaBord() kallað");
         stopGullDropper();
         stopOvinur();
+        for (Ovinur o : ovinur) {
+            o.stop();
+        }
         getChildren().removeAll(gulls);
         gulls.clear();
-        getChildren().removeAll(ovinur);
+        getChildren().removeIf(node -> node instanceof Ovinur);
         ovinur.clear();
         getChildren().remove(grafari);
     }

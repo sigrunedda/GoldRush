@@ -58,6 +58,7 @@ public class MenuController {
             goldController.setInitialTime(initialTime);
 
             goldController.startCountDown();
+
         } else {
             System.out.println("Ekkert erfiðleikastig valið!");
         }
@@ -93,7 +94,7 @@ public class MenuController {
     }
 
     @FXML
-    private void onNyrLeikur(ActionEvent event) {
+    public void onNyrLeikur() {
         System.out.println("Nýr Leikur");
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Byrja upp á nýtt");
@@ -105,7 +106,7 @@ public class MenuController {
         alert.showAndWait().ifPresent(response -> {
             if (response == buttonOK){
                 ViewSwitcher.switchTo(View.KARAKTER);
-                goldController.hreinsabord();
+                goldController.hreinsaBord();
                 goldController.updateCountdownLabel(0);
                 goldController.updatePoints(0);
             }

@@ -13,6 +13,7 @@ import java.util.TimerTask;
 public class Ovinur extends Rectangle {
     private final Random random;
     private final Timer timer;
+    private TimerTask currentTask;
 
     public Ovinur() {
         setWidth(50);
@@ -26,12 +27,19 @@ public class Ovinur extends Rectangle {
     }
 
     private void byrjaHreyfingu() {
-        timer.scheduleAtFixedRate(new TimerTask() {
+        currentTask = new TimerTask() {
             @Override
             public void run() {
                 afram();
             }
-        },0,100);
+        };
+        timer.scheduleAtFixedRate(currentTask, 0, 100);
+    }
+
+    public void stop() {
+        currentTask.cancel();
+        timer.cancel();
+        timer.purge();
     }
 
     public boolean isCollidingWithGrafari(Grafari grafari) {
@@ -54,5 +62,4 @@ public class Ovinur extends Rectangle {
             setLayoutY(newY);
         }
     }
-
 }
