@@ -18,7 +18,7 @@ public class Karakter {
     }
     @FXML
     private void onMario(){
-        System.out.println("Mario valin!");
+        System.out.println("Mario valinn!");
         karController.setSelectedCharacter("Mario");
 //        grafari.setImage("myndir/Mario.png");
     }
@@ -30,7 +30,7 @@ public class Karakter {
     }
     @FXML
     private void onLuigi(){
-        System.out.println("Luigi valin!");
+        System.out.println("Luigi valinn!");
         karController.setSelectedCharacter("Luigi");
 //        grafari.setImage("myndir/Luigi.png");
     }

@@ -8,7 +8,6 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Bounds;
-import javafx.scene.Scene;
 import javafx.scene.control.MenuBar;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
@@ -33,10 +32,10 @@ public class Leikbord extends Pane {
     private boolean isMovingLeft = false;
     private boolean isMovingRight = false;
     private AnimationTimer gameLoop;
-    private Scene scene;
     private Timeline ovinurDropper;
     @FXML
     public MenuBar menustyring;
+    private static final double SPEED = 5.0;
     private final List<Gull> gulls = new ArrayList<>();
     private final ObservableList<Ovinur> ovinur = FXCollections.observableArrayList();
     public static final String VARST_DREPINN = "Bowser náði þér.";
@@ -74,7 +73,6 @@ public class Leikbord extends Pane {
             }
         };
         gameLoop.start();
-
         setOnKeyPressed(this::handleKeyPress);
         setOnKeyReleased(this::handleKeyRelease);
     }
@@ -113,6 +111,7 @@ public class Leikbord extends Pane {
                 iterator.remove();
                 o.stop();
                 gameLoop.stop();
+
                 setOnKeyPressed(null);
                 setOnKeyReleased(null);
 
@@ -178,7 +177,6 @@ public class Leikbord extends Pane {
                 getChildren().remove(gull);
                 goldController.updatePoints(1);
                 gullGrafid = true;
-                System.out.println("grafari grefur");
             }
         }
         if (gullGrafid) {
@@ -220,32 +218,29 @@ public class Leikbord extends Pane {
     }
 
     private void updateGrafariPosition() {
-        double speed = 5.0;
-
         if (isMovingUp) {
-            if (erLoglegt(grafari.getLayoutX(), grafari.getLayoutY() - speed)) {
-                grafari.setLayoutY(grafari.getLayoutY() - speed);
+            if (erLoglegt(grafari.getLayoutX(), grafari.getLayoutY() - SPEED)) {
+                grafari.setLayoutY(grafari.getLayoutY() - SPEED);
             }
         }
         if (isMovingDown) {
-            if (erLoglegt(grafari.getLayoutX(), grafari.getLayoutY() + speed)) {
-                grafari.setLayoutY(grafari.getLayoutY() + speed);
+            if (erLoglegt(grafari.getLayoutX(), grafari.getLayoutY() + SPEED)) {
+                grafari.setLayoutY(grafari.getLayoutY() + SPEED);
             }
         }
         if (isMovingLeft) {
-            if (erLoglegt(grafari.getLayoutX() - speed, grafari.getLayoutY())) {
-                grafari.setLayoutX(grafari.getLayoutX() - speed);
+            if (erLoglegt(grafari.getLayoutX() - SPEED, grafari.getLayoutY())) {
+                grafari.setLayoutX(grafari.getLayoutX() - SPEED);
             }
         }
         if (isMovingRight) {
-            if (erLoglegt(grafari.getLayoutX() + speed, grafari.getLayoutY())) {
-                grafari.setLayoutX(grafari.getLayoutX() + speed);
+            if (erLoglegt(grafari.getLayoutX() + SPEED, grafari.getLayoutY())) {
+                grafari.setLayoutX(grafari.getLayoutX() + SPEED);
             }
         }
     }
 
     public void hreinsaBord() {
-        System.out.println("hreinsaBord() kallað");
         stopGullDropper();
         stopOvinur();
         for (Ovinur o : ovinur) {
@@ -256,6 +251,9 @@ public class Leikbord extends Pane {
         getChildren().removeIf(node -> node instanceof Ovinur);
         ovinur.clear();
         getChildren().remove(grafari);
+
+        setOnKeyPressed(null);
+        setOnKeyReleased(null);
 
         isMovingUp = false;
         isMovingDown = false;

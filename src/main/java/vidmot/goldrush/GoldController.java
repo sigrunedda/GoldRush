@@ -22,6 +22,7 @@ public class GoldController {
     private Label fxTimi;
     @FXML
     private Label fxStig;
+    private int haestaStig = 0;
     private Timeline countdownTimeline;
     private int initialTimeInSeconds = 300;
     @FXML
@@ -93,7 +94,11 @@ public class GoldController {
     }
 
     private void synaAlert(String s){
-        Alert alert = new AdvorunDialog("Leik lokið", s, "Stigin þín: " + fxStig.getText());
+        if (Integer.parseInt(fxStig.getText()) > haestaStig) {
+            haestaStig = Integer.parseInt(fxStig.getText());
+        }
+        Alert alert = new AdvorunDialog("Leik lokið", s, "Stigin þín: " + fxStig.getText() + " | Hæsti stigafjöldi: " + haestaStig);
+
         Optional<ButtonType> u = alert.showAndWait();
 
         // ætti mögulega að vera frekar að velja ef
