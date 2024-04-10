@@ -29,15 +29,14 @@ public class GoldController {
     private final Leikur leikur;
     private final Timeline t;
 
-    public GoldController(){
+    public GoldController() {
         this.leikbord = new Leikbord();
         this.leikur = new Leikur();
         this.t = new Timeline();
     }
 
-
     @FXML
-    public void initialize(){
+    public void initialize() {
         menustyringController.setGoldController(this);
         leikbord.setGoldController(this);
 
@@ -90,19 +89,22 @@ public class GoldController {
     public void leikLokid(String varstDrepinn) {
         leikur.leikLokid();
         t.stop();
-        Platform.runLater( () -> synaAlert("Leik lokid: " + varstDrepinn) );
+        Platform.runLater( () -> synaAlert(varstDrepinn) );
     }
 
     private void synaAlert(String s){
-        Alert alert = new AdvorunDialog("Titill", s, "Viltu hætta?");
+        Alert alert = new AdvorunDialog("Leik lokið", s, "Myndirðu vilja hefja nýjan leik?");
         Optional<ButtonType> u = alert.showAndWait();
 
-        //ætti mögulega að vera frekar að velja ef
+        // ætti mögulega að vera frekar að velja ef
         // ekkicancelbutton on þá er farið í nýjan
         // leik en það er þá bara seinna
         if (u.get().getButtonData().isCancelButton()){
-            System.exit(0);
-        } else if (u.get().getButtonData().isDefaultButton()) {
+            hreinsaBord();
+            updatePoints(0);
+            ViewSwitcher.switchTo(View.START);
+        }
+        else if (u.get().getButtonData().isDefaultButton()) {
             hreinsaBord();
             leikbord.hefjaAfram();
             updatePoints(0);

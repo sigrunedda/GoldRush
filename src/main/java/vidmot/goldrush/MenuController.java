@@ -56,7 +56,6 @@ public class MenuController {
 
             int initialTime = getInitialTime(valid.getText());
             goldController.setInitialTime(initialTime);
-
             goldController.startCountDown();
 
         } else {
@@ -65,16 +64,12 @@ public class MenuController {
     }
 
     private int getInitialTime(String difficulty){
-        switch (difficulty){
-            case "Auðvelt":
-                return 90;
-            case "Miðlungs":
-                return 60;
-            case "Erfitt":
-                return 30;
-            default:
-                return 0;
-        }
+        return switch (difficulty) {
+            case "Auðvelt" -> 90;
+            case "Miðlungs" -> 60;
+            case "Erfitt" -> 30;
+            default -> 0;
+        };
     }
 
     private void updateCountdown(){
@@ -104,16 +99,16 @@ public class MenuController {
         ButtonType buttonOK = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
         alert.getButtonTypes().setAll(buttonOK, ButtonType.CANCEL);
         alert.showAndWait().ifPresent(response -> {
-            if (response == buttonOK){
-                ViewSwitcher.switchTo(View.KARAKTER);
+            if (response == buttonOK) {
                 goldController.hreinsaBord();
                 goldController.updateCountdownLabel(0);
                 goldController.updatePoints(0);
+                ViewSwitcher.switchTo(View.KARAKTER);
             }
         });
     }
 
-    public void onLokaPressed(ActionEvent event) {
+    public void onLokaPressed() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Staðfesting til að hætta leik");
         alert.setHeaderText("Ertu viss um að þú viljir hætta?");
@@ -124,6 +119,9 @@ public class MenuController {
 
         alert.showAndWait().ifPresent(response -> {
             if (response == buttonOK){
+                goldController.hreinsaBord();
+                goldController.updateCountdownLabel(0);
+                goldController.updatePoints(0);
                 ViewSwitcher.switchTo(View.START);
             }
         });
@@ -134,7 +132,7 @@ public class MenuController {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Um Forritið");
         alert.setHeaderText(null);
-        alert.setContentText("Þetta er leikurinn Gold Rush. \nHöfundur: Sigrún Edda \nÁrtal: 2024");
+        alert.setContentText("Þetta er leikurinn Gold Rush. \nUnnið af: Sigrún Edda, Helga Björg, Kristín Fríða, Elma Karen og Sylvía Hanna \nÁrtal: 2024");
         alert.showAndWait();
     }
 

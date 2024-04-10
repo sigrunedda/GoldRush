@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Bounds;
+import javafx.scene.Scene;
 import javafx.scene.control.MenuBar;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
@@ -32,12 +33,13 @@ public class Leikbord extends Pane {
     private boolean isMovingLeft = false;
     private boolean isMovingRight = false;
     private AnimationTimer gameLoop;
+    private Scene scene;
     private Timeline ovinurDropper;
     @FXML
     public MenuBar menustyring;
     private final List<Gull> gulls = new ArrayList<>();
     private final ObservableList<Ovinur> ovinur = FXCollections.observableArrayList();
-    public static final String VARST_DREPINN = "Þú varst drepinn. Leik lokið";
+    public static final String VARST_DREPINN = "Bowser náði þér.";
 
     public void setGoldController(GoldController goldController) {
         this.goldController = goldController;
@@ -57,10 +59,6 @@ public class Leikbord extends Pane {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        setOnKeyPressed(this::handleKeyPress);
-        setOnKeyReleased(this::handleKeyRelease);
-        setOnKeyPressed(this::handleKeyPress);
-        setOnKeyReleased(this::handleKeyRelease);
         setFocusTraversable(true);
         requestFocus();
     }
@@ -69,13 +67,16 @@ public class Leikbord extends Pane {
         Duration ovinurInterval = Duration.seconds(1);
         ovinurDropper = new Timeline(new KeyFrame(ovinurInterval, event -> dropOvinur()));
         ovinurDropper.play();
-        AnimationTimer gameLoop = new AnimationTimer() {
+        gameLoop = new AnimationTimer() {
             @Override
             public void handle(long l) {
                 ovinurDrepur();
             }
         };
         gameLoop.start();
+
+        setOnKeyPressed(this::handleKeyPress);
+        setOnKeyReleased(this::handleKeyRelease);
     }
 
 
@@ -111,6 +112,14 @@ public class Leikbord extends Pane {
                 System.out.println("Óvinur drap þig");
                 iterator.remove();
                 o.stop();
+                gameLoop.stop();
+                setOnKeyPressed(null);
+                setOnKeyReleased(null);
+
+                isMovingUp = false;
+                isMovingDown = false;
+                isMovingLeft = false;
+                isMovingRight = false;
             }
         }
     }
@@ -247,6 +256,11 @@ public class Leikbord extends Pane {
         getChildren().removeIf(node -> node instanceof Ovinur);
         ovinur.clear();
         getChildren().remove(grafari);
+
+        isMovingUp = false;
+        isMovingDown = false;
+        isMovingLeft = false;
+        isMovingRight = false;
     }
 
     public void hefjaAfram(){
