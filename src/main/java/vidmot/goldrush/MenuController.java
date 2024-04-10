@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.util.Duration;
 
 public class MenuController {
+    public MenuBar menuBar;
     @FXML
     private RadioMenuItem audvelt;
     @FXML

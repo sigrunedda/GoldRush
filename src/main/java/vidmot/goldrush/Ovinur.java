@@ -2,7 +2,9 @@ package vidmot.goldrush;
 
 import javafx.geometry.Bounds;
 import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
 import java.util.Objects;
@@ -14,6 +16,7 @@ public class Ovinur extends Rectangle {
     private final Random random;
     private final Timer timer;
     private TimerTask currentTask;
+    private Rectangle collisionBox;
 
     public Ovinur() {
         setWidth(50);
@@ -24,6 +27,9 @@ public class Ovinur extends Rectangle {
         timer = new Timer();
         byrjaHreyfingu();
 
+        collisionBox = new Rectangle();
+        collisionBox.setWidth(30);
+        collisionBox.setHeight(50);
     }
 
     private void byrjaHreyfingu() {
@@ -43,7 +49,9 @@ public class Ovinur extends Rectangle {
     }
 
     public boolean isCollidingWithGrafari(Grafari grafari) {
-        Bounds ovinurBounds = this.getBoundsInParent();
+        collisionBox.setLayoutX(getLayoutX() + (getWidth() - collisionBox.getWidth()) / 2);
+        collisionBox.setLayoutY(getLayoutY() + (getHeight() - collisionBox.getHeight()) / 2);
+        Bounds ovinurBounds = collisionBox.getBoundsInParent();
         Bounds grafariBounds = grafari.getBoundsInParent();
 
         return ovinurBounds.intersects(grafariBounds);

@@ -35,7 +35,7 @@ public class Leikbord extends Pane {
     private Timeline ovinurDropper;
     @FXML
     public MenuBar menustyring;
-    private static final double SPEED = 5.0;
+    private static double SPEED = 5.0;
     private final List<Gull> gulls = new ArrayList<>();
     private final ObservableList<Ovinur> ovinur = FXCollections.observableArrayList();
     public static final String VARST_DREPINN = "Bowser náði þér.";
@@ -73,6 +73,7 @@ public class Leikbord extends Pane {
             }
         };
         gameLoop.start();
+
         setOnKeyPressed(this::handleKeyPress);
         setOnKeyReleased(this::handleKeyRelease);
     }
@@ -105,7 +106,7 @@ public class Leikbord extends Pane {
         while (iterator.hasNext()) {
             Ovinur o = iterator.next();
             Bounds ovinurBounds = o.getBoundsInParent();
-            if (grafariBounds.intersects(ovinurBounds)) {
+            if (o.isCollidingWithGrafari(grafari)) {
                 goldController.leikLokid(VARST_DREPINN);
                 System.out.println("Óvinur drap þig");
                 iterator.remove();
@@ -261,7 +262,7 @@ public class Leikbord extends Pane {
         isMovingRight = false;
     }
 
-    public void hefjaAfram(){
+    public void hefjaAfram() {
         grafari = new Grafari();
         getChildren().add(grafari);
         startGullDropper();

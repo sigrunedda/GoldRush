@@ -28,12 +28,10 @@ public class GoldController {
     @FXML
     private Leikbord leikbord;
     private final Leikur leikur;
-    private final Timeline t;
 
     public GoldController() {
         this.leikbord = new Leikbord();
         this.leikur = new Leikur();
-        this.t = new Timeline();
     }
 
     @FXML
@@ -89,7 +87,7 @@ public class GoldController {
 
     public void leikLokid(String varstDrepinn) {
         leikur.leikLokid();
-        t.stop();
+        countdownTimeline.stop();
         Platform.runLater( () -> synaAlert(varstDrepinn) );
     }
 
