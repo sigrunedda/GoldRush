@@ -6,7 +6,7 @@ Leikur var uppáhalds verkefnið hjá öllum þar sem hann gefur marga möguleik
 - Hægt er að velja mismunandi persónur sem uppfylla hlutverk grafarans.
 - Óvinur sem endar leikinn ef grafarinn rekst á hann.
   
-## **Mavaen uppsetning**
+## **Maven uppsetning**
    ### Maven Compiler Plugin:
   Við notuðum Maven source 21, version 3.11.0. (Group ID: org.apache.maven.plugins)
   ### JavaFX Maven Plugin:
