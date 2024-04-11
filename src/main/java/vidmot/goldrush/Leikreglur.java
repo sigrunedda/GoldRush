@@ -7,6 +7,6 @@ public class Leikreglur {
 
     @FXML
     private void onHeim(ActionEvent event){
-        ViewSwitcher.switchTo(View.START);
+        ViewSwitcher.switchTo(ViewSwitcher.getLastView());
     }
 }

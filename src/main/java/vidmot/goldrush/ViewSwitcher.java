@@ -14,6 +14,8 @@ public class ViewSwitcher {
     // viðbót fyrir controllers
     private static final Map<View, Object> controllers = new HashMap<>();
     private static Scene scene;
+    private static View lastView;
+    private static View currentView;
 
     public static void setScene(Scene scene){
         ViewSwitcher.scene = scene;
@@ -38,6 +40,8 @@ public class ViewSwitcher {
                 controllers.put(view, loader.getController());
                 System.out.println(view);
             }
+            lastView = currentView;
+            currentView = view;
             scene.setRoot(root);
         }catch (IOException e){
             e.printStackTrace();
@@ -48,4 +52,7 @@ public class ViewSwitcher {
         return controllers.get(v);
     }
 
+    public static View getLastView() {
+        return lastView;
+    }
 }
