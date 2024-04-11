@@ -3,6 +3,7 @@ package vidmot.goldrush;
 import javafx.animation.AnimationTimer;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -112,6 +113,7 @@ public class Leikbord extends Pane {
                 iterator.remove();
                 o.stop();
                 gameLoop.stop();
+                gameLoop = null;
 
                 setOnKeyPressed(null);
                 setOnKeyReleased(null);
@@ -132,6 +134,8 @@ public class Leikbord extends Pane {
             }
         };
         gameLoop.start();
+
+        Platform.runLater(this::dropGull);
     }
 
     public void stopGullDropper() {
@@ -180,7 +184,7 @@ public class Leikbord extends Pane {
                 gullGrafid = true;
             }
         }
-        if (gullGrafid) {
+        if (gulls.isEmpty() && gullGrafid) {
             dropGull();
         }
         updateGrafariPosition();
@@ -242,6 +246,10 @@ public class Leikbord extends Pane {
     }
 
     public void hreinsaBord() {
+        if (gameLoop != null) {
+            gameLoop.stop();
+            gameLoop = null;
+        }
         stopGullDropper();
         stopOvinur();
         for (Ovinur o : ovinur) {
@@ -266,7 +274,6 @@ public class Leikbord extends Pane {
         grafari = new Grafari();
         getChildren().add(grafari);
         startGullDropper();
-        dropGull();
         startOvinur();
         goldController.updateCountdownLabel(0);
     }
