@@ -105,7 +105,7 @@ public class MenuController {
                 goldController.hreinsaBord();
                 goldController.updateCountdownLabel(0);
                 goldController.updatePoints(0);
-                ViewSwitcher.switchTo(View.KARAKTER);
+                ViewSwitcher.switchTo(View.ERFIDLEIKI);
             }
         });
     }
