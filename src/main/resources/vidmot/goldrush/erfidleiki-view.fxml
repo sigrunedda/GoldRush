@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="vidmot.goldrush.ErfidleikiController"
+            prefHeight="400.0" prefWidth="600.0">
+    <Button layoutX="108.0" layoutY="200.0" mnemonicParsing="false" onAction="#onAudvelt" prefHeight="46.0" prefWidth="148.0" text="Auðvelt">
+        <font>
+            <Font name="Lucida Console" size="14.0" />
+        </font>
+    </Button>
+    <Button layoutX="220.0" layoutY="200.0" mnemonicParsing="false" onAction="#onMidlungs" prefHeight="46.0" prefWidth="148.0" text="Miðlungs">
+        <font>
+            <Font name="Lucida Console" size="14.0" />
+        </font>
+    </Button>
+    <Button layoutX="359.0" layoutY="200.0" mnemonicParsing="false" onAction="#onErfitt" prefHeight="46.0" prefWidth="148.0" text="Erfitt">
+        <font>
+            <Font name="Lucida Console" size="14.0" />
+        </font>
+    </Button>
+    <Button layoutX="108.0" layoutY="340.0" mnemonicParsing="false" onAction="#onTilbaka" prefHeight="46.0" prefWidth="148.0" text="&lt;- TIL BAKA">
+        <font>
+            <Font name="Lucida Console" size="14.0" />
+        </font>
+    </Button>
+</AnchorPane>

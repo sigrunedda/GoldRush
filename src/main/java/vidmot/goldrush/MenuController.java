@@ -55,8 +55,9 @@ public class MenuController {
             RadioMenuItem valid = (RadioMenuItem) erfidleikastig.getSelectedToggle();
             System.out.println("Erfiðleikastigið " + valid.getText() + " valið!");
 
-            int initialTime = getInitialTime(valid.getText());
-            goldController.setInitialTime(initialTime);
+            int fjoldiOvina = getFjoldiOvina(valid.getText());
+            ErfidleikiController erfidleikiController = null;
+            erfidleikiController.setFjoldiOvina(fjoldiOvina);
             goldController.startCountDown();
 
         } else {
@@ -64,12 +65,12 @@ public class MenuController {
         }
     }
 
-    private int getInitialTime(String difficulty){
+    private int getFjoldiOvina(String difficulty){
         return switch (difficulty) {
-            case "Auðvelt" -> 90;
-            case "Miðlungs" -> 60;
-            case "Erfitt" -> 30;
-            default -> 0;
+            case "Auðvelt" -> 1;
+            case "Miðlungs" -> 2;
+            case "Erfitt" -> 3;
+            default -> 1;
         };
     }
 

@@ -9,7 +9,7 @@ public class StartController {
     @FXML
     private void onHefjaLeik(){
         System.out.println("Hefja Leik!");
-        ViewSwitcher.switchTo(View.KARAKTER);
+        ViewSwitcher.switchTo(View.ERFIDLEIKI);
     }
 
     @FXML
