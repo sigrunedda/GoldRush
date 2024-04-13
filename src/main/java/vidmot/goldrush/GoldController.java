@@ -41,6 +41,7 @@ public class GoldController {
     }
 
     public void startCountUp() {
+        initialTimeInSeconds = 0; // Reset initialTimeInSeconds to 0
         updateCountLabel(initialTimeInSeconds);
         if (countUpTimeline != null) {
             countUpTimeline.stop();
@@ -51,16 +52,17 @@ public class GoldController {
         KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), event -> updateCountUp());
         countUpTimeline.getKeyFrames().add(keyFrame);
         countUpTimeline.play();
-    }
 
+    }
     private void updateCountUp() {
         initialTimeInSeconds++;
         updateCountLabel(initialTimeInSeconds);
     }
+
     public void stopAndClearTimer() {
         countUpTimeline.stop();
         countUpTimeline.getKeyFrames().clear();
-        initialTimeInSeconds=0;
+        initialTimeInSeconds = 0;
     }
 
     protected void updateCountLabel(int timeInSeconds) {
