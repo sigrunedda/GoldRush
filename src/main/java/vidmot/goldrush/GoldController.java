@@ -21,6 +21,7 @@ public class GoldController {
     private Label fxTimi;
     @FXML
     private Label fxStig;
+    private int haestaStigTime = 0;
     private int haestaStig = 0;
     private Timeline countUpTimeline;
     private int initialTimeInSeconds = 0;
@@ -41,6 +42,7 @@ public class GoldController {
     }
 
     public void startCountUp() {
+        initialTimeInSeconds = 0;
         updateCountLabel(initialTimeInSeconds);
         if (countUpTimeline != null) {
             countUpTimeline.stop();
@@ -52,15 +54,9 @@ public class GoldController {
         countUpTimeline.getKeyFrames().add(keyFrame);
         countUpTimeline.play();
     }
-
     private void updateCountUp() {
         initialTimeInSeconds++;
         updateCountLabel(initialTimeInSeconds);
-    }
-    public void stopAndClearTimer() {
-        countUpTimeline.stop();
-        countUpTimeline.getKeyFrames().clear();
-        initialTimeInSeconds=0;
     }
 
     protected void updateCountLabel(int timeInSeconds) {
@@ -75,6 +71,11 @@ public class GoldController {
             int currentPoints = Integer.parseInt(currentPointsText);
             int newPoints = currentPoints + points;
 
+            if (newPoints > haestaStig) {
+                haestaStig = newPoints;
+                haestaStigTime = initialTimeInSeconds + 1;
+            }
+
             fxStig.setText(String.valueOf(newPoints));
         } else {
             fxStig.setText("0");
@@ -88,10 +89,12 @@ public class GoldController {
     }
 
     private void synaAlert(String s) {
+        int currentTime = initialTimeInSeconds;
         if (Integer.parseInt(fxStig.getText()) > haestaStig) {
             haestaStig = Integer.parseInt(fxStig.getText());
         }
-        Alert alert = new AdvorunDialog("Leik lokið", s, "Stigin þín: " + fxStig.getText() + " | Hæsti stigafjöldi: " + haestaStig);
+        Alert alert = new AdvorunDialog("Leik lokið", s, "Stigin þín: " + fxStig.getText() + " | Hæsti stigafjöldi: " + haestaStig +
+                "\nTimi:   " + formatTime(currentTime) + " | Tíminn þegar hæsta stigafjölda var náð: " + formatTime(haestaStigTime));
 
         Optional<ButtonType> u = alert.showAndWait();
 
@@ -115,5 +118,10 @@ public class GoldController {
 
     public void hreinsaBord() {
         leikbord.hreinsaBord();
+    }
+    private String formatTime(int timeInSeconds) {
+        int minutes = timeInSeconds / 60;
+        int seconds = timeInSeconds % 60;
+        return String.format("%02d:%02d", minutes, seconds);
     }
 }
