@@ -1,6 +1,5 @@
 package vidmot.goldrush;
 
-import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -13,15 +12,9 @@ public class MenuController {
     private RadioMenuItem midlungs;
     @FXML
     private RadioMenuItem erfitt;
-
     private ToggleGroup erfidleikastig;
-    private ToggleGroup personur;
     @FXML
     private GoldController goldController;
-    @FXML
-    private Label fxTimi;
-    private Timeline countdownTimeline;
-    private int initialTimeInSeconds = 300;
 
     public void setGoldController(GoldController goldController){
         this.goldController = goldController;

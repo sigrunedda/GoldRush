@@ -58,11 +58,9 @@ public class GoldController {
         updateCountLabel(initialTimeInSeconds);
     }
     public void stopAndClearTimer() {
-        if (countUpTimeline != null) {
-            countUpTimeline.stop();
-            countUpTimeline.getKeyFrames().clear();
-            initialTimeInSeconds=0;
-        }
+        countUpTimeline.stop();
+        countUpTimeline.getKeyFrames().clear();
+        initialTimeInSeconds=0;
     }
 
     protected void updateCountLabel(int timeInSeconds) {
