@@ -38,12 +38,6 @@ public class GoldController {
         menustyringController.setGoldController(this);
         leikbord.setGoldController(this);
 
-        countUpTimeline = new Timeline();
-        countUpTimeline.setCycleCount(Timeline.INDEFINITE);
-
-        KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), event -> updateCountUp());
-        countUpTimeline.getKeyFrames().add(keyFrame);
-
     }
 
     public void startCountUp() {
@@ -52,6 +46,7 @@ public class GoldController {
             countUpTimeline.stop();
             countUpTimeline.getKeyFrames().clear();
         }
+        countUpTimeline = new Timeline();
         countUpTimeline.setCycleCount(Timeline.INDEFINITE);
         KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), event -> updateCountUp());
         countUpTimeline.getKeyFrames().add(keyFrame);
@@ -66,13 +61,13 @@ public class GoldController {
         if (countUpTimeline != null) {
             countUpTimeline.stop();
             countUpTimeline.getKeyFrames().clear();
+            initialTimeInSeconds=0;
         }
     }
 
     protected void updateCountLabel(int timeInSeconds) {
         int minutes = timeInSeconds / 60;
         int seconds = timeInSeconds % 60;
-
         fxTimi.setText(String.format("%02d:%02d", minutes, seconds));
     }
 
@@ -85,7 +80,6 @@ public class GoldController {
             fxStig.setText(String.valueOf(newPoints));
         } else {
             fxStig.setText("0");
-            fxTimi.setText("0");
         }
     }
 
