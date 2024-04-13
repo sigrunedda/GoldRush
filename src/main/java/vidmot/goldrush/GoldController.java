@@ -21,6 +21,7 @@ public class GoldController {
     private Label fxTimi;
     @FXML
     private Label fxStig;
+    private int haestaStigTime = 0;
     private int haestaStig = 0;
     private Timeline countUpTimeline;
     private int initialTimeInSeconds = 0;
@@ -70,6 +71,11 @@ public class GoldController {
             int currentPoints = Integer.parseInt(currentPointsText);
             int newPoints = currentPoints + points;
 
+            if (newPoints > haestaStig) {
+                haestaStig = newPoints;
+                haestaStigTime = initialTimeInSeconds + 1;
+            }
+
             fxStig.setText(String.valueOf(newPoints));
         } else {
             fxStig.setText("0");
@@ -88,7 +94,7 @@ public class GoldController {
             haestaStig = Integer.parseInt(fxStig.getText());
         }
         Alert alert = new AdvorunDialog("Leik lokið", s, "Stigin þín: " + fxStig.getText() + " | Hæsti stigafjöldi: " + haestaStig +
-                "\nTiminn þinn: " + formatTime(currentTime));
+                "\nTimi:   " + formatTime(currentTime) + " | Tíminn þegar hæsta stigafjölda var náð: " + formatTime(haestaStigTime));
 
         Optional<ButtonType> u = alert.showAndWait();
 
