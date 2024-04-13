@@ -83,10 +83,12 @@ public class GoldController {
     }
 
     private void synaAlert(String s) {
+        int currentTime = initialTimeInSeconds;
         if (Integer.parseInt(fxStig.getText()) > haestaStig) {
             haestaStig = Integer.parseInt(fxStig.getText());
         }
-        Alert alert = new AdvorunDialog("Leik lokið", s, "Stigin þín: " + fxStig.getText() + " | Hæsti stigafjöldi: " + haestaStig);
+        Alert alert = new AdvorunDialog("Leik lokið", s, "Stigin þín: " + fxStig.getText() + " | Hæsti stigafjöldi: " + haestaStig +
+                "\nTiminn þinn: " + formatTime(currentTime));
 
         Optional<ButtonType> u = alert.showAndWait();
 
@@ -110,5 +112,10 @@ public class GoldController {
 
     public void hreinsaBord() {
         leikbord.hreinsaBord();
+    }
+    private String formatTime(int timeInSeconds) {
+        int minutes = timeInSeconds / 60;
+        int seconds = timeInSeconds % 60;
+        return String.format("%02d:%02d", minutes, seconds);
     }
 }
