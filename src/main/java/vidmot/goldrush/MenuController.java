@@ -26,7 +26,6 @@ public class MenuController {
         alert.showAndWait().ifPresent(response -> {
             if (response == buttonOK) {
                 goldController.hreinsaBord();
-                goldController.stopAndClearTimer();
                 goldController.updatePoints(0);
                 ViewSwitcher.switchTo(View.ERFIDLEIKI);
             }
