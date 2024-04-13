@@ -1,6 +1,5 @@
 package vidmot.goldrush;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 public class Karakter {
@@ -17,7 +16,6 @@ public class Karakter {
         ViewSwitcher.switchTo(View.LEIKBORD);
         GoldController goldController = (GoldController) ViewSwitcher.lookup(View.LEIKBORD);
         goldController.getLeikbord().hefjaAfram();
-//        grafari.setImage("myndir/Daisy.png");
     }
     @FXML
     private void onMario(){
@@ -26,7 +24,6 @@ public class Karakter {
         ViewSwitcher.switchTo(View.LEIKBORD);
         GoldController goldController = (GoldController) ViewSwitcher.lookup(View.LEIKBORD);
         goldController.getLeikbord().hefjaAfram();
-//        grafari.setImage("myndir/Mario.png");
     }
     @FXML
     private void onPeach(){
@@ -35,20 +32,11 @@ public class Karakter {
         ViewSwitcher.switchTo(View.LEIKBORD);
         GoldController goldController = (GoldController) ViewSwitcher.lookup(View.LEIKBORD);
         goldController.getLeikbord().hefjaAfram();
-//        grafari.setImage("myndir/Peach.png");
     }
     @FXML
     private void onLuigi(){
         System.out.println("Luigi valinn!");
         karController.setSelectedCharacter("Luigi");
-        ViewSwitcher.switchTo(View.LEIKBORD);
-        GoldController goldController = (GoldController) ViewSwitcher.lookup(View.LEIKBORD);
-        goldController.getLeikbord().hefjaAfram();
-//        grafari.setImage("myndir/Luigi.png");
-    }
-
-    @FXML
-    private void onAfram(ActionEvent event){
         ViewSwitcher.switchTo(View.LEIKBORD);
         GoldController goldController = (GoldController) ViewSwitcher.lookup(View.LEIKBORD);
         goldController.getLeikbord().hefjaAfram();
