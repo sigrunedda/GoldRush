@@ -6,7 +6,6 @@ import javafx.scene.control.*;
 
 public class MenuController {
     public MenuBar menuBar;
-    private ToggleGroup erfidleikastig;
     @FXML
     private GoldController goldController;
 
@@ -14,31 +13,6 @@ public class MenuController {
         this.goldController = goldController;
     }
 
-
-    @FXML
-    private void onBreytaErfidleika(ActionEvent actionEvent){
-        if (erfidleikastig.getSelectedToggle() != null){
-            RadioMenuItem valid = (RadioMenuItem) erfidleikastig.getSelectedToggle();
-            System.out.println("Erfiðleikastigið " + valid.getText() + " valið!");
-
-            int fjoldiOvina = getFjoldiOvina(valid.getText());
-            ErfidleikiController erfidleikiController = null;
-            erfidleikiController.setFjoldiOvina(fjoldiOvina);
-            goldController.startCountUp();
-
-        } else {
-            System.out.println("Ekkert erfiðleikastig valið!");
-        }
-    }
-
-    private int getFjoldiOvina(String difficulty){
-        return switch (difficulty) {
-            case "Auðvelt" -> 1;
-            case "Miðlungs" -> 2;
-            case "Erfitt" -> 3;
-            default -> 1;
-        };
-    }
 
     @FXML
     public void onNyrLeikur() {
