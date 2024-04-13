@@ -97,7 +97,13 @@ public class Leikbord extends Pane {
     }
 
     private void dropOvinur() {
-        int fjoldiOvina = erfidleikiController.getFjoldiOvina();
+        int fjoldiOvina;
+        if (erfidleikiController != null) {
+            fjoldiOvina = erfidleikiController.getFjoldiOvina();
+        } else {
+            fjoldiOvina = 1; // or any default value you prefer
+        }
+
         for (int i = 0; i < fjoldiOvina; i++) {
             Ovinur ovinur1 = new Ovinur();
             ovinur.add(ovinur1);
@@ -116,6 +122,7 @@ public class Leikbord extends Pane {
             ovinur1.setLayoutY(initialY);
         }
     }
+
 
     public void ovinurDrepur() {
         Iterator<Ovinur> iterator = ovinur.iterator();
@@ -294,5 +301,6 @@ public class Leikbord extends Pane {
         startGullDropper();
         startOvinur();
         goldController.startCountUp();
+
     }
 }

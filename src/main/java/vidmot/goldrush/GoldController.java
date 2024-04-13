@@ -38,33 +38,34 @@ public class GoldController {
         menustyringController.setGoldController(this);
         leikbord.setGoldController(this);
 
-        countUpTimeline = new Timeline();
-        countUpTimeline.setCycleCount(Timeline.INDEFINITE);
-
-        KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), event -> updateCountUp());
-        countUpTimeline.getKeyFrames().add(keyFrame);
-
-    }
-
-
-    public void startCountDown() {
-        updateCountdownLabel(initialTimeInSeconds);
-        countUpTimeline.play();
     }
 
     public void startCountUp() {
-        countUpTimeline.playFromStart();
+        updateCountLabel(initialTimeInSeconds);
+        if (countUpTimeline != null) {
+            countUpTimeline.stop();
+            countUpTimeline.getKeyFrames().clear();
+        }
+        countUpTimeline = new Timeline();
+        countUpTimeline.setCycleCount(Timeline.INDEFINITE);
+        KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), event -> updateCountUp());
+        countUpTimeline.getKeyFrames().add(keyFrame);
+        countUpTimeline.play();
     }
 
     private void updateCountUp() {
         initialTimeInSeconds++;
-        updateCountdownLabel(initialTimeInSeconds);
+        updateCountLabel(initialTimeInSeconds);
+    }
+    public void stopAndClearTimer() {
+        countUpTimeline.stop();
+        countUpTimeline.getKeyFrames().clear();
+        initialTimeInSeconds=0;
     }
 
-    protected void updateCountdownLabel(int timeInSeconds) {
+    protected void updateCountLabel(int timeInSeconds) {
         int minutes = timeInSeconds / 60;
         int seconds = timeInSeconds % 60;
-
         fxTimi.setText(String.format("%02d:%02d", minutes, seconds));
     }
 
@@ -77,7 +78,6 @@ public class GoldController {
             fxStig.setText(String.valueOf(newPoints));
         } else {
             fxStig.setText("0");
-            fxTimi.setText("0");
         }
     }
 
