@@ -17,7 +17,6 @@ public class Karakter {
         ViewSwitcher.switchTo(View.LEIKBORD);
         GoldController goldController = (GoldController) ViewSwitcher.lookup(View.LEIKBORD);
         goldController.getLeikbord().hefjaAfram();
-//        grafari.setImage("myndir/Daisy.png");
     }
     @FXML
     private void onMario(){
@@ -26,7 +25,6 @@ public class Karakter {
         ViewSwitcher.switchTo(View.LEIKBORD);
         GoldController goldController = (GoldController) ViewSwitcher.lookup(View.LEIKBORD);
         goldController.getLeikbord().hefjaAfram();
-//        grafari.setImage("myndir/Mario.png");
     }
     @FXML
     private void onPeach(){
@@ -35,7 +33,6 @@ public class Karakter {
         ViewSwitcher.switchTo(View.LEIKBORD);
         GoldController goldController = (GoldController) ViewSwitcher.lookup(View.LEIKBORD);
         goldController.getLeikbord().hefjaAfram();
-//        grafari.setImage("myndir/Peach.png");
     }
     @FXML
     private void onLuigi(){
@@ -44,7 +41,6 @@ public class Karakter {
         ViewSwitcher.switchTo(View.LEIKBORD);
         GoldController goldController = (GoldController) ViewSwitcher.lookup(View.LEIKBORD);
         goldController.getLeikbord().hefjaAfram();
-//        grafari.setImage("myndir/Luigi.png");
     }
 
     @FXML

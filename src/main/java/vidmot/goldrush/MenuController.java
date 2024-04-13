@@ -26,6 +26,8 @@ public class MenuController {
     private Timeline countdownTimeline;
     private int initialTimeInSeconds = 300;
 
+    public Leikbord leikbord;
+
     public void setGoldController(GoldController goldController){
         this.goldController = goldController;
     }
@@ -57,7 +59,7 @@ public class MenuController {
 
             int fjoldiOvina = getFjoldiOvina(valid.getText());
             ErfidleikiController erfidleikiController = null;
-            erfidleikiController.setFjoldiOvina(fjoldiOvina);
+            leikbord.dropOvinur(fjoldiOvina);
             goldController.startCountDown();
 
         } else {

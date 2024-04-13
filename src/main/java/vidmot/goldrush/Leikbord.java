@@ -43,6 +43,18 @@ public class Leikbord extends Pane {
     private final ObservableList<Ovinur> ovinur = FXCollections.observableArrayList();
     public static final String VARST_DREPINN = "Bowser náði þér.";
 
+    public int fjoldiOvina = 1;
+    public Leikbord leikbord;
+
+    public int setFjoldiOvina (int fjoldiOvina) {
+        System.out.println("Fjöldi óvina set to: " + fjoldiOvina);
+        return fjoldiOvina;
+    }
+
+    public int getFjoldiOvina(int fjoldiOvina) {
+        return fjoldiOvina;
+    }
+
     public void setGoldController(GoldController goldController) {
         this.goldController = goldController;
     }
@@ -56,6 +68,7 @@ public class Leikbord extends Pane {
     }
 
     public Leikbord() {
+        //System.out.println("Initial fjoldiOvina: " + fjoldiOvina);
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leikbord-view.fxml"));
         fxmlLoader.setClassLoader(getClass().getClassLoader());
         fxmlLoader.setRoot(this);
@@ -71,7 +84,7 @@ public class Leikbord extends Pane {
 
     public void startOvinur() {
         Duration ovinurInterval = Duration.seconds(1);
-        ovinurDropper = new Timeline(new KeyFrame(ovinurInterval, event -> dropOvinur()));
+        ovinurDropper = new Timeline(new KeyFrame(ovinurInterval, event -> dropOvinur(setFjoldiOvina(fjoldiOvina))));
         ovinurDropper.play();
         gameLoop = new AnimationTimer() {
             @Override
@@ -83,6 +96,7 @@ public class Leikbord extends Pane {
 
         setOnKeyPressed(this::handleKeyPress);
         setOnKeyReleased(this::handleKeyRelease);
+        System.out.println("StartOvinur");
     }
 
     public void stopOvinur() {
@@ -96,12 +110,13 @@ public class Leikbord extends Pane {
         }
     }
 
-    private void dropOvinur() {
-        int fjoldiOvina = erfidleikiController.getFjoldiOvina();
-        for (int i = 0; i < fjoldiOvina; i++) {
+    public void dropOvinur(int fjoldi) {
+
+        for (int i = 0; i <= fjoldi; i++) {
             Ovinur ovinur1 = new Ovinur();
             ovinur.add(ovinur1);
             getChildren().add(ovinur1);
+
 
             double minX = 0;
             double maxX = getWidth() - ovinur1.getWidth();
@@ -293,6 +308,6 @@ public class Leikbord extends Pane {
         getChildren().add(grafari);
         startGullDropper();
         startOvinur();
-        goldController.updateCountdownLabel(0);
+        goldController.startCountUp();
     }
 }

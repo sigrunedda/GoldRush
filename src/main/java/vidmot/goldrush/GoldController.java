@@ -23,8 +23,8 @@ public class GoldController {
     @FXML
     private Label fxStig;
     private int haestaStig = 0;
-    private Timeline countdownTimeline;
-    private int initialTimeInSeconds = 300;
+    private Timeline countUpTimeline;
+    private int initialTimeInSeconds = 0;
     @FXML
     private Leikbord leikbord;
     private final Leikur leikur;
@@ -39,31 +39,36 @@ public class GoldController {
         menustyringController.setGoldController(this);
         leikbord.setGoldController(this);
 
-        countdownTimeline = new Timeline();
-        countdownTimeline.setCycleCount(Timeline.INDEFINITE);
+        countUpTimeline = new Timeline();
+        countUpTimeline.setCycleCount(Timeline.INDEFINITE);
 
-        KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), event -> updateCountdown());
-        countdownTimeline.getKeyFrames().add(keyFrame);
+        KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), event -> updateCountUp());
+        countUpTimeline.getKeyFrames().add(keyFrame);
 
-    }
-
-    public void setInitialTime(int initialTimeInSeconds){
-        this.initialTimeInSeconds = initialTimeInSeconds;
     }
 
     public void startCountDown() {
         updateCountdownLabel(initialTimeInSeconds);
-        countdownTimeline.play();
+        countUpTimeline.play();
     }
 
-    private void updateCountdown() {
+    public void startCountUp(){
+        countUpTimeline.playFromStart();
+    }
+
+    private void updateCountUp(){
+        initialTimeInSeconds++;
+        updateCountdownLabel(initialTimeInSeconds);
+    }
+
+    /*private void updateCountdown() {
         initialTimeInSeconds--;
         updateCountdownLabel(initialTimeInSeconds);
         if (initialTimeInSeconds <= 0) {
             countdownTimeline.stop();
             System.out.println("LeikLokið");
         }
-    }
+    }*/
 
     protected void updateCountdownLabel(int timeInSeconds) {
         int minutes = timeInSeconds / 60;
@@ -87,7 +92,7 @@ public class GoldController {
 
     public void leikLokid(String varstDrepinn) {
         leikur.leikLokid();
-        countdownTimeline.stop();
+        countUpTimeline.stop();
         Platform.runLater( () -> synaAlert(varstDrepinn) );
     }
 
