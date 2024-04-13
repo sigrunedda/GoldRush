@@ -293,6 +293,6 @@ public class Leikbord extends Pane {
         getChildren().add(grafari);
         startGullDropper();
         startOvinur();
-        goldController.updateCountdownLabel(0);
+        goldController.startCountUp();
     }
 }
