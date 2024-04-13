@@ -301,5 +301,6 @@ public class Leikbord extends Pane {
         startGullDropper();
         startOvinur();
         goldController.startCountUp();
+
     }
 }

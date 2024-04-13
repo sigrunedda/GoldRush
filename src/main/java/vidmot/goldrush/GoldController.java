@@ -46,22 +46,30 @@ public class GoldController {
 
     }
 
-
-    public void startCountDown() {
-        updateCountdownLabel(initialTimeInSeconds);
-        countUpTimeline.play();
-    }
-
     public void startCountUp() {
-        countUpTimeline.playFromStart();
+        updateCountLabel(initialTimeInSeconds);
+        if (countUpTimeline != null) {
+            countUpTimeline.stop();
+            countUpTimeline.getKeyFrames().clear();
+        }
+        countUpTimeline.setCycleCount(Timeline.INDEFINITE);
+        KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), event -> updateCountUp());
+        countUpTimeline.getKeyFrames().add(keyFrame);
+        countUpTimeline.play();
     }
 
     private void updateCountUp() {
         initialTimeInSeconds++;
-        updateCountdownLabel(initialTimeInSeconds);
+        updateCountLabel(initialTimeInSeconds);
+    }
+    public void stopAndClearTimer() {
+        if (countUpTimeline != null) {
+            countUpTimeline.stop();
+            countUpTimeline.getKeyFrames().clear();
+        }
     }
 
-    protected void updateCountdownLabel(int timeInSeconds) {
+    protected void updateCountLabel(int timeInSeconds) {
         int minutes = timeInSeconds / 60;
         int seconds = timeInSeconds % 60;
 
