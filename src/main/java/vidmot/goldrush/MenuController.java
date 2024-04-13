@@ -6,12 +6,6 @@ import javafx.scene.control.*;
 
 public class MenuController {
     public MenuBar menuBar;
-    @FXML
-    private RadioMenuItem audvelt;
-    @FXML
-    private RadioMenuItem midlungs;
-    @FXML
-    private RadioMenuItem erfitt;
     private ToggleGroup erfidleikastig;
     @FXML
     private GoldController goldController;
@@ -20,13 +14,6 @@ public class MenuController {
         this.goldController = goldController;
     }
 
-    @FXML
-    private void initialize(){
-        erfidleikastig = new ToggleGroup();
-        audvelt.setToggleGroup(erfidleikastig);
-        midlungs.setToggleGroup(erfidleikastig);
-        erfitt.setToggleGroup(erfidleikastig);
-    }
 
     @FXML
     private void onBreytaErfidleika(ActionEvent actionEvent){
