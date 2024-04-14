@@ -5,27 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e7fbf34-9b44-47f2-87e8-9b9e2d45d50f" name="Changes" comment="Að rekast í óvin endar leik">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/music/tonlist.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/myndir/Icon.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/myndir/erfidleiki.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/GoldApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/GoldApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Leikbord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Leikbord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/erfidleiki-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/erfidleiki-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/karakter-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/karakter-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/leikreglur-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/leikreglur-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/start-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/start-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/GoldApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/GoldApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/GoldController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/GoldController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Grafari.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Grafari.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vinnsla/goldrush/Klukka.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinnsla/goldrush/Klukka.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vinnsla/goldrush/Leikur.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vinnsla/goldrush/Leikur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/music/tonlist.mp3" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,20 +108,15 @@
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\Documents\Viðmótsforritun\GoldRush2\src\main\resources\vidmot\goldrush" />
     </key>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-19.0.2-corretto-19.0.2-4caba194b151-48ba4555" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -149,6 +126,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1710764278084</updated>
+      <workItem from="1713129406615" duration="62000" />
     </task>
     <task id="LOCAL-00001" summary="prufa">
       <option name="closed" value="true" />
