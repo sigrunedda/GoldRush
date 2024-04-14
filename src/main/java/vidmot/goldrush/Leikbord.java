@@ -8,6 +8,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.BoundingBox;
 import javafx.geometry.Bounds;
 import javafx.scene.control.MenuBar;
 import javafx.scene.input.KeyEvent;
@@ -43,11 +44,11 @@ public class Leikbord extends Pane {
     private final ObservableList<Ovinur> ovinur = FXCollections.observableArrayList();
     public static final String VARST_DREPINN = "Bowser náði þér.";
 
-    public int fjoldiOvina = 1;
-    public Leikbord leikbord;
+    public int fjoldiOvina;
 
     public int setFjoldiOvina (int fjoldiOvina) {
         System.out.println("Fjöldi óvina set to: " + fjoldiOvina);
+        this.fjoldiOvina = fjoldiOvina;
         return fjoldiOvina;
     }
 
@@ -68,7 +69,7 @@ public class Leikbord extends Pane {
     }
 
     public Leikbord() {
-        //System.out.println("Initial fjoldiOvina: " + fjoldiOvina);
+
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leikbord-view.fxml"));
         fxmlLoader.setClassLoader(getClass().getClassLoader());
         fxmlLoader.setRoot(this);
@@ -80,6 +81,36 @@ public class Leikbord extends Pane {
         }
         setFocusTraversable(true);
         requestFocus();
+    }
+
+    public void dropOvinur(int fjoldiOvina) {
+        List<Bounds> usedPositions = new ArrayList<>();
+        System.out.println("Creating " + fjoldiOvina + " enemies.");
+
+        for (int i = 0; i < fjoldiOvina; i++) {
+            Ovinur ovinur1 = new Ovinur();
+            ovinur.add(ovinur1);
+            getChildren().add(ovinur1);
+
+
+            double minX = 0;
+            double maxX = getWidth() - ovinur1.getWidth();
+
+            double minY = menustyring != null ? menustyring.getHeight() : 0;
+            double maxY = getHeight() - ovinur1.getHeight();
+
+            Bounds bounds = new BoundingBox(minX, minY, maxX - minX, maxY - minY);
+            do {
+                double initialX = Math.random() * (maxX - minX) + minX;
+                double initialY = Math.random() * (maxY - minY) + minY;
+
+                ovinur1.setLayoutX(initialX);
+                ovinur1.setLayoutY(initialY);
+                bounds = new BoundingBox(initialX, initialY, ovinur1.getWidth(), ovinur1.getHeight());
+            }while (positionOverlaps(bounds, usedPositions));
+
+            usedPositions.add(bounds);
+        }
     }
 
     public void startOvinur() {
@@ -110,26 +141,13 @@ public class Leikbord extends Pane {
         }
     }
 
-    public void dropOvinur(int fjoldi) {
-
-        for (int i = 0; i <= fjoldi; i++) {
-            Ovinur ovinur1 = new Ovinur();
-            ovinur.add(ovinur1);
-            getChildren().add(ovinur1);
-
-
-            double minX = 0;
-            double maxX = getWidth() - ovinur1.getWidth();
-
-            double minY = menustyring != null ? menustyring.getHeight() : 0;
-            double maxY = getHeight() - ovinur1.getHeight();
-
-            double initialX = Math.random() * (maxX - minX) + minX;
-            double initialY = Math.random() * (maxY - minY) + minY;
-
-            ovinur1.setLayoutX(initialX);
-            ovinur1.setLayoutY(initialY);
+    private boolean positionOverlaps(Bounds position, List<Bounds> usedPositions){
+        for (Bounds usedPosition : usedPositions){
+            if (position.intersects(usedPosition)){
+                return true;
+            }
         }
+        return false;
     }
 
     public void ovinurDrepur() {
