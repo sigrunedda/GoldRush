@@ -1,36 +1,50 @@
 package vidmot.goldrush;
 
+import javafx.fxml.FXML;
+
 public class ErfidleikiController {
 
-    public Leikbord leikbord;
+    private int fjoldiOvina;
+    @FXML
+    private Leikbord leikbord;
+    private static ErfidleikiController instance = new ErfidleikiController();
+
+    public ErfidleikiController() {
+        this.leikbord = new Leikbord();
+    }
+
+    public static ErfidleikiController getInstance() {
+        return instance;
+    }
+
+    public void setFjoldiOvina (int fjoldiOvina) {
+        this.fjoldiOvina = fjoldiOvina;
+    }
+
+    public int getFjoldiOvina() {
+        return fjoldiOvina;
+    }
 
     public void onTilbaka() {
         ViewSwitcher.switchTo(View.START);
     }
 
-    public void setLeikbord(Leikbord leikbord){
-        this.leikbord = leikbord;
-    }
-
     public void onAudvelt() {
-        leikbord = new Leikbord();
         ViewSwitcher.switchTo(View.KARAKTER);
+        setFjoldiOvina(1);
         leikbord.setFjoldiOvina(1);
-        System.out.println("setfjoldiOvina er " + leikbord.fjoldiOvina);
     }
 
     public void onMidlungs() {
-        leikbord = new Leikbord();
         ViewSwitcher.switchTo(View.KARAKTER);
+        setFjoldiOvina(2);
         leikbord.setFjoldiOvina(2);
-        System.out.println("setfjoldiOvina er " + leikbord.fjoldiOvina);
     }
 
     public void onErfitt() {
-        leikbord = new Leikbord();
         ViewSwitcher.switchTo(View.KARAKTER);
+        setFjoldiOvina(3);
         leikbord.setFjoldiOvina(3);
-        System.out.println("setfjoldiOvina er " + leikbord.fjoldiOvina);
     }
 
 }

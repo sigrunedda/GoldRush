@@ -14,7 +14,6 @@ import vinnsla.goldrush.Leikur;
 import java.util.Optional;
 
 public class GoldController {
-
     public MenuBar menustyring;
     @FXML
     private MenuController menustyringController;
@@ -39,46 +38,39 @@ public class GoldController {
         menustyringController.setGoldController(this);
         leikbord.setGoldController(this);
 
-        countUpTimeline = new Timeline();
-        countUpTimeline.setCycleCount(Timeline.INDEFINITE);
-
-        KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), event -> updateCountUp());
-        countUpTimeline.getKeyFrames().add(keyFrame);
-
     }
 
-    public void startCountDown() {
-        updateCountdownLabel(initialTimeInSeconds);
+    public void startCountUp() {
+        updateCountLabel(initialTimeInSeconds);
+        if (countUpTimeline != null) {
+            countUpTimeline.stop();
+            countUpTimeline.getKeyFrames().clear();
+        }
+        countUpTimeline = new Timeline();
+        countUpTimeline.setCycleCount(Timeline.INDEFINITE);
+        KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), event -> updateCountUp());
+        countUpTimeline.getKeyFrames().add(keyFrame);
         countUpTimeline.play();
     }
 
-    public void startCountUp(){
-        countUpTimeline.playFromStart();
-    }
-
-    private void updateCountUp(){
+    private void updateCountUp() {
         initialTimeInSeconds++;
-        updateCountdownLabel(initialTimeInSeconds);
+        updateCountLabel(initialTimeInSeconds);
+    }
+    public void stopAndClearTimer() {
+        countUpTimeline.stop();
+        countUpTimeline.getKeyFrames().clear();
+        initialTimeInSeconds=0;
     }
 
-    /*private void updateCountdown() {
-        initialTimeInSeconds--;
-        updateCountdownLabel(initialTimeInSeconds);
-        if (initialTimeInSeconds <= 0) {
-            countdownTimeline.stop();
-            System.out.println("LeikLokið");
-        }
-    }*/
-
-    protected void updateCountdownLabel(int timeInSeconds) {
+    protected void updateCountLabel(int timeInSeconds) {
         int minutes = timeInSeconds / 60;
         int seconds = timeInSeconds % 60;
-
         fxTimi.setText(String.format("%02d:%02d", minutes, seconds));
     }
 
-    public void updatePoints(int points){
-        if (points != 0){
+    public void updatePoints(int points) {
+        if (points != 0) {
             String currentPointsText = fxStig.getText();
             int currentPoints = Integer.parseInt(currentPointsText);
             int newPoints = currentPoints + points;
@@ -86,17 +78,16 @@ public class GoldController {
             fxStig.setText(String.valueOf(newPoints));
         } else {
             fxStig.setText("0");
-            fxTimi.setText("0");
         }
     }
 
     public void leikLokid(String varstDrepinn) {
         leikur.leikLokid();
         countUpTimeline.stop();
-        Platform.runLater( () -> synaAlert(varstDrepinn) );
+        Platform.runLater(() -> synaAlert(varstDrepinn));
     }
 
-    private void synaAlert(String s){
+    private void synaAlert(String s) {
         if (Integer.parseInt(fxStig.getText()) > haestaStig) {
             haestaStig = Integer.parseInt(fxStig.getText());
         }
@@ -107,17 +98,17 @@ public class GoldController {
         // ætti mögulega að vera frekar að velja ef
         // ekkicancelbutton on þá er farið í nýjan
         // leik en það er þá bara seinna
-        if (u.get().getButtonData().isCancelButton()){
+        if (u.get().getButtonData().isCancelButton()) {
             hreinsaBord();
             updatePoints(0);
             ViewSwitcher.switchTo(View.START);
-        }
-        else if (u.get().getButtonData().isDefaultButton()) {
+        } else if (u.get().getButtonData().isDefaultButton()) {
             hreinsaBord();
             leikbord.hefjaAfram();
             updatePoints(0);
         }
     }
+
     public Leikbord getLeikbord() {
         return leikbord;
     }

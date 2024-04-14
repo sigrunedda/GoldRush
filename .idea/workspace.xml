@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8e7fbf34-9b44-47f2-87e8-9b9e2d45d50f" name="Changes" comment="Að rekast í óvin endar leik">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/ErfidleikiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/ErfidleikiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Leikbord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Leikbord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/GoldApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/GoldApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/GoldController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/GoldController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/GoldController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/GoldController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,11 +56,25 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "KristinFrida"
+  }
+}]]></component>
   <component name="GithubProjectSettings">
     <option name="branchProtectionPatterns">
       <list>
         <option value="main" />
       </list>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="a2948911-270c-4ebe-8f0c-1b7a6e407552" />
+        <option name="url" value="https://github.com/sigrunedda/GoldRush.git" />
+      </UrlAndAccount>
     </option>
   </component>
   <component name="MarkdownSettingsMigration">
@@ -87,21 +97,26 @@
     &quot;Maven.GoldRush [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Sigrún&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Kristín&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator/OneDrive - Menntaský/Documents/HBV201G-Verkefni-main (2)/HBV201G-Verkefni-main/HBV201G-Verkefni-main/2022&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\Documents\Viðmótsforritun\GoldRush2\src\main\resources\vidmot\goldrush" />
     </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-19.0.2-corretto-19.0.2-4caba194b151-48ba4555" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -111,9 +126,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1710764278084</updated>
-      <workItem from="1713021069929" duration="13115000" />
-      <workItem from="1713041027713" duration="3588000" />
-      <workItem from="1713103940227" duration="6605000" />
     </task>
     <task id="LOCAL-00001" summary="prufa">
       <option name="closed" value="true" />

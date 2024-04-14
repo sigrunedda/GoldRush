@@ -11,13 +11,6 @@
             <RadioMenuItem fx:id="lokaGlugga" onAction="#onLokaPressed" text="Heim" />
         </items>
     </Menu>
-    <Menu fx:id="BreytaValmynd" mnemonicParsing="false" onAction="#onBreytaErfidleika" text="Breyta">
-        <items>
-            <RadioMenuItem fx:id="audvelt" mnemonicParsing="false" text="Auðvelt" />
-            <RadioMenuItem fx:id="midlungs" mnemonicParsing="false" text="Miðlungs" />
-            <RadioMenuItem fx:id="erfitt" mnemonicParsing="false" text="Erfitt" />
-        </items>
-    </Menu>
     <Menu mnemonicParsing="false" text="Hjálp">
         <items>
             <RadioMenuItem fx:id="umforrit" mnemonicParsing="false" onAction="#onUmForritid" text="Um Forritið" />

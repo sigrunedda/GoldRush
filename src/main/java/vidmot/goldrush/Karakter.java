@@ -1,6 +1,5 @@
 package vidmot.goldrush;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 public class Karakter {
@@ -38,13 +37,6 @@ public class Karakter {
     private void onLuigi(){
         System.out.println("Luigi valinn!");
         karController.setSelectedCharacter("Luigi");
-        ViewSwitcher.switchTo(View.LEIKBORD);
-        GoldController goldController = (GoldController) ViewSwitcher.lookup(View.LEIKBORD);
-        goldController.getLeikbord().hefjaAfram();
-    }
-
-    @FXML
-    private void onAfram(ActionEvent event){
         ViewSwitcher.switchTo(View.LEIKBORD);
         GoldController goldController = (GoldController) ViewSwitcher.lookup(View.LEIKBORD);
         goldController.getLeikbord().hefjaAfram();

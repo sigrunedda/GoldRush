@@ -8,7 +8,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.BoundingBox;
 import javafx.geometry.Bounds;
 import javafx.scene.control.MenuBar;
 import javafx.scene.input.KeyEvent;
@@ -24,7 +23,6 @@ public class Leikbord extends Pane {
 
     @FXML
     private GoldController goldController;
-    @FXML
     private ErfidleikiController erfidleikiController;
     @FXML
     private MenuController menuController;
@@ -37,31 +35,20 @@ public class Leikbord extends Pane {
     private boolean isMovingRight = false;
     private AnimationTimer gameLoop;
     private Timeline ovinurDropper;
+    private int fjoldiOvina;
     @FXML
     public MenuBar menustyring;
-    private static double SPEED = 5.0;
+    private static final double SPEED = 5.0;
     private final List<Gull> gulls = new ArrayList<>();
     private final ObservableList<Ovinur> ovinur = FXCollections.observableArrayList();
     public static final String VARST_DREPINN = "Bowser náði þér.";
-
-    public int fjoldiOvina;
-
-    public int setFjoldiOvina (int fjoldiOvina) {
-        System.out.println("Fjöldi óvina set to: " + fjoldiOvina);
-        this.fjoldiOvina = fjoldiOvina;
-        return fjoldiOvina;
-    }
-
-    public int getFjoldiOvina(int fjoldiOvina) {
-        return fjoldiOvina;
-    }
 
     public void setGoldController(GoldController goldController) {
         this.goldController = goldController;
     }
 
     public void setErfidleikiController(ErfidleikiController erfidleikiController) {
-        this.erfidleikiController = erfidleikiController;
+        this.erfidleikiController = ErfidleikiController.getInstance();
     }
 
     public void setMenuController(MenuController menuController) {
@@ -69,7 +56,6 @@ public class Leikbord extends Pane {
     }
 
     public Leikbord() {
-
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leikbord-view.fxml"));
         fxmlLoader.setClassLoader(getClass().getClassLoader());
         fxmlLoader.setRoot(this);
@@ -81,41 +67,20 @@ public class Leikbord extends Pane {
         }
         setFocusTraversable(true);
         requestFocus();
+        setErfidleikiController(erfidleikiController);
     }
 
-    public void dropOvinur(int fjoldiOvina) {
-        List<Bounds> usedPositions = new ArrayList<>();
-        System.out.println("Creating " + fjoldiOvina + " enemies.");
+    public void setFjoldiOvina(int fjoldiOvina) {
+        erfidleikiController.setFjoldiOvina(fjoldiOvina);
+    }
 
-        for (int i = 0; i < fjoldiOvina; i++) {
-            Ovinur ovinur1 = new Ovinur();
-            ovinur.add(ovinur1);
-            getChildren().add(ovinur1);
-
-
-            double minX = 0;
-            double maxX = getWidth() - ovinur1.getWidth();
-
-            double minY = menustyring != null ? menustyring.getHeight() : 0;
-            double maxY = getHeight() - ovinur1.getHeight();
-
-            Bounds bounds = new BoundingBox(minX, minY, maxX - minX, maxY - minY);
-            do {
-                double initialX = Math.random() * (maxX - minX) + minX;
-                double initialY = Math.random() * (maxY - minY) + minY;
-
-                ovinur1.setLayoutX(initialX);
-                ovinur1.setLayoutY(initialY);
-                bounds = new BoundingBox(initialX, initialY, ovinur1.getWidth(), ovinur1.getHeight());
-            }while (positionOverlaps(bounds, usedPositions));
-
-            usedPositions.add(bounds);
-        }
+    public int getFjoldiOvina() {
+        return erfidleikiController.getFjoldiOvina();
     }
 
     public void startOvinur() {
         Duration ovinurInterval = Duration.seconds(1);
-        ovinurDropper = new Timeline(new KeyFrame(ovinurInterval, event -> dropOvinur(setFjoldiOvina(fjoldiOvina))));
+        ovinurDropper = new Timeline(new KeyFrame(ovinurInterval, event -> dropOvinur()));
         ovinurDropper.play();
         gameLoop = new AnimationTimer() {
             @Override
@@ -127,27 +92,35 @@ public class Leikbord extends Pane {
 
         setOnKeyPressed(this::handleKeyPress);
         setOnKeyReleased(this::handleKeyRelease);
-        System.out.println("StartOvinur");
     }
 
     public void stopOvinur() {
         if (ovinurDropper != null) {
             ovinurDropper.stop();
         }
-        Iterator<Ovinur> iterator = ovinur.iterator();
-        while (iterator.hasNext()) {
-            Ovinur o = iterator.next();
+        for (Ovinur o : ovinur) {
             o.stop();
         }
     }
 
-    private boolean positionOverlaps(Bounds position, List<Bounds> usedPositions){
-        for (Bounds usedPosition : usedPositions){
-            if (position.intersects(usedPosition)){
-                return true;
-            }
+    private void dropOvinur() {
+        for (int i = 0; i < getFjoldiOvina(); i++) {
+            Ovinur ovinur1 = new Ovinur();
+            ovinur.add(ovinur1);
+            getChildren().add(ovinur1);
+
+            double minX = 0;
+            double maxX = getWidth() - ovinur1.getWidth();
+
+            double minY = menustyring != null ? menustyring.getHeight() : 0;
+            double maxY = getHeight() - ovinur1.getHeight();
+
+            double initialX = Math.random() * (maxX - minX) + minX;
+            double initialY = Math.random() * (maxY - minY) + minY;
+
+            ovinur1.setLayoutX(initialX);
+            ovinur1.setLayoutY(initialY);
         }
-        return false;
     }
 
     public void ovinurDrepur() {
@@ -157,8 +130,7 @@ public class Leikbord extends Pane {
             if (o.isCollidingWithGrafari(grafari)) {
                 goldController.leikLokid(VARST_DREPINN);
                 System.out.println("Óvinur drap þig");
-                iterator.remove();
-                o.stop();
+                stopOvinur();
                 gameLoop.stop();
                 gameLoop = null;
 
@@ -169,16 +141,6 @@ public class Leikbord extends Pane {
                 isMovingDown = false;
                 isMovingLeft = false;
                 isMovingRight = false;
-
-                if (ovinurDropper != null) {
-                    ovinurDropper.stop();
-                }
-                Iterator<Ovinur> stopIterator = ovinur.iterator();
-                while (stopIterator.hasNext()) {
-                    Ovinur stopOvinur = stopIterator.next();
-                    stopIterator.remove();
-                    stopOvinur.stop();
-                }
             }
         }
     }
@@ -327,5 +289,6 @@ public class Leikbord extends Pane {
         startGullDropper();
         startOvinur();
         goldController.startCountUp();
+
     }
 }
