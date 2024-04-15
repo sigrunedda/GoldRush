@@ -55,7 +55,7 @@ public class Leikbord extends Pane {
         this.menuController = menuController;
     }
 
-    public Leikbord(){
+    public Leikbord() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leikbord-view.fxml"));
         fxmlLoader.setClassLoader(getClass().getClassLoader());
         fxmlLoader.setRoot(this);
@@ -289,5 +289,6 @@ public class Leikbord extends Pane {
         startGullDropper();
         startOvinur();
         goldController.startCountUp();
+
     }
 }
