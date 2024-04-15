@@ -16,9 +16,6 @@ public class MenuController {
     @FXML
     private RadioMenuItem nyrLeikur, lokaGlugga, umforrit, leikreglur;
 
-
-
-
     @FXML
     public void onNyrLeikur(ActionEvent event) {
         RadioMenuItem menuItem = (RadioMenuItem) event.getSource();
@@ -47,7 +44,6 @@ public class MenuController {
         if (menuItem.isSelected()){
             lokaGlugga.setSelected(false);
         }
-
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Staðfesting til að hætta leik");
@@ -87,7 +83,6 @@ public class MenuController {
         if (menuItem.isSelected()){
             leikreglur.setSelected(false);
         }
-
 
         System.out.println("Leikreglur display!");
         ViewSwitcher.switchTo(View.LEIKREGLUR);
