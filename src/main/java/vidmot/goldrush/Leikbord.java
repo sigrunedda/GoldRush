@@ -3,7 +3,9 @@ package vidmot.goldrush;
 import javafx.animation.AnimationTimer;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.event.EventHandler;
+import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Bounds;
@@ -21,6 +23,9 @@ public class Leikbord extends Pane {
 
     @FXML
     private GoldController goldController;
+    private ErfidleikiController erfidleikiController;
+    @FXML
+    private MenuController menuController;
     private Grafari grafari;
     private long lastUpdateTime = 0;
     private static final long UPDATE_INTERVAL = 16_666_666;
@@ -28,15 +33,29 @@ public class Leikbord extends Pane {
     private boolean isMovingDown = false;
     private boolean isMovingLeft = false;
     private boolean isMovingRight = false;
+    private AnimationTimer gameLoop;
+    private Timeline ovinurDropper;
+    private int fjoldiOvina;
     @FXML
     public MenuBar menustyring;
-    private List<Gull> gulls = new ArrayList<>();
+    private static final double SPEED = 5.0;
+    private final List<Gull> gulls = new ArrayList<>();
+    private final ObservableList<Ovinur> ovinur = FXCollections.observableArrayList();
+    public static final String VARST_DREPINN = "Bowser náði þér.";
 
     public void setGoldController(GoldController goldController) {
         this.goldController = goldController;
     }
 
-    public Leikbord() {
+    public void setErfidleikiController(ErfidleikiController erfidleikiController) {
+        this.erfidleikiController = ErfidleikiController.getInstance();
+    }
+
+    public void setMenuController(MenuController menuController) {
+        this.menuController = menuController;
+    }
+
+    public Leikbord(){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leikbord-view.fxml"));
         fxmlLoader.setClassLoader(getClass().getClassLoader());
         fxmlLoader.setRoot(this);
@@ -46,46 +65,102 @@ public class Leikbord extends Pane {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        setFocusTraversable(true);
+        requestFocus();
+        setErfidleikiController(erfidleikiController);
+    }
 
-        setOnKeyPressed(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent event) {
-                handleKeyPress(event);
-            }
-        });
+    public void setFjoldiOvina(int fjoldiOvina) {
+        erfidleikiController.setFjoldiOvina(fjoldiOvina);
+    }
 
-        setOnKeyReleased(new EventHandler<KeyEvent>() {
+    public int getFjoldiOvina() {
+        return erfidleikiController.getFjoldiOvina();
+    }
+
+    public void startOvinur() {
+        Duration ovinurInterval = Duration.seconds(1);
+        ovinurDropper = new Timeline(new KeyFrame(ovinurInterval, event -> dropOvinur()));
+        ovinurDropper.play();
+        gameLoop = new AnimationTimer() {
             @Override
-            public void handle(KeyEvent event) {
-                handleKeyRelease(event);
+            public void handle(long l) {
+                ovinurDrepur();
             }
-        });
+        };
+        gameLoop.start();
 
         setOnKeyPressed(this::handleKeyPress);
         setOnKeyReleased(this::handleKeyRelease);
+    }
 
-        grafari = new Grafari();
-        getChildren().add(grafari);
+    public void stopOvinur() {
+        if (ovinurDropper != null) {
+            ovinurDropper.stop();
+        }
+        for (Ovinur o : ovinur) {
+            o.stop();
+        }
+    }
 
-        setFocusTraversable(true);
-        requestFocus();
+    private void dropOvinur() {
+        for (int i = 0; i < getFjoldiOvina(); i++) {
+            Ovinur ovinur1 = new Ovinur();
+            ovinur.add(ovinur1);
+            getChildren().add(ovinur1);
 
-        startGullDropper();
+            double minX = 0;
+            double maxX = getWidth() - ovinur1.getWidth();
+
+            double minY = menustyring != null ? menustyring.getHeight() : 0;
+            double maxY = getHeight() - ovinur1.getHeight();
+
+            double initialX = Math.random() * (maxX - minX) + minX;
+            double initialY = Math.random() * (maxY - minY) + minY;
+
+            ovinur1.setLayoutX(initialX);
+            ovinur1.setLayoutY(initialY);
+        }
+    }
+
+    public void ovinurDrepur() {
+        Iterator<Ovinur> iterator = ovinur.iterator();
+        while (iterator.hasNext()) {
+            Ovinur o = iterator.next();
+            if (o.isCollidingWithGrafari(grafari)) {
+                goldController.leikLokid(VARST_DREPINN);
+                System.out.println("Óvinur drap þig");
+                stopOvinur();
+                gameLoop.stop();
+                gameLoop = null;
+
+                setOnKeyPressed(null);
+                setOnKeyReleased(null);
+
+                isMovingUp = false;
+                isMovingDown = false;
+                isMovingLeft = false;
+                isMovingRight = false;
+            }
+        }
     }
 
     public void startGullDropper() {
-        Duration gullDropInterval = Duration.seconds(2);
-        Timeline gullDropper = new Timeline(new KeyFrame(gullDropInterval, event -> dropGull()));
-        gullDropper.setCycleCount(Timeline.INDEFINITE);
-        gullDropper.play();
-
-        AnimationTimer gameLoop = new AnimationTimer() {
+        gameLoop = new AnimationTimer() {
             @Override
             public void handle(long l) {
                 grafaGull();
             }
         };
         gameLoop.start();
+
+        Platform.runLater(this::dropGull);
+    }
+
+    public void stopGullDropper() {
+        if (gameLoop != null) {
+            gameLoop.stop();
+        }
     }
 
     private void dropGull() {
@@ -99,7 +174,6 @@ public class Leikbord extends Pane {
         double minY = menustyring != null ? menustyring.getHeight() : 0;
         double maxY = getHeight() - gull.getHeight();
 
-
         double initialX = Math.random() * (maxX - minX) + minX;
         double initialY = Math.random() * (maxY - minY) + minY;
 
@@ -109,6 +183,7 @@ public class Leikbord extends Pane {
 
     public void grafaGull() {
         Bounds grafariBounds = grafari.getBoundsInParent();
+        boolean gullGrafid = false;
 
         Iterator<Gull> iterator = gulls.iterator();
         while (iterator.hasNext()) {
@@ -119,8 +194,11 @@ public class Leikbord extends Pane {
                 iterator.remove();
                 getChildren().remove(gull);
                 goldController.updatePoints(1);
-                System.out.println("grafari grefur");
+                gullGrafid = true;
             }
+        }
+        if (gulls.isEmpty() && gullGrafid) {
+            dropGull();
         }
         updateGrafariPosition();
     }
@@ -131,19 +209,12 @@ public class Leikbord extends Pane {
             return;
         }
         switch (event.getCode()) {
-            case UP:
-                isMovingUp = true;
-                break;
-            case DOWN:
-                isMovingDown = true;
-                break;
-            case LEFT:
-                isMovingLeft = true;
-                break;
-            case RIGHT:
-                isMovingRight = true;
-                break;
-            default:
+            case UP -> isMovingUp = true;
+            case DOWN -> isMovingDown = true;
+            case LEFT -> isMovingLeft = true;
+            case RIGHT -> isMovingRight = true;
+            default -> {
+            }
         }
         updateGrafariPosition();
         lastUpdateTime = currentTime;
@@ -151,52 +222,72 @@ public class Leikbord extends Pane {
 
     private void handleKeyRelease(KeyEvent event) {
         switch (event.getCode()) {
-            case UP:
-                isMovingUp = false;
-                break;
-            case DOWN:
-                isMovingDown = false;
-                break;
-            case LEFT:
-                isMovingLeft = false;
-                break;
-            case RIGHT:
-                isMovingRight = false;
-                break;
-            default:
+            case UP -> isMovingUp = false;
+            case DOWN -> isMovingDown = false;
+            case LEFT -> isMovingLeft = false;
+            case RIGHT -> isMovingRight = false;
+            default -> {
+            }
         }
     }
 
     private boolean erLoglegt(double x, double y) {
-        return x >= 0 && y >= 0 && x <= 570 && y < 315;
+        return x >= 0 && y >= 0 && x <= getWidth() - grafari.getWidth() && y < getHeight() - grafari.getHeight();
     }
 
     private void updateGrafariPosition() {
-        double speed = 5.0;
-
         if (isMovingUp) {
-            if (erLoglegt(grafari.getLayoutX(), grafari.getLayoutY() - speed)) {
-                grafari.setLayoutY(grafari.getLayoutY() - speed);
+            if (erLoglegt(grafari.getLayoutX(), grafari.getLayoutY() - SPEED)) {
+                grafari.setLayoutY(grafari.getLayoutY() - SPEED);
             }
         }
         if (isMovingDown) {
-            if (erLoglegt(grafari.getLayoutX(), grafari.getLayoutY() + speed)) {
-                grafari.setLayoutY(grafari.getLayoutY() + speed);
+            if (erLoglegt(grafari.getLayoutX(), grafari.getLayoutY() + SPEED)) {
+                grafari.setLayoutY(grafari.getLayoutY() + SPEED);
             }
         }
         if (isMovingLeft) {
-            if (erLoglegt(grafari.getLayoutX() - speed, grafari.getLayoutY())) {
-                grafari.setLayoutX(grafari.getLayoutX() - speed);
+            if (erLoglegt(grafari.getLayoutX() - SPEED, grafari.getLayoutY())) {
+                grafari.setLayoutX(grafari.getLayoutX() - SPEED);
             }
         }
         if (isMovingRight) {
-            if (erLoglegt(grafari.getLayoutX() + speed, grafari.getLayoutY())) {
-                grafari.setLayoutX(grafari.getLayoutX() + speed);
+            if (erLoglegt(grafari.getLayoutX() + SPEED, grafari.getLayoutY())) {
+                grafari.setLayoutX(grafari.getLayoutX() + SPEED);
             }
         }
     }
 
-    private void hreinsaBord() {
-        hreinsaBord();
+    public void hreinsaBord() {
+        if (gameLoop != null) {
+            gameLoop.stop();
+            gameLoop = null;
+        }
+        stopGullDropper();
+        stopOvinur();
+        for (Ovinur o : ovinur) {
+            o.stop();
+        }
+        getChildren().removeAll(gulls);
+        gulls.clear();
+        getChildren().removeIf(node -> node instanceof Ovinur);
+        ovinur.clear();
+        getChildren().remove(grafari);
+
+        setOnKeyPressed(null);
+        setOnKeyReleased(null);
+
+        isMovingUp = false;
+        isMovingDown = false;
+        isMovingLeft = false;
+        isMovingRight = false;
+    }
+
+    public void hefjaAfram() {
+        grafari = new Grafari();
+        getChildren().add(grafari);
+        startGullDropper();
+        startOvinur();
+        goldController.startCountUp();
     }
 }
