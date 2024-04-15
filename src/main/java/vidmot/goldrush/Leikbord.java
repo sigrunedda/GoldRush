@@ -24,8 +24,6 @@ public class Leikbord extends Pane {
     @FXML
     private GoldController goldController;
     private ErfidleikiController erfidleikiController;
-    @FXML
-    private MenuController menuController;
     private Grafari grafari;
     private long lastUpdateTime = 0;
     private static final long UPDATE_INTERVAL = 16_666_666;
@@ -35,7 +33,6 @@ public class Leikbord extends Pane {
     private boolean isMovingRight = false;
     private AnimationTimer gameLoop;
     private Timeline ovinurDropper;
-    private int fjoldiOvina;
     @FXML
     public MenuBar menustyring;
     private static final double SPEED = 5.0;
@@ -47,12 +44,8 @@ public class Leikbord extends Pane {
         this.goldController = goldController;
     }
 
-    public void setErfidleikiController(ErfidleikiController erfidleikiController) {
+    public void setErfidleikiController() {
         this.erfidleikiController = ErfidleikiController.getInstance();
-    }
-
-    public void setMenuController(MenuController menuController) {
-        this.menuController = menuController;
     }
 
     public Leikbord() {
@@ -67,7 +60,7 @@ public class Leikbord extends Pane {
         }
         setFocusTraversable(true);
         requestFocus();
-        setErfidleikiController(erfidleikiController);
+        setErfidleikiController();
     }
 
     public void setFjoldiOvina(int fjoldiOvina) {
@@ -124,9 +117,7 @@ public class Leikbord extends Pane {
     }
 
     public void ovinurDrepur() {
-        Iterator<Ovinur> iterator = ovinur.iterator();
-        while (iterator.hasNext()) {
-            Ovinur o = iterator.next();
+        for (Ovinur o : ovinur) {
             if (o.isCollidingWithGrafari(grafari)) {
                 goldController.leikLokid(VARST_DREPINN);
                 System.out.println("Óvinur drap þig");

@@ -2,9 +2,7 @@ package vidmot.goldrush;
 
 import javafx.geometry.Bounds;
 import javafx.scene.image.Image;
-import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
-import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
 import java.util.Objects;
@@ -16,7 +14,7 @@ public class Ovinur extends Rectangle {
     private final Random random;
     private final Timer timer;
     private TimerTask currentTask;
-    private Rectangle collisionBox;
+    private final Rectangle collisionBox;
 
     public Ovinur() {
         setWidth(50);

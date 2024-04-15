@@ -49,14 +49,7 @@ public class ViewSwitcher {
     }
 
     public static Object lookup(View v) {
-        /*if (!isLoaded(v)) {
-            loadView(v);
-        }*/
         return controllers.get(v);
-    }
-
-    private static boolean isLoaded(View v) {
-        return controllers.containsKey(v);
     }
 
     public static View getLastView() {

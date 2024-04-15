@@ -4,25 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e7fbf34-9b44-47f2-87e8-9b9e2d45d50f" name="Changes" comment="Að rekast í óvin endar leik">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/letur/PixeloidSans-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/letur/PixeloidSans.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/myndir/Icon.jpg" afterDir="false" />
+    <list default="true" id="8e7fbf34-9b44-47f2-87e8-9b9e2d45d50f" name="Changes" comment="Lagaði 8-bit textann ofl.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/GoldApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/GoldApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/ErfidleikiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/ErfidleikiController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/GoldController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/GoldController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/erfidleiki-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/erfidleiki-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Karakter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Karakter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Leikbord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Leikbord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Leikreglur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Leikreglur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Ovinur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Ovinur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/ViewSwitcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/ViewSwitcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/grafari-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/grafari-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/gull-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/gull-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/karakter-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/karakter-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/leikreglur-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/leikreglur-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/menu-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/menu-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/ovinur-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/ovinur-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/start-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/start-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/GoldApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/GoldApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/GoldController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/GoldController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Grafari.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Grafari.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Gull.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Gull.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/MenuController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,6 +205,7 @@
     <MESSAGE value="Smá villumeðhöndlun fyrir óvin" />
     <MESSAGE value="Til baka takki í leiðbeiningum fer í lastView" />
     <MESSAGE value="Að rekast í óvin endar leik" />
-    <option name="LAST_COMMIT_MESSAGE" value="Að rekast í óvin endar leik" />
+    <MESSAGE value="Lagaði 8-bit textann ofl." />
+    <option name="LAST_COMMIT_MESSAGE" value="Lagaði 8-bit textann ofl." />
   </component>
 </project>
