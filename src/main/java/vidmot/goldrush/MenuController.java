@@ -7,19 +7,27 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.util.Objects;
-
+/**
+ * Klassinn sér um menubar fyrir ofan leikborðið
+ */
 public class MenuController {
     public MenuBar menuBar;
+    
     @FXML
     private GoldController goldController;
-
+    /**
+     * GoldController stjórnar þessum klasa
+     */
     public void setGoldController(GoldController goldController){
         this.goldController = goldController;
     }
 
     @FXML
     private RadioMenuItem nyrLeikur, lokaGlugga, umforrit, leikreglur;
-
+    /**
+     * Ef að Nýr leikur er valið, sem er undir Skrá þá fer notandinn aftur í valmyndina fyrir erfiðleikastig
+     * og það er hreinsað borðið
+     */
     @FXML
     public void onNyrLeikur(ActionEvent event) {
         RadioMenuItem menuItem = (RadioMenuItem) event.getSource();
@@ -46,7 +54,9 @@ public class MenuController {
             }
         });
     }
-
+    /**
+     * Ef að Loka er valið, sem er undir Skrá þá fer notandinn aftur í valmyndina start og það er hreinsað borðið
+     */
     public void onLokaPressed(ActionEvent event) {
         RadioMenuItem menuItem = (RadioMenuItem) event.getSource();
         if (menuItem.isSelected()){
@@ -74,7 +84,10 @@ public class MenuController {
             }
         });
     }
-
+    /**
+     * Ef að Um forritið er valið, sem er undir Hjálp þá birtist upplýsinga alert sem segir notandanum
+     * hver bjó til leikinn
+     */
     @FXML
     private void onUmForritid(ActionEvent event){
         RadioMenuItem menuItem = (RadioMenuItem) event.getSource();
@@ -93,7 +106,10 @@ public class MenuController {
 
         alert.showAndWait();
     }
-
+    /**
+     * Ef að Leikreglur er valið, sem er undir Hjálp þá birtist leikreglur-view.fxml sem segir notandanum hvernig
+     * leikurinn virkar
+     */
     @FXML
     private void onLeikreglur(ActionEvent event){
         RadioMenuItem menuItem = (RadioMenuItem) event.getSource();
