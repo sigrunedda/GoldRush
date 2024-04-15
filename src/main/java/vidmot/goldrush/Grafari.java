@@ -12,6 +12,9 @@ public class Grafari extends Rectangle {
 
     private final KarakterController karController = KarakterController.getInstance();
 
+    /**
+     * Smiður til að upphafsstilla grafara
+     */
     public Grafari(){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("grafari-view.fxml"));
         fxmlLoader.setClassLoader(getClass().getClassLoader());
@@ -29,6 +32,9 @@ public class Grafari extends Rectangle {
         setImage();
     }
 
+    /**
+     * Setur mynd á grafara
+     */
     public void setImage(){
         String selectedCharacter = karController.getSelectedCharacter();
         if (selectedCharacter != null) {

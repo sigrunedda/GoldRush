@@ -48,6 +48,9 @@ public class Leikbord extends Pane {
         this.erfidleikiController = ErfidleikiController.getInstance();
     }
 
+    /**
+     * Smiður til að upphafsstilla leikborð
+     */
     public Leikbord() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leikbord-view.fxml"));
         fxmlLoader.setClassLoader(getClass().getClassLoader());
@@ -63,14 +66,27 @@ public class Leikbord extends Pane {
         setErfidleikiController();
     }
 
+    /**
+     * Setur inn fjölda óvina
+     *
+     * @param fjoldiOvina
+     */
     public void setFjoldiOvina(int fjoldiOvina) {
         erfidleikiController.setFjoldiOvina(fjoldiOvina);
     }
 
+    /**
+     * Skilar fjölda óvina eftir því hvaða erfiðleikastig er valið
+     *
+     * @return fjöldi óvina
+     */
     public int getFjoldiOvina() {
         return erfidleikiController.getFjoldiOvina();
     }
 
+    /**
+     * Setur óvin á leikborðið
+     */
     public void startOvinur() {
         Duration ovinurInterval = Duration.seconds(1);
         ovinurDropper = new Timeline(new KeyFrame(ovinurInterval, event -> dropOvinur()));
@@ -87,6 +103,9 @@ public class Leikbord extends Pane {
         setOnKeyReleased(this::handleKeyRelease);
     }
 
+    /**
+     * Passar að óvinur heldur ekki áfram að myndast á leikborði
+     */
     public void stopOvinur() {
         if (ovinurDropper != null) {
             ovinurDropper.stop();
@@ -96,6 +115,9 @@ public class Leikbord extends Pane {
         }
     }
 
+    /**
+     * Staðsetur óvin á leikborði
+     */
     private void dropOvinur() {
         for (int i = 0; i < getFjoldiOvina(); i++) {
             Ovinur ovinur1 = new Ovinur();
@@ -116,6 +138,9 @@ public class Leikbord extends Pane {
         }
     }
 
+    /**
+     * Ef grafari rekst á óvin þá stöðvast leikurinn
+     */
     public void ovinurDrepur() {
         for (Ovinur o : ovinur) {
             if (o.isCollidingWithGrafari(grafari)) {
@@ -136,6 +161,9 @@ public class Leikbord extends Pane {
         }
     }
 
+    /**
+     * Animation fyrir gullið í leikborði
+     */
     public void startGullDropper() {
         gameLoop = new AnimationTimer() {
             @Override
@@ -148,12 +176,18 @@ public class Leikbord extends Pane {
         Platform.runLater(this::dropGull);
     }
 
+    /**
+     * Passar að aðeins eitt gull myndast í einu á leikborði
+     */
     public void stopGullDropper() {
         if (gameLoop != null) {
             gameLoop.stop();
         }
     }
 
+    /**
+     * Staðsetur gull á leikborði
+     */
     private void dropGull() {
         Gull gull = new Gull();
         gulls.add(gull);
@@ -172,6 +206,9 @@ public class Leikbord extends Pane {
         gull.setLayoutY(initialY);
     }
 
+    /**
+     * Þegar grafari grefur gull þá hverfur gullið af leikborði og stigin uppfærast
+     */
     public void grafaGull() {
         Bounds grafariBounds = grafari.getBoundsInParent();
         boolean gullGrafid = false;
@@ -194,6 +231,11 @@ public class Leikbord extends Pane {
         updateGrafariPosition();
     }
 
+    /**
+     * Stillir hvernig grafari hreyfir sig miðað við hvaða örvatakka er ýtt á.
+     *
+     * @param event - Hvernig grafari hreyfir sig
+     */
     private void handleKeyPress(KeyEvent event) {
         long currentTime = System.nanoTime();
         if (currentTime - lastUpdateTime < UPDATE_INTERVAL) {
@@ -211,6 +253,11 @@ public class Leikbord extends Pane {
         lastUpdateTime = currentTime;
     }
 
+    /**
+     * Stöðvar grafarann þegar sleppt er örvatökkunum
+     *
+     * @param event
+     */
     private void handleKeyRelease(KeyEvent event) {
         switch (event.getCode()) {
             case UP -> isMovingUp = false;
@@ -222,10 +269,20 @@ public class Leikbord extends Pane {
         }
     }
 
+    /**
+     * Aðferð til að grafari fari ekki útfyrir leikborð
+     *
+     * @param x - x hnit á leikborði
+     * @param y - y hnit á leikborði
+     * @return true er grafari er inná leikborði, annars false
+     */
     private boolean erLoglegt(double x, double y) {
         return x >= 0 && y >= 0 && x <= getWidth() - grafari.getWidth() && y < getHeight() - grafari.getHeight();
     }
 
+    /**
+     * Uppfærir staðsetningu á grafara
+     */
     private void updateGrafariPosition() {
         if (isMovingUp) {
             if (erLoglegt(grafari.getLayoutX(), grafari.getLayoutY() - SPEED)) {
@@ -249,6 +306,9 @@ public class Leikbord extends Pane {
         }
     }
 
+    /**
+     * Stöðvar leik og hreinsar allt af leikborði
+     */
     public void hreinsaBord() {
         if (gameLoop != null) {
             gameLoop.stop();
@@ -274,6 +334,10 @@ public class Leikbord extends Pane {
         isMovingRight = false;
     }
 
+    /**
+     * Byrjar leik, setur grafara, gull og óvin á leikborð.
+     * Byrjar að telja tímann
+     */
     public void hefjaAfram() {
         grafari = new Grafari();
         getChildren().add(grafari);
