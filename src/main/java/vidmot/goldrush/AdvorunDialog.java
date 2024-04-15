@@ -4,8 +4,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 
+/**
+ * Þetta er klasinn sem sér um að birta að viðvörun þegar að leikurinn endar
+ * Viðvörunin birtir tvo hnappa; reyna aftur og aftur á forsíðu
+ */
 public class AdvorunDialog extends Alert {
-
     private static final String REYNA_AFTUR = "Reyna aftur";
     public static final ButtonType BTYPE = new ButtonType(REYNA_AFTUR,
             ButtonBar.ButtonData.OK_DONE);

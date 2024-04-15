@@ -13,12 +13,14 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * Klasinn sér um að búa til sjálft leikborðið í leiknum
+ */
 public class Leikbord extends Pane {
 
     @FXML
@@ -40,14 +42,19 @@ public class Leikbord extends Pane {
     private final ObservableList<Ovinur> ovinur = FXCollections.observableArrayList();
     public static final String VARST_DREPINN = "Bowser náði þér.";
 
+    /**
+     * Verið að stilla hvaða klasar stjórna leikborðinu
+     */
     public void setGoldController(GoldController goldController) {
         this.goldController = goldController;
     }
-
     public void setErfidleikiController() {
         this.erfidleikiController = ErfidleikiController.getInstance();
     }
 
+    /**
+     * Hér er hlaðið inn leikborðið frá leikborð-view.fxml
+     */
     public Leikbord() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leikbord-view.fxml"));
         fxmlLoader.setClassLoader(getClass().getClassLoader());
@@ -71,6 +78,9 @@ public class Leikbord extends Pane {
         return erfidleikiController.getFjoldiOvina();
     }
 
+    /**
+     * Aðferð til þess að hreyfa óvin um leikborðið
+     */
     public void startOvinur() {
         Duration ovinurInterval = Duration.seconds(1);
         ovinurDropper = new Timeline(new KeyFrame(ovinurInterval, event -> dropOvinur()));
@@ -87,6 +97,9 @@ public class Leikbord extends Pane {
         setOnKeyReleased(this::handleKeyRelease);
     }
 
+    /**
+     * Aðferð til þess að stoppa óvin þegar að hann drepur grafarann
+     */
     public void stopOvinur() {
         if (ovinurDropper != null) {
             ovinurDropper.stop();
@@ -95,6 +108,10 @@ public class Leikbord extends Pane {
             o.stop();
         }
     }
+
+    /**
+     * Hér er verið að bæta við óvin/óvini á leikborðið og stjórna hreyfingu hans/þeirra
+     */
 
     private void dropOvinur() {
         for (int i = 0; i < getFjoldiOvina(); i++) {
@@ -115,7 +132,9 @@ public class Leikbord extends Pane {
             ovinur1.setLayoutY(initialY);
         }
     }
-
+    /**
+     * Ef að óvinurinn rekst á grafarann þá er ræst aðferðina leikLokið og stoppað allt á leikborðinu
+     */
     public void ovinurDrepur() {
         for (Ovinur o : ovinur) {
             if (o.isCollidingWithGrafari(grafari)) {
@@ -136,6 +155,10 @@ public class Leikbord extends Pane {
         }
     }
 
+    /**
+     * Hér er verið að setja stjörnur/gull á leikborðið
+     */
+
     public void startGullDropper() {
         gameLoop = new AnimationTimer() {
             @Override
@@ -148,12 +171,19 @@ public class Leikbord extends Pane {
         Platform.runLater(this::dropGull);
     }
 
+    /**
+     * Hér er stoppað framleiðsluna á stjörnunum/gullinu.
+     */
+
     public void stopGullDropper() {
         if (gameLoop != null) {
             gameLoop.stop();
         }
     }
 
+    /**
+     * Sett gullið/stjörnurnar á tilviljunarkenda staði á leikborðinu
+     */
     private void dropGull() {
         Gull gull = new Gull();
         gulls.add(gull);
@@ -172,6 +202,9 @@ public class Leikbord extends Pane {
         gull.setLayoutY(initialY);
     }
 
+    /**
+     * Ef að grafarinn rekst á stjörnurnar/gullið þá er fjarlægt það og bætt við stigafjöldann
+     */
     public void grafaGull() {
         Bounds grafariBounds = grafari.getBoundsInParent();
         boolean gullGrafid = false;
@@ -194,6 +227,10 @@ public class Leikbord extends Pane {
         updateGrafariPosition();
     }
 
+    /**
+     * Tengja örvatakkana við grafarann
+     * @param event hvert er ýtt
+     */
     private void handleKeyPress(KeyEvent event) {
         long currentTime = System.nanoTime();
         if (currentTime - lastUpdateTime < UPDATE_INTERVAL) {
@@ -222,6 +259,13 @@ public class Leikbord extends Pane {
         }
     }
 
+    /**
+     * Passar upp á að grafarinn fer ekki fyrir utan leikborðið
+     * @param x lárétt
+     * @param y lóðrétt
+     * @return löglega vídd leikborðsins
+     */
+
     private boolean erLoglegt(double x, double y) {
         return x >= 0 && y >= 0 && x <= getWidth() - grafari.getWidth() && y < getHeight() - grafari.getHeight();
     }
@@ -249,6 +293,9 @@ public class Leikbord extends Pane {
         }
     }
 
+    /**
+     * Þegar að leikur er endurstilltur þá þarf að hreinsa fyrri leikinn af leikborðinu, það er gert með þessari aðferð
+     */
     public void hreinsaBord() {
         if (gameLoop != null) {
             gameLoop.stop();
@@ -274,6 +321,10 @@ public class Leikbord extends Pane {
         isMovingRight = false;
     }
 
+    /**
+     * Þegar að notandinn vill hefja leik þá er bætt við nýjan grafara, byrjað framleiðsluna á gullinu og óvin/óvinum,
+     * það er einnig ræst klukkuna
+     */
     public void hefjaAfram() {
         grafari = new Grafari();
         getChildren().add(grafari);

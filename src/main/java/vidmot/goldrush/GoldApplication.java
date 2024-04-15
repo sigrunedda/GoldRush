@@ -6,13 +6,16 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardOpenOption;
 import java.util.Objects;
 
+/**
+ * Klasinn sér um að ræsa leikinn og leikurinn byrjar á start-view fxml
+ * Hér stillt letrið og icon myndina fyrir vinstra efra hornið
+ */
 public class GoldApplication extends Application {
 
     @Override

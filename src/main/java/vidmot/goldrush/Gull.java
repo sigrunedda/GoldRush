@@ -3,9 +3,11 @@ package vidmot.goldrush;
 import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
-
 import java.util.Objects;
 
+/**
+ * Klasinn býr til stjörnu/gull af ákveðnri stærð og setur viðeigandi mynd yfir
+ */
 public class Gull extends Rectangle {
     public Gull(){
         setWidth(30);

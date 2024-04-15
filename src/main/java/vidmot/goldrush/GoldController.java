@@ -13,6 +13,9 @@ import vinnsla.goldrush.Leikur;
 
 import java.util.Optional;
 
+/**
+ * Klasinn sem sér um leikborðið eða leikbord-view.fxml
+ */
 public class GoldController {
     public MenuBar menustyring;
     @FXML
@@ -33,6 +36,9 @@ public class GoldController {
         this.leikur = new Leikur();
     }
 
+    /**
+     * Hér er sett upp hvaða klasar sjá um stýringuna fyrir leikborðið er bæði GoldController og MenuController
+     */
     @FXML
     public void initialize() {
         menustyringController.setGoldController(this);
@@ -40,6 +46,10 @@ public class GoldController {
 
     }
 
+    /**
+     * Aðferðin er notuð til þess að ræsa klukkuna sem er í neðra hægra horninu á leikborðinu
+     * Klukkan telur upp fyrir notandann þegar að leikur hefst.
+     */
     public void startCountUp() {
         initialTimeInSeconds = 0;
         updateCountLabel(initialTimeInSeconds);
@@ -53,27 +63,37 @@ public class GoldController {
         countUpTimeline.getKeyFrames().add(keyFrame);
         countUpTimeline.play();
     }
+
+    /**
+     * Hér erum við að samstilla klukkuna við label þannig að fxTimi uppfærist
+     */
     private void updateCountUp() {
         initialTimeInSeconds++;
         updateCountLabel(initialTimeInSeconds);
     }
 
+    /**
+     * Birtingarmynd klukkunar, þannig hún birtist sem 00:00 fyrir mínútur og
+     * sekúndur
+     * @param timeInSeconds breytist í samræmi við hefðbundna klukku
+     *                      þannig þegar að 60 sek næst þá telur það eina mínútu
+     */
     protected void updateCountLabel(int timeInSeconds) {
         int minutes = timeInSeconds / 60;
         int seconds = timeInSeconds % 60;
         fxTimi.setText(String.format("%02d:%02d", minutes, seconds));
     }
 
+    /**
+     * Uppfærir fxStig í samræmi við fjölda stjarna sem hefur verið safnað
+     *
+     * @param points
+     */
     public void updatePoints(int points) {
         if (points != 0) {
             String currentPointsText = fxStig.getText();
             int currentPoints = Integer.parseInt(currentPointsText);
             int newPoints = currentPoints + points;
-
-            if (newPoints > haestaStig) {
-                haestaStig = newPoints;
-                int haestaStigTime = initialTimeInSeconds + 1;
-            }
 
             fxStig.setText(String.valueOf(newPoints));
         } else {

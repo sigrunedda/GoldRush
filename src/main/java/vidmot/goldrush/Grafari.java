@@ -4,12 +4,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
-
 import java.io.IOException;
 import java.util.Objects;
 
 public class Grafari extends Rectangle {
 
+    /**
+     * Klasinn nær í grafara-view.fxml sem er rétthyringur, stillir stærðina á grafaranum
+     * og setur mynd yfir grafarann eftir að hann hefur verið valinn
+     */
     private final KarakterController karController = KarakterController.getInstance();
 
     public Grafari(){
@@ -29,6 +32,9 @@ public class Grafari extends Rectangle {
         setImage();
     }
 
+    /**
+     * Hér er sett viðeigandi mynd yfir grafarann eftir að hann hefur verið valinn
+     */
     public void setImage(){
         String selectedCharacter = karController.getSelectedCharacter();
         if (selectedCharacter != null) {
