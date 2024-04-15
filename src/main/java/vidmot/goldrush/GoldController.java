@@ -28,11 +28,18 @@ public class GoldController {
     private Leikbord leikbord;
     private final Leikur leikur;
 
+    /**
+     * Smiður til að setja upp leikborð
+     */
     public GoldController() {
         this.leikbord = new Leikbord();
         this.leikur = new Leikur();
     }
 
+    /**
+     * Upphafsstilling til að tengja saman leikbord og menustyring
+     * við GoldController
+     */
     @FXML
     public void initialize() {
         menustyringController.setGoldController(this);
@@ -40,6 +47,9 @@ public class GoldController {
 
     }
 
+    /**
+     * Aðferð til að upphafsstilla tímann i leikborði
+     */
     public void startCountUp() {
         initialTimeInSeconds = 0;
         updateCountLabel(initialTimeInSeconds);
@@ -53,17 +63,29 @@ public class GoldController {
         countUpTimeline.getKeyFrames().add(keyFrame);
         countUpTimeline.play();
     }
+
+    /**
+     * Uppfærir tímann i leikborði
+     */
     private void updateCountUp() {
         initialTimeInSeconds++;
         updateCountLabel(initialTimeInSeconds);
     }
 
+    /**
+     * Uppfærir tímann í leikborði og sýnir hann í leikborði
+     * @param timeInSeconds - tími í sekúndum
+     */
     protected void updateCountLabel(int timeInSeconds) {
         int minutes = timeInSeconds / 60;
         int seconds = timeInSeconds % 60;
         fxTimi.setText(String.format("%02d:%02d", minutes, seconds));
     }
 
+    /**
+     * Uppfærir stig i leikborði
+     * @param points - stig
+     */
     public void updatePoints(int points) {
         if (points != 0) {
             String currentPointsText = fxStig.getText();
@@ -81,12 +103,22 @@ public class GoldController {
         }
     }
 
+    /**
+     * Ef leikmaður deyr í leikborði þá núllstillast stigin og tíminn.
+     * Alert gluggi kemur upp
+     * @param varstDrepinn - hvort leikmaður deyr í leikborði
+     */
     public void leikLokid(String varstDrepinn) {
         leikur.leikLokid();
         countUpTimeline.stop();
         Platform.runLater(() -> synaAlert(varstDrepinn));
     }
 
+    /**
+     * Alert gluggi kemur upp með skilaboð um að leiknum sé lokið, stigafjölda
+     * og tíma
+     * @param s
+     */
     private void synaAlert(String s) {
         int currentTime = initialTimeInSeconds;
         if (Integer.parseInt(fxStig.getText()) > haestaStig) {
@@ -97,9 +129,6 @@ public class GoldController {
 
         Optional<ButtonType> u = alert.showAndWait();
 
-        // ætti mögulega að vera frekar að velja ef
-        // ekkicancelbutton on þá er farið í nýjan
-        // leik en það er þá bara seinna
         if (u.get().getButtonData().isCancelButton()) {
             hreinsaBord();
             updatePoints(0);
@@ -111,13 +140,26 @@ public class GoldController {
         }
     }
 
+    /**
+     * Skilar leikborði
+     * @return leikbord
+     */
     public Leikbord getLeikbord() {
         return leikbord;
     }
 
+    /**
+     * Eyðir öllu af leikborði
+     */
     public void hreinsaBord() {
         leikbord.hreinsaBord();
     }
+
+    /**
+     * Stillir tímann á rétt snið
+     * @param timeInSeconds - tími í sekúndum
+     * @return tíminn á réttu sniði
+     */
     private String formatTime(int timeInSeconds) {
         int minutes = timeInSeconds / 60;
         int seconds = timeInSeconds % 60;

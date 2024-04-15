@@ -13,6 +13,13 @@ public class AdvorunDialog extends Alert {
     public static final ButtonType HTYPE = new ButtonType(AFTUR_A_FORSIDU,
             ButtonBar.ButtonData.CANCEL_CLOSE); // ButtonType er merktur með CANCEL_CLOSE (er enum);
 
+    /**
+     * Smiður til að setja upp aðvörun
+     *
+     * @param titill - titill aðvörunar
+     * @param haus - haus aðvörunar
+     * @param spurning - spurning aðvörunar
+     */
     public AdvorunDialog(String titill, String haus, String spurning){
         super(AlertType.NONE, spurning, BTYPE, HTYPE);
         setTitle(titill);

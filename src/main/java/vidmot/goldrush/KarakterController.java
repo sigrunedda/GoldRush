@@ -1,17 +1,21 @@
 package vidmot.goldrush;
 
-/**
- * @author Sylvía Tyrfingsdóttir
- * Póstur : sht15@hi.is
- * Lýsing :
- */
+
 public class KarakterController {
     private String selectedCharacter;
 
+    /**
+     * Skilar hvaða karakter er valin
+     * @return valinn karakter
+     */
     public String getSelectedCharacter() {
         return selectedCharacter;
     }
 
+    /**
+     * Setter fyrir valinn karakter
+     * @param selectedCharacter
+     */
     public void setSelectedCharacter(String selectedCharacter) {
         this.selectedCharacter = selectedCharacter;
     }

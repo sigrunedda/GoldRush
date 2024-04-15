@@ -7,6 +7,10 @@ import javafx.scene.shape.Rectangle;
 import java.util.Objects;
 
 public class Gull extends Rectangle {
+
+    /**
+     * Smiður til að setja mynd á "gullið"
+     */
     public Gull(){
         setWidth(30);
         setHeight(30);
