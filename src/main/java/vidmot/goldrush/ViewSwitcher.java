@@ -11,7 +11,6 @@ import java.util.Map;
 public class ViewSwitcher {
 
     private static final Map<View, Parent> cache = new HashMap<>();
-    // viðbót fyrir controllers
     private static final Map<View, Object> controllers = new HashMap<>();
     private static Scene scene;
     private static View lastView;
@@ -21,6 +20,9 @@ public class ViewSwitcher {
         ViewSwitcher.scene = scene;
     }
 
+    /**
+     * Færir notandann á milli mismunandi valmynda/fxml skráa
+     */
     public static void switchTo(View view){
         if (scene == null){
             System.out.println("No scene set");
@@ -48,10 +50,16 @@ public class ViewSwitcher {
         }
     }
 
+    /**
+     * Flettir upp hvaða fxml skrá notandinn er á
+     */
     public static Object lookup(View v) {
         return controllers.get(v);
     }
-
+    /**
+     * Flettir upp hvaða fxml skrá notandinn var síðast á
+     * @return síðasta fxml skráin
+     */
     public static View getLastView() {
         return lastView;
     }
