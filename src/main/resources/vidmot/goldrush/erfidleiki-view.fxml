@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="vidmot.goldrush.ErfidleikiController"
-            prefHeight="400.0" prefWidth="600.0">
-    <Button layoutX="108.0" layoutY="200.0" mnemonicParsing="false" onAction="#onAudvelt" prefHeight="46.0" prefWidth="148.0" text="Auðvelt">
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.goldrush.ErfidleikiController">
+    <Text layoutX="103.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titill" text="Veldu erfiðleikastig" textAlignment="CENTER" wrappingWidth="393.4700927734375">
+        <font>
+            <Font name="Lucida Console" size="30.0" />
+        </font>
+    </Text>
+    <Button layoutX="109.0" layoutY="175.0" mnemonicParsing="false" onAction="#onAudvelt" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Auðvelt">
         <font>
             <Font name="Lucida Console" size="14.0" />
         </font>
     </Button>
-    <Button layoutX="220.0" layoutY="200.0" mnemonicParsing="false" onAction="#onMidlungs" prefHeight="46.0" prefWidth="148.0" text="Miðlungs">
+    <Button layoutX="241.0" layoutY="175.0" mnemonicParsing="false" onAction="#onMidlungs" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #FFC107; -fx-text-fill: white;" text="Miðlungs">
         <font>
             <Font name="Lucida Console" size="14.0" />
         </font>
     </Button>
-    <Button layoutX="359.0" layoutY="200.0" mnemonicParsing="false" onAction="#onErfitt" prefHeight="46.0" prefWidth="148.0" text="Erfitt">
+    <Button layoutX="371.0" layoutY="175.0" mnemonicParsing="false" onAction="#onErfitt" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #F44336; -fx-text-fill: white;" text="Erfitt">
         <font>
             <Font name="Lucida Console" size="14.0" />
         </font>
     </Button>
-    <Button layoutX="108.0" layoutY="340.0" mnemonicParsing="false" onAction="#onTilbaka" prefHeight="46.0" prefWidth="148.0" text="&lt;- TIL BAKA">
+    <Button layoutX="227.0" layoutY="278.0" mnemonicParsing="false" onAction="#onTilbaka" prefHeight="46.0" prefWidth="148.0" style="-fx-background-color: #FFD700 ; -fx-text-fill: black;" text="&lt;- TIL BAKA" textAlignment="CENTER">
         <font>
             <Font name="Lucida Console" size="14.0" />
         </font>

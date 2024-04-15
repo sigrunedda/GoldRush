@@ -9,36 +9,36 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.goldrush.Karakter">
    <children>
-      <Text layoutX="194.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veldu leikmann" wrappingWidth="211.4700927734375">
+      <Text layoutX="150.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titill" text="Veldu leikmann" textAlignment="CENTER" wrappingWidth="296.4700927734375">
          <font>
-            <Font name="Lucida Console" size="25.0" />
+            <Font name="Lucida Console" size="30.0" />
          </font>
       </Text>
-      <ImageView fitHeight="126.0" fitWidth="73.0" layoutX="52.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="126.0" fitWidth="73.0" layoutX="50.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@myndir/Daisy.png" />
          </image>
       </ImageView>
-      <Button fx:id="daisy" layoutX="62.0" layoutY="266.0" mnemonicParsing="false" onAction="#onDaisy" text="Daisy" />
-      <ImageView fitHeight="109.0" fitWidth="90.0" layoutX="182.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+      <Button fx:id="daisy" layoutX="60.0" layoutY="258.0" mnemonicParsing="false" onAction="#onDaisy" style="-fx-background-color: #CD853F; -fx-text-fill: white;" text="Daisy" />
+      <ImageView fitHeight="109.0" fitWidth="90.0" layoutX="180.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@myndir/Mario.png" />
          </image>
       </ImageView>
-      <Button fx:id="mario" layoutX="198.0" layoutY="266.0" mnemonicParsing="false" onAction="#onMario" text="Mario" />
-      <ImageView fitHeight="126.0" fitWidth="85.0" layoutX="323.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true">
+      <Button fx:id="mario" layoutX="196.0" layoutY="258.0" mnemonicParsing="false" onAction="#onMario" style="-fx-background-color: #FF6347 ; -fx-text-fill: white;" text="Mario" />
+      <ImageView fitHeight="126.0" fitWidth="85.0" layoutX="321.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@myndir/Peach.png" />
          </image>
       </ImageView>
-      <Button fx:id="peach" layoutX="333.0" layoutY="266.0" mnemonicParsing="false" onAction="#onPeach" text="Peach" />
-      <ImageView fitHeight="132.0" fitWidth="91.0" layoutX="461.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
+      <Button fx:id="peach" layoutX="331.0" layoutY="258.0" mnemonicParsing="false" onAction="#onPeach" style="-fx-background-color: #FFC0CB; -fx-text-fill: white;" text="Peach" />
+      <ImageView fitHeight="132.0" fitWidth="91.0" layoutX="459.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@myndir/Luigi.png" />
          </image>
       </ImageView>
-      <Button fx:id="luigi" layoutX="481.0" layoutY="266.0" mnemonicParsing="false" onAction="#onLuigi" text="Luigi" />
-      <Button layoutX="108.0" layoutY="340.0" mnemonicParsing="false" onAction="#onTilbaka" prefHeight="46.0" prefWidth="148.0" text="&lt;- TIL BAKA">
+      <Button fx:id="luigi" layoutX="479.0" layoutY="258.0" mnemonicParsing="false" onAction="#onLuigi" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Luigi" />
+      <Button layoutX="224.0" layoutY="314.0" mnemonicParsing="false" onAction="#onTilbaka" prefHeight="46.0" prefWidth="148.0" style="-fx-background-color: #FFD700 ; -fx-text-fill: black;" text="&lt;- TIL BAKA">
          <font>
             <Font name="Lucida Console" size="14.0" />
          </font>
