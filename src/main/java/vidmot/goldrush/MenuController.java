@@ -3,6 +3,10 @@ package vidmot.goldrush;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
+
+import java.util.Objects;
 
 public class MenuController {
     public MenuBar menuBar;
@@ -30,6 +34,10 @@ public class MenuController {
         alert.setContentText("Veldu OK til að hætta, eða Cancel til að halda áfram");
         ButtonType buttonOK = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
         alert.getButtonTypes().setAll(buttonOK, ButtonType.CANCEL);
+
+        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("myndir/Icon.jpg"))));
+
         alert.showAndWait().ifPresent(response -> {
             if (response == buttonOK) {
                 goldController.hreinsaBord();
@@ -53,6 +61,10 @@ public class MenuController {
         ButtonType buttonOK = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
         alert.getButtonTypes().setAll(buttonOK, ButtonType.CANCEL);
 
+        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("myndir/Icon.jpg"))));
+
+
         alert.showAndWait().ifPresent(response -> {
             if (response == buttonOK){
                 goldController.hreinsaBord();
@@ -74,6 +86,11 @@ public class MenuController {
         alert.setTitle("Um Forritið");
         alert.setHeaderText(null);
         alert.setContentText("Þetta er leikurinn Gold Rush. \nUnnið af: Sigrún Edda, Helga Björg, Kristín Fríða, Elma Karen og Sylvía Hanna \nÁrtal: 2024");
+
+        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("myndir/Icon.jpg"))));
+
+
         alert.showAndWait();
     }
 
