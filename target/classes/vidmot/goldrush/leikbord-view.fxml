@@ -2,6 +2,4 @@
 
 <?import javafx.scene.layout.Pane?>
 
-
-<fx:root fx:id="leikbord" prefHeight="300.0" prefWidth="600.0" id="leikbord" type="javafx.scene.layout.Pane" style="-fx-background-image: url(myndir/Bakgrunnur.png); -fx-background-size: cover; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
-</fx:root>
+<fx:root id="leikbord" fx:id="leikbord" prefHeight="300.0" prefWidth="600.0" type="javafx.scene.layout.Pane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" />
