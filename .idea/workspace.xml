@@ -6,20 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="8e7fbf34-9b44-47f2-87e8-9b9e2d45d50f" name="Changes" comment="Lagaði 8-bit textann ofl.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/ErfidleikiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/ErfidleikiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/GoldController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/GoldController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Karakter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Karakter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Leikbord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Leikbord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Leikreglur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Leikreglur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Ovinur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/Ovinur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/ViewSwitcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidmot/goldrush/ViewSwitcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/grafari-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/grafari-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/gull-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/gull-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/karakter-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/karakter-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/leikreglur-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/leikreglur-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/menu-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/menu-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/ovinur-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/ovinur-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/start-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/start-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/gold-rush-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/gold-rush-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/leikbord-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/leikbord-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/myndir/Bakgrunnur.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vidmot/goldrush/myndir/Bakgrunnur.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/GoldApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/GoldApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/GoldController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/GoldController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/Leikbord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/gold-rush-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/gold-rush-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/grafari-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/grafari-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/gull-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/gull-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/leikbord-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/leikbord-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vidmot/goldrush/menu-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vidmot/goldrush/menu-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,6 +141,7 @@
       <updated>1710764278084</updated>
       <workItem from="1713129406615" duration="356000" />
       <workItem from="1713179060651" duration="538000" />
+      <workItem from="1713216709327" duration="481000" />
     </task>
     <task id="LOCAL-00001" summary="prufa">
       <option name="closed" value="true" />
