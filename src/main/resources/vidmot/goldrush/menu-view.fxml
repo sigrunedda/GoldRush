@@ -14,7 +14,7 @@
     <Menu mnemonicParsing="false" text="Hjálp">
         <items>
             <RadioMenuItem fx:id="umforrit" mnemonicParsing="false" onAction="#onUmForritid" text="Um Forritið" />
-            <RadioMenuItem mnemonicParsing="false" onAction="#onLeikreglur" text="Leiðbeiningar" />
+            <RadioMenuItem fx:id="leikreglur" mnemonicParsing="false" onAction="#onLeikreglur" text="Leiðbeiningar" />
         </items>
     </Menu>
 </MenuBar>
