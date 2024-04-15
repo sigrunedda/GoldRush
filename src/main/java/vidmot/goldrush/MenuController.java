@@ -13,9 +13,16 @@ public class MenuController {
         this.goldController = goldController;
     }
 
+    @FXML
+    private RadioMenuItem nyrLeikur, lokaGlugga, umforrit, leikreglur;
 
     @FXML
-    public void onNyrLeikur() {
+    public void onNyrLeikur(ActionEvent event) {
+        RadioMenuItem menuItem = (RadioMenuItem) event.getSource();
+        if (menuItem.isSelected()){
+            nyrLeikur.setSelected(false);
+        }
+
         System.out.println("Nýr Leikur");
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Byrja upp á nýtt");
@@ -32,7 +39,12 @@ public class MenuController {
         });
     }
 
-    public void onLokaPressed() {
+    public void onLokaPressed(ActionEvent event) {
+        RadioMenuItem menuItem = (RadioMenuItem) event.getSource();
+        if (menuItem.isSelected()){
+            lokaGlugga.setSelected(false);
+        }
+
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Staðfesting til að hætta leik");
         alert.setHeaderText("Ertu viss um að þú viljir hætta?");
@@ -53,6 +65,11 @@ public class MenuController {
 
     @FXML
     private void onUmForritid(ActionEvent event){
+        RadioMenuItem menuItem = (RadioMenuItem) event.getSource();
+        if (menuItem.isSelected()){
+            umforrit.setSelected(false);
+        }
+
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Um Forritið");
         alert.setHeaderText(null);
@@ -62,6 +79,11 @@ public class MenuController {
 
     @FXML
     private void onLeikreglur(ActionEvent event){
+        RadioMenuItem menuItem = (RadioMenuItem) event.getSource();
+        if (menuItem.isSelected()){
+            leikreglur.setSelected(false);
+        }
+
         System.out.println("Leikreglur display!");
         ViewSwitcher.switchTo(View.LEIKREGLUR);
     }
