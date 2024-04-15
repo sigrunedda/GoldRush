@@ -94,7 +94,7 @@ public class GoldController {
             haestaStig = Integer.parseInt(fxStig.getText());
         }
         Alert alert = new AdvorunDialog("Leik lokið", s, "Stigin þín: " + fxStig.getText() + " | Hæsti stigafjöldi: " + haestaStig +
-                "\nTimi:   " + formatTime(currentTime) + " | Tíminn þegar hæsta stigafjölda var náð: " + formatTime(haestaStigTime));
+                "\nTiminn þinn: " + formatTime(currentTime));
 
         Optional<ButtonType> u = alert.showAndWait();
 
