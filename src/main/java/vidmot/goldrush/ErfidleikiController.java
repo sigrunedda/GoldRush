@@ -6,8 +6,8 @@ public class ErfidleikiController {
 
     private int fjoldiOvina;
     @FXML
-    private Leikbord leikbord;
-    private static ErfidleikiController instance = new ErfidleikiController();
+    private final Leikbord leikbord;
+    private static final ErfidleikiController instance = new ErfidleikiController();
 
     public ErfidleikiController() {
         this.leikbord = new Leikbord();

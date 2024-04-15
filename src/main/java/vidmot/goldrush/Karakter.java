@@ -5,10 +5,6 @@ import javafx.fxml.FXML;
 public class Karakter {
 
     private final KarakterController karController = KarakterController.getInstance();
-
-    @FXML
-    private final Grafari grafari = new Grafari();
-
     @FXML
     private void onDaisy(){
         System.out.println("Daisy valin!");

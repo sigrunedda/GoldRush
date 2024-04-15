@@ -13,7 +13,7 @@
     </top>
 
     <center>
-        <Leikbord fx:id="leikbord"/>
+        <Leikbord fx:id="leikbord" />
     </center>
 
     <bottom>
@@ -29,7 +29,7 @@
                     <Insets right="100.0"/>
                 </HBox.margin>
             </Label>
-            <Label alignment="CENTER" prefHeight="34.0" prefWidth="77.0" text="Tíminn þinn :">
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="90.0" text="Tíminn þinn :">
                 <HBox.margin>
                     <Insets right="50.0"/>
                 </HBox.margin>
