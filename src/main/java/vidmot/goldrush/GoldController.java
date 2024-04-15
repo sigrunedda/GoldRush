@@ -21,7 +21,6 @@ public class GoldController {
     private Label fxTimi;
     @FXML
     private Label fxStig;
-    private int haestaStigTime = 0;
     private int haestaStig = 0;
     private Timeline countUpTimeline;
     private int initialTimeInSeconds = 0;
@@ -73,7 +72,7 @@ public class GoldController {
 
             if (newPoints > haestaStig) {
                 haestaStig = newPoints;
-                haestaStigTime = initialTimeInSeconds + 1;
+                int haestaStigTime = initialTimeInSeconds + 1;
             }
 
             fxStig.setText(String.valueOf(newPoints));
