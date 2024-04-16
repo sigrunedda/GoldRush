@@ -3,6 +3,10 @@
 
 target
 .idea
+/target/
+/.idea/
+.vscode/
+
 
 # Project exclude paths
 /target/
