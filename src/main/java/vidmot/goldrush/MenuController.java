@@ -8,11 +8,11 @@ import javafx.stage.Stage;
 
 import java.util.Objects;
 /**
- * Klassinn sér um menubar fyrir ofan leikborðið
+ * Klasinn sér um menubar fyrir ofan leikborðið
  */
 public class MenuController {
     public MenuBar menuBar;
-    
+
     @FXML
     private GoldController goldController;
     /**
@@ -25,8 +25,8 @@ public class MenuController {
     @FXML
     private RadioMenuItem nyrLeikur, lokaGlugga, umforrit, leikreglur;
     /**
-     * Ef að Nýr leikur er valið, sem er undir Skrá þá fer notandinn aftur í valmyndina fyrir erfiðleikastig
-     * og það er hreinsað borðið
+     * Ef Nýr leikur er valið, sem er undir Skrá þá fer notandinn aftur í valmyndina fyrir erfiðleikastig
+     * og borðið er hreinsað
      */
     @FXML
     public void onNyrLeikur(ActionEvent event) {
@@ -55,7 +55,7 @@ public class MenuController {
         });
     }
     /**
-     * Ef að Loka er valið, sem er undir Skrá þá fer notandinn aftur í valmyndina start og það er hreinsað borðið
+     * Ef Loka er valið, sem er undir Skrá þá fer notandinn aftur í valmyndina start og borðið er hreinsað
      */
     public void onLokaPressed(ActionEvent event) {
         RadioMenuItem menuItem = (RadioMenuItem) event.getSource();
@@ -85,7 +85,7 @@ public class MenuController {
         });
     }
     /**
-     * Ef að Um forritið er valið, sem er undir Hjálp þá birtist upplýsinga alert sem segir notandanum
+     * Ef Um forritið er valið, sem er undir Hjálp þá birtist upplýsinga alert sem segir notandanum
      * hver bjó til leikinn
      */
     @FXML
@@ -107,7 +107,7 @@ public class MenuController {
         alert.showAndWait();
     }
     /**
-     * Ef að Leikreglur er valið, sem er undir Hjálp þá birtist leikreglur-view.fxml sem segir notandanum hvernig
+     * Ef Leikreglur er valið, sem er undir Hjálp þá birtist leikreglur-view.fxml sem segir notandanum hvernig
      * leikurinn virkar
      */
     @FXML

@@ -20,7 +20,7 @@ public class StartController {
         ViewSwitcher.switchTo(View.ERFIDLEIKI);
     }
     /**
-     * Ef að Leikreglur er valið þá er breytt yfir í leikreglur-view.fxml og notandinn getur lesið um leikreglur
+     * Ef Leikreglur er valið þá er breytt yfir í leikreglur-view.fxml og notandinn getur lesið um leikreglur
      */
 
     @FXML
@@ -29,7 +29,7 @@ public class StartController {
         ViewSwitcher.switchTo(View.LEIKREGLUR);
     }
     /**
-     * Ef að Hætta er valið þá birtist alert sem býður notandanum að loka forritinu
+     * Ef Hætta er valið þá birtist alert sem býður notandanum að loka forritinu
      */
     @FXML
     private void onHaettaLeik(){
