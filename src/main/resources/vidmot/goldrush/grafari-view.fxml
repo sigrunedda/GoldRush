@@ -2,7 +2,7 @@
 
 <?import javafx.scene.shape.Rectangle?>
 
-<fx:root height="50" width="36" layoutX="50" layoutY="50"
+<fx:root height="37" width="27" layoutX="50" layoutY="50"
          type="javafx.scene.shape.Rectangle" xmlns="http://javafx.com/javafx/17.0.2-ea"
          xmlns:fx="http://javafx.com/fxml/1">
 </fx:root>

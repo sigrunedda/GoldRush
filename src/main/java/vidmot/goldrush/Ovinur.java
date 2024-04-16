@@ -17,8 +17,8 @@ public class Ovinur extends Rectangle {
     private final Rectangle collisionBox;
 
     public Ovinur() {
-        setWidth(50);
-        setHeight(80);
+        setWidth(76);
+        setHeight(68);
         Image Star = new Image(Objects.requireNonNull(getClass().getResourceAsStream("myndir/Ovinur.png")));
         setFill(new ImagePattern(Star));
         random = new Random();
@@ -26,8 +26,8 @@ public class Ovinur extends Rectangle {
         byrjaHreyfingu();
 
         collisionBox = new Rectangle();
-        collisionBox.setWidth(30);
-        collisionBox.setHeight(50);
+        collisionBox.setWidth(40);
+        collisionBox.setHeight(40);
     }
 
     private void byrjaHreyfingu() {
