@@ -9,71 +9,52 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-      prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="vidmot.goldrush.Leikreglur">
-   <Label alignment="CENTER" layoutX="196.0" layoutY="14.0" prefHeight="56.0" prefWidth="208.0" styleClass="titill"
-          text="Leikreglur">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.goldrush.Leikreglur">
+   <Label alignment="CENTER" layoutX="196.0" layoutY="14.0" prefHeight="56.0" prefWidth="208.0" styleClass="titill" text="Leikreglur">
       <font>
-         <Font name="Lucida Console" size="19.0"/>
+         <Font name="Lucida Console" size="19.0" />
       </font>
    </Label>
-   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5f5f500" height="144.0" layoutX="27.0" layoutY="70.0"
-              stroke="BLACK" strokeType="INSIDE" width="169.0"/>
-   <Text styleClass="texti" layoutX="34.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0"
-         text="1. Þegar leikur er hafinn er gefið val um þrjú erfiðleikastig:" wrappingWidth="154.33334350585938">
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5f5f500" height="144.0" layoutX="27.0" layoutY="70.0" stroke="BLACK" strokeType="INSIDE" width="169.0" />
+   <Text layoutX="34.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texti" text="1. Þegar leikur er hafinn er gefið val um þrjú erfiðleikastig:" wrappingWidth="154.33334350585938">
       <font>
-         <Font name="Lucida Console" size="12.0"/>
+         <Font name="Lucida Console" size="12.0" />
       </font>
    </Text>
-   <Text styleClass="texti" layoutX="34.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0"
-         text="Auðvelt - Einn óvinur Miðlungs - Tveir óvinir Erfitt - Þrír óvinir" wrappingWidth="154.33334350585938">
+   <Text layoutX="34.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texti" text="Auðvelt - Einn óvinur Miðlungs - Tveir óvinir Erfitt - Þrír óvinir" wrappingWidth="154.33334350585938">
       <font>
-         <Font name="Lucida Console" size="12.0"/>
+         <Font name="Lucida Console" size="12.0" />
       </font>
    </Text>
-   <ImageView fitHeight="103.0" fitWidth="169.0" layoutX="60.0" layoutY="246.0" pickOnBounds="true"
-              preserveRatio="true">
-      <Image url="@myndir/Star1.png"/>
+   <ImageView fitHeight="103.0" fitWidth="169.0" layoutX="57.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@myndir/Star1.png" />
    </ImageView>
-   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5f5f500" height="120.0" layoutX="214.0" layoutY="206.0"
-              stroke="BLACK" strokeType="INSIDE" width="169.0"/>
-   <Text styleClass="texti" layoutX="221.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0"
-         text="2. Næst velur notandi á milli fjögurra karaktera. Þegar smellt er á takkann fyrir neðan valinn karakter opnast leikborðið og leikurinn hefst."
-         wrappingWidth="154.33334350585938">
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5f5f500" height="120.0" layoutX="214.0" layoutY="206.0" stroke="BLACK" strokeType="INSIDE" width="169.0" />
+   <Text layoutX="221.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texti" text="2. Næst velur notandi á milli fjögurra karaktera. Þegar smellt er á takkann fyrir neðan valinn karakter opnast leikborðið og leikurinn hefst." wrappingWidth="154.33334350585938">
       <font>
-         <Font name="Lucida Console" size="12.0"/>
+         <Font name="Lucida Console" size="12.0" />
       </font>
    </Text>
-   <ImageView fitHeight="72.0" fitWidth="57.0" layoutX="216.0" layoutY="78.0" pickOnBounds="true"
-              preserveRatio="true">
-      <Image url="@myndir/Daisy.png"/>
+   <ImageView fitHeight="72.0" fitWidth="57.0" layoutX="225.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@myndir/Daisy.png" />
    </ImageView>
-   <ImageView fitHeight="72.0" fitWidth="57.0" layoutX="283.0" layoutY="78.0" pickOnBounds="true"
-              preserveRatio="true">
-      <Image url="@myndir/Mario.png"/>
+   <ImageView fitHeight="72.0" fitWidth="57.0" layoutX="292.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@myndir/Mario.png" />
    </ImageView>
-   <ImageView fitHeight="72.0" fitWidth="57.0" layoutX="257.0" layoutY="124.0" pickOnBounds="true"
-              preserveRatio="true">
-      <Image url="@myndir/Peach.png"/>
+   <ImageView fitHeight="72.0" fitWidth="57.0" layoutX="257.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@myndir/Peach.png" />
    </ImageView>
-   <ImageView fitHeight="72.0" fitWidth="57.0" layoutX="329.0" layoutY="124.0" pickOnBounds="true"
-              preserveRatio="true">
-      <Image url="@myndir/Luigi.png"/>
+   <ImageView fitHeight="72.0" fitWidth="57.0" layoutX="324.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@myndir/Luigi.png" />
    </ImageView>
-   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5f5f500" height="164.0" layoutX="404.0" layoutY="70.0"
-              stroke="BLACK" strokeType="INSIDE" width="169.0"/>
-   <Text styleClass="texti" layoutX="411.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0"
-         text="3. Markmið leiksins er að ná eins mörgum stjörnum og hægt er á sem skemmstum tíma án þess að rekast í Bowser. Leik lýkur þegar Bowser snertir leikmann. Þá býðst notanda að reyna aftur eða að hætta leik."
-         wrappingWidth="154.33334350585938">
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5f5f500" height="164.0" layoutX="404.0" layoutY="70.0" stroke="BLACK" strokeType="INSIDE" width="169.0" />
+   <Text layoutX="411.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texti" text="3. Markmið leiksins er að ná eins mörgum stjörnum og hægt er á sem skemmstum tíma án þess að rekast í Bowser. Leik lýkur þegar Bowser snertir leikmann. Þá býðst notanda að reyna aftur eða að hætta leik." wrappingWidth="154.33334350585938">
       <font>
-         <Font name="Lucida Console" size="12.0"/>
+         <Font name="Lucida Console" size="12.0" />
       </font>
    </Text>
-   <ImageView fitHeight="103.0" fitWidth="169.0" layoutX="437.0" layoutY="246.0" pickOnBounds="true"
-              preserveRatio="true">
-      <Image url="@myndir/Ovinur.png"/>
+   <ImageView fitHeight="103.0" fitWidth="169.0" layoutX="430.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@myndir/Ovinur.png" />
    </ImageView>
-   <Button layoutX="268.0" layoutY="342.0" mnemonicParsing="false" onAction="#onHeim"
-           style="-fx-background-color: #FFD700 ; -fx-text-fill: black;" text="Til baka"/>
+   <Button layoutX="268.0" layoutY="342.0" mnemonicParsing="false" onAction="#onHeim" style="-fx-background-color: #FFD700 ; -fx-text-fill: black;" text="Til baka" />
 </Pane>

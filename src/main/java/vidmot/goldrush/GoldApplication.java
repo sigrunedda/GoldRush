@@ -31,8 +31,11 @@ public class GoldApplication extends Application {
                          .button, .texti, .label {
                            -fx-font-family: 'Pixeloid Sans';
                          }
-                         .titill {
+                         .titill, .gameBar {
                            -fx-font-family: 'Pixeloid Sans Bold';
+                         }
+                         .gameBar {
+                           -fx-text-fill: white;
                          }
                          """;
         File cssFile = File.createTempFile("demo", "css");
