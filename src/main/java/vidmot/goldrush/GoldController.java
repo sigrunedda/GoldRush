@@ -107,7 +107,7 @@ public class GoldController {
     }
 
     /**
-     * Ef leikmaður deyr í leikborði þá núllstillast stigin og tíminn.
+     * Ef leikmaður deyr á leikborði núllstillast stigin og tíminn.
      * Alert gluggi kemur upp
      * @param varstDrepinn - hvort leikmaður deyr í leikborði
      */
