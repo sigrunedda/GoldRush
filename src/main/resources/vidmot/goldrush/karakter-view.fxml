@@ -16,7 +16,7 @@
          <Font name="Lucida Console" size="30.0"/>
       </font>
    </Text>
-   <ImageView fitHeight="126.0" fitWidth="73.0" layoutX="50.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+   <ImageView fitHeight="109.0" fitWidth="90.0" layoutX="50.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
       <Image url="@myndir/Daisy.png"/>
    </ImageView>
    <Button layoutX="60.0" layoutY="258.0" mnemonicParsing="false" onAction="#onDaisy"
@@ -27,13 +27,13 @@
    </ImageView>
    <Button layoutX="196.0" layoutY="258.0" mnemonicParsing="false" onAction="#onMario"
            style="-fx-background-color: #FF6347 ; -fx-text-fill: white;" text="Mario"/>
-   <ImageView fitHeight="126.0" fitWidth="85.0" layoutX="321.0" layoutY="118.0" pickOnBounds="true"
+   <ImageView fitHeight="109.0" fitWidth="90.0" layoutX="321.0" layoutY="118.0" pickOnBounds="true"
               preserveRatio="true">
       <Image url="@myndir/Peach.png"/>
    </ImageView>
    <Button layoutX="331.0" layoutY="258.0" mnemonicParsing="false" onAction="#onPeach"
            style="-fx-background-color: #FFC0CB; -fx-text-fill: white;" text="Peach"/>
-   <ImageView fitHeight="132.0" fitWidth="91.0" layoutX="459.0" layoutY="121.0" pickOnBounds="true"
+   <ImageView fitHeight="109.0" fitWidth="90.0" layoutX="459.0" layoutY="121.0" pickOnBounds="true"
               preserveRatio="true">
       <Image url="@myndir/Luigi.png"/>
    </ImageView>
