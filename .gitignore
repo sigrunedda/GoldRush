@@ -3,4 +3,8 @@
 
 target
 .idea
+/target/
+/.idea/
+.vscode/
+
 
