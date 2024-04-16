@@ -17,7 +17,7 @@
     <center>
         <Leikbord fx:id="leikbord">
          <children>
-            <ImageView fitHeight="345.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="380.0" fitWidth="1250.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@myndir/Bakgrunnur.png" />
                </image>
