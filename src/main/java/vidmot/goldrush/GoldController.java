@@ -8,9 +8,12 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import vinnsla.goldrush.Leikur;
 
+import java.util.Objects;
 import java.util.Optional;
 
 public class GoldController {
@@ -126,6 +129,9 @@ public class GoldController {
         }
         Alert alert = new AdvorunDialog("Leik lokið", s, "Stigin þín: " + fxStig.getText() + " | Hæsti stigafjöldi: " + haestaStig +
                 "\nTiminn þinn: " + formatTime(currentTime));
+
+        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("myndir/Icon.jpg"))));
 
         Optional<ButtonType> u = alert.showAndWait();
 
