@@ -1,5 +1,6 @@
 package vidmot.goldrush;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -91,26 +92,28 @@ public class GoldController {
      */
     private void synaAlert(String s) {
         int currentTime = klukka.getCurrentTimeInSeconds();
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Leik lokið");
-        alert.setHeaderText(s);
-        alert.setContentText("Stigin þín: " + fxStig.getText() + " | Hæsti stigafjöldi: " + haestaStig +
-                "\nTiminn þinn: " + formatTime(currentTime));
+        Platform.runLater(() ->{
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Leik lokið");
+            alert.setHeaderText(s);
+            alert.setContentText("Stigin þín: " + fxStig.getText() + " | Hæsti stigafjöldi: " + haestaStig +
+                    "\nTiminn þinn: " + formatTime(currentTime));
 
-        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-        stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("myndir/Icon.jpg"))));
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("myndir/Icon.jpg"))));
 
-        Optional<ButtonType> result = alert.showAndWait();
+            Optional<ButtonType> result = alert.showAndWait();
 
-        if (result.isPresent() && result.get() == ButtonType.OK) {
-            hreinsaBord();
-            updatePoints(0);
-            ViewSwitcher.switchTo(View.START);
-        } else {
-            hreinsaBord();
-            leikbord.hefjaAfram();
-            updatePoints(0);
-        }
+            if (result.isPresent() && result.get() == ButtonType.OK) {
+                hreinsaBord();
+                updatePoints(0);
+                ViewSwitcher.switchTo(View.START);
+            } else {
+                hreinsaBord();
+                leikbord.hefjaAfram();
+                updatePoints(0);
+            }
+        });
     }
 
     /**
