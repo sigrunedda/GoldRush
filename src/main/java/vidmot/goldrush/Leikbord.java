@@ -95,6 +95,7 @@ public class Leikbord extends Pane {
             @Override
             public void handle(long l) {
                 ovinurDrepur();
+                updateGrafariPosition();
             }
         };
         gameLoop.start();
@@ -228,7 +229,6 @@ public class Leikbord extends Pane {
         if (gulls.isEmpty() && gullGrafid) {
             dropGull();
         }
-        updateGrafariPosition();
     }
 
     /**
