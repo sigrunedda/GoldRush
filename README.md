@@ -1,10 +1,20 @@
 # Version 1.0
 
-Verkefnið er endurbætt útgáfa af GoldRush í Viðmótsforritun vorið 2024. 
-Leikur var uppáhalds verkefnið hjá öllum þar sem hann gefur marga möguleika á að bæta við auka virknum sem gera leikinn skemmtilegri og fjölbreytnari.
+Verkefnið er endurbætt útgáfa af GoldRush. Sá leikur var uppáhalds verkefnið hjá öllum þar sem hann gefur marga 
+möguleika á að bæta við auka virkni sem gerir leikinn skemmtilegri og fjölbreytnari, og voru því allir sammála 
+hvaða verkefni yrði valið.
+
+Þetta verkefnið var frábrugðið hinum verkefnunum þar sem það var tölvuleikur og meira gagnvirkt en hin verkefnin. 
+Við höfum allar mismunandi reynslur af tölvuleikjum og því viljum við prófa að útfæra leik á okkar hátt. 
+Við vorum komnar með góðan grunn til að vinna með og því skemmtilegra að hugsa um hvernig við getum bætt 
+við leikinn til að gera upplifunina fyrir notandann enn skemmtilegri. Viðmótið sjálft var með mestu möguleikana
+til að betrumbæta leikinn.
+
 **Allar grunnkröfurnar eru þær sömu en þó nokkrar viðbætur:**
 - Hægt er að velja mismunandi persónur sem uppfylla hlutverk grafarans.
+- Hægt er að velja erfiðleikastig sem hefur áhrif á hversu margir óvinir birtast.
 - Óvinur sem endar leikinn ef grafarinn rekst á hann.
+- Breytt var leikjatímanum þar sem hann telur ekki lengur niður heldur telur áfram þangað til þú rekst á óvininn eða hættir í leik.
   
 ## **Maven uppsetning**
    ### Maven Compiler Plugin:
