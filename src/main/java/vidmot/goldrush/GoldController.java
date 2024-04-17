@@ -93,10 +93,7 @@ public class GoldController {
     private void synaAlert(String s) {
         int currentTime = klukka.getCurrentTimeInSeconds();
         Platform.runLater(() ->{
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Leik lokið");
-            alert.setHeaderText(s);
-            alert.setContentText("Stigin þín: " + fxStig.getText() + " | Hæsti stigafjöldi: " + haestaStig +
+            AdvorunDialog alert = new AdvorunDialog("Leik lokið", s, "Stigin þín: " + fxStig.getText() + " | Hæsti stigafjöldi: " + haestaStig +
                     "\nTiminn þinn: " + formatTime(currentTime));
 
             Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
@@ -104,14 +101,14 @@ public class GoldController {
 
             Optional<ButtonType> result = alert.showAndWait();
 
-            if (result.isPresent() && result.get() == ButtonType.OK) {
-                hreinsaBord();
-                updatePoints(0);
-                ViewSwitcher.switchTo(View.START);
-            } else {
+            if (result.isPresent() && result.get() == AdvorunDialog.BTYPE) {
                 hreinsaBord();
                 leikbord.hefjaAfram();
                 updatePoints(0);
+            } else {
+                hreinsaBord();
+                updatePoints(0);
+                ViewSwitcher.switchTo(View.START);
             }
         });
     }
