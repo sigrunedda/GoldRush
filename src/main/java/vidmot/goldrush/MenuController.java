@@ -78,7 +78,6 @@ public class MenuController {
         alert.showAndWait().ifPresent(response -> {
             if (response == buttonOK){
                 goldController.hreinsaBord();
-                goldController.updateCountLabel(0);
                 goldController.updatePoints(0);
                 ViewSwitcher.switchTo(View.START);
             }

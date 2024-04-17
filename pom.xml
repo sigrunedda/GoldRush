@@ -7,14 +7,34 @@
     <groupId>vidmot</groupId>
     <artifactId>GoldRush</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <name>GoldRush</name>
+    <licenses>
+        <license>
+            <name>MIT</name>
+        </license>
+    </licenses>
+    <organization>
+        <name>University of Iceland</name>
+        <url>https://www.hi.is</url>
+    </organization>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>5.10.0</junit.version>
+        <java.version>17</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.release>${java.version}</maven.compiler.release>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -70,6 +90,15 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <!-- Plugins from the other POM -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <mainClass>vidmot.goldrush/vidmot.goldrush.GoldApplication</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>

@@ -1,8 +1,5 @@
 package vidmot.goldrush;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -10,7 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import javafx.util.Duration;
+import vinnsla.goldrush.Klukka;
 import vinnsla.goldrush.Leikur;
 
 import java.util.Objects;
@@ -25,11 +22,10 @@ public class GoldController {
     @FXML
     private Label fxStig;
     private int haestaStig = 0;
-    private Timeline countUpTimeline;
-    private int initialTimeInSeconds = 0;
     @FXML
     private Leikbord leikbord;
     private final Leikur leikur;
+    private Klukka klukka;
 
     /**
      * Smiður til að setja upp leikborð
@@ -47,42 +43,14 @@ public class GoldController {
     public void initialize() {
         menustyringController.setGoldController(this);
         leikbord.setGoldController(this);
-
+        klukka = new Klukka(this, fxTimi);
     }
 
     /**
      * Aðferð til að upphafsstilla tímann i leikborði
      */
     public void startCountUp() {
-        initialTimeInSeconds = 0;
-        updateCountLabel(initialTimeInSeconds);
-        if (countUpTimeline != null) {
-            countUpTimeline.stop();
-            countUpTimeline.getKeyFrames().clear();
-        }
-        countUpTimeline = new Timeline();
-        countUpTimeline.setCycleCount(Timeline.INDEFINITE);
-        KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), event -> updateCountUp());
-        countUpTimeline.getKeyFrames().add(keyFrame);
-        countUpTimeline.play();
-    }
-
-    /**
-     * Uppfærir tímann i leikborði
-     */
-    private void updateCountUp() {
-        initialTimeInSeconds++;
-        updateCountLabel(initialTimeInSeconds);
-    }
-
-    /**
-     * Uppfærir tímann í leikborði og sýnir hann í leikborði
-     * @param timeInSeconds - tími í sekúndum
-     */
-    protected void updateCountLabel(int timeInSeconds) {
-        int minutes = timeInSeconds / 60;
-        int seconds = timeInSeconds % 60;
-        fxTimi.setText(String.format("%02d:%02d", minutes, seconds));
+        klukka.startCountUp();
     }
 
     /**
@@ -97,7 +65,6 @@ public class GoldController {
 
             if (newPoints > haestaStig) {
                 haestaStig = newPoints;
-                int haestaStigTime = initialTimeInSeconds + 1;
             }
 
             fxStig.setText(String.valueOf(newPoints));
@@ -107,14 +74,14 @@ public class GoldController {
     }
 
     /**
-     * Ef leikmaður deyr á leikborði núllstillast stigin og tíminn.
+     * Ef leikmaður deyr í leikborði þá núllstillast stigin og tíminn.
      * Alert gluggi kemur upp
      * @param varstDrepinn - hvort leikmaður deyr í leikborði
      */
     public void leikLokid(String varstDrepinn) {
         leikur.leikLokid();
-        countUpTimeline.stop();
-        Platform.runLater(() -> synaAlert(varstDrepinn));
+        klukka.stopCountUp();
+        synaAlert(varstDrepinn);
     }
 
     /**
@@ -123,23 +90,23 @@ public class GoldController {
      * @param s
      */
     private void synaAlert(String s) {
-        int currentTime = initialTimeInSeconds;
-        if (Integer.parseInt(fxStig.getText()) > haestaStig) {
-            haestaStig = Integer.parseInt(fxStig.getText());
-        }
-        Alert alert = new AdvorunDialog("Leik lokið", s, "Stigin þín: " + fxStig.getText() + " | Hæsti stigafjöldi: " + haestaStig +
+        int currentTime = klukka.getCurrentTimeInSeconds();
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Leik lokið");
+        alert.setHeaderText(s);
+        alert.setContentText("Stigin þín: " + fxStig.getText() + " | Hæsti stigafjöldi: " + haestaStig +
                 "\nTiminn þinn: " + formatTime(currentTime));
 
         Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
         stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("myndir/Icon.jpg"))));
 
-        Optional<ButtonType> u = alert.showAndWait();
+        Optional<ButtonType> result = alert.showAndWait();
 
-        if (u.get().getButtonData().isCancelButton()) {
+        if (result.isPresent() && result.get() == ButtonType.OK) {
             hreinsaBord();
             updatePoints(0);
             ViewSwitcher.switchTo(View.START);
-        } else if (u.get().getButtonData().isDefaultButton()) {
+        } else {
             hreinsaBord();
             leikbord.hefjaAfram();
             updatePoints(0);
