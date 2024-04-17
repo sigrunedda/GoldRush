@@ -1,6 +1,21 @@
-# Default ignored files
-/workspace.xml
+# Project exclude paths
+/target/
+/.idea/
+.vscode/
+.settings/
+.project
+.classpath
 
-target
-.idea
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
 
+### IntelliJ IDEA ###
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
+*.iml
+*.ipr

@@ -26,7 +26,7 @@
             <Font name="Lucida Console" size="14.0" />
         </font>
     </Button>
-    <Button layoutX="227.0" layoutY="278.0" mnemonicParsing="false" onAction="#onTilbaka" prefHeight="46.0" prefWidth="148.0" style="-fx-background-color: #FFD700 ; -fx-text-fill: black;" text="&lt;- TIL BAKA" textAlignment="CENTER">
+    <Button layoutX="224.0" layoutY="314.0" mnemonicParsing="false" onAction="#onTilbaka" prefHeight="46.0" prefWidth="148.0" style="-fx-background-color: #FFD700 ; -fx-text-fill: black;" text="&lt;- TIL BAKA">
         <font>
             <Font name="Lucida Console" size="14.0" />
         </font>

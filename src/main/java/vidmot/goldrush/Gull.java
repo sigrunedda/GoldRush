@@ -12,8 +12,8 @@ public class Gull extends Rectangle {
      * Smiður til að setja mynd á "gullið"
      */
     public Gull(){
-        setWidth(30);
-        setHeight(30);
+        setWidth(19);
+        setHeight(18);
         Image Star = new Image(Objects.requireNonNull(getClass().getResourceAsStream("myndir/star1.png")));
         setFill(new ImagePattern(Star));
     }

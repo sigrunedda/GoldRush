@@ -5,5 +5,5 @@
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="vidmot.goldrush.Ovinur"
-            prefHeight="20.0" prefWidth="40.0">
+            prefHeight="51.0" prefWidth="57.0">
 </AnchorPane>

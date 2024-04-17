@@ -16,9 +16,12 @@ public class Ovinur extends Rectangle {
     private TimerTask currentTask;
     private final Rectangle collisionBox;
 
+    /**
+     * Smiður til að upphafsstilla óvin
+     */
     public Ovinur() {
-        setWidth(50);
-        setHeight(80);
+        setWidth(76);
+        setHeight(68);
         Image Star = new Image(Objects.requireNonNull(getClass().getResourceAsStream("myndir/Ovinur.png")));
         setFill(new ImagePattern(Star));
         random = new Random();
@@ -26,10 +29,13 @@ public class Ovinur extends Rectangle {
         byrjaHreyfingu();
 
         collisionBox = new Rectangle();
-        collisionBox.setWidth(30);
-        collisionBox.setHeight(50);
+        collisionBox.setWidth(40);
+        collisionBox.setHeight(40);
     }
 
+    /**
+     * Uppfærir staðsetningu óvinar á 100ms fresti
+     */
     private void byrjaHreyfingu() {
         currentTask = new TimerTask() {
             @Override
@@ -40,12 +46,20 @@ public class Ovinur extends Rectangle {
         timer.scheduleAtFixedRate(currentTask, 0, 100);
     }
 
+    /**
+     * Stöðvar óvin
+     */
     public void stop() {
         currentTask.cancel();
         timer.cancel();
         timer.purge();
     }
 
+    /**
+     * Athugar hvort óvinur og grafari snertast
+     * @param grafari leikmaður á leikborði
+     * @return true eða false
+     */
     public boolean isCollidingWithGrafari(Grafari grafari) {
         collisionBox.setLayoutX(getLayoutX() + (getWidth() - collisionBox.getWidth()) / 2);
         collisionBox.setLayoutY(getLayoutY() + (getHeight() - collisionBox.getHeight()) / 2);
@@ -55,6 +69,9 @@ public class Ovinur extends Rectangle {
         return ovinurBounds.intersects(grafariBounds);
     }
 
+    /**
+     * Hreyfir óvin áfram í handahófskennda átt
+     */
     public void afram(){
         double hradi = 30;
         double newX = getLayoutX() + (random.nextDouble() -0.5) * hradi *2;

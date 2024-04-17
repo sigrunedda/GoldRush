@@ -17,7 +17,7 @@
     <center>
         <Leikbord fx:id="leikbord">
          <children>
-            <ImageView fitHeight="345.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="380.0" fitWidth="1250.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@myndir/Bakgrunnur.png" />
                </image>
@@ -28,22 +28,22 @@
     <bottom>
         <Separator layoutY="369.0" prefHeight="0.0" prefWidth="600.0" />
         <HBox layoutY="370.0" prefHeight="32.0" prefWidth="600.0">
-            <Label alignment="CENTER" prefHeight="34.0" prefWidth="77.0" text="Stigin þín:">
+            <Label styleClass="gameBar" alignment="CENTER" prefHeight="34.0" prefWidth="110.0" text="Stigin þín:">
                 <HBox.margin>
                     <Insets left="50.0" right="50.0" />
                 </HBox.margin>
             </Label>
-            <Label fx:id="fxStig" alignment="CENTER" prefHeight="34.0" prefWidth="77.0" text="0">
+            <Label styleClass="gameBar" fx:id="fxStig" alignment="CENTER" prefHeight="34.0" prefWidth="77.0" text="0">
                 <HBox.margin>
                     <Insets right="100.0" />
                 </HBox.margin>
             </Label>
-            <Label alignment="CENTER" prefHeight="34.0" prefWidth="90.0" text="Tíminn þinn :">
+            <Label styleClass="gameBar" alignment="CENTER" prefHeight="34.0" prefWidth="140.0" text="Tíminn þinn :">
                 <HBox.margin>
                     <Insets right="50.0" />
                 </HBox.margin>
             </Label>
-            <Label fx:id="fxTimi" alignment="CENTER" prefHeight="34.0" prefWidth="77.0">
+            <Label styleClass="gameBar" fx:id="fxTimi" alignment="CENTER" prefHeight="34.0" prefWidth="77.0">
                 <HBox.margin>
                     <Insets right="50.0" />
                 </HBox.margin>

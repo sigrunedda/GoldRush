@@ -24,15 +24,17 @@ public class GoldApplication extends Application {
         stage.setScene(scene);
         stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("myndir/Icon.jpg"))));
 
-        // loada leturgerðir
         Font.loadFont(Objects.requireNonNull(getClass().getResource("/vidmot/goldrush/letur/PixeloidSans.ttf")).toExternalForm(), 12);
         Font.loadFont(Objects.requireNonNull(getClass().getResource("/vidmot/goldrush/letur/PixeloidSans-Bold.ttf")).toExternalForm(), 16);
         String myStyles = """
                          .button, .texti, .label {
                            -fx-font-family: 'Pixeloid Sans';
                          }
-                         .titill {
+                         .titill, .gameBar {
                            -fx-font-family: 'Pixeloid Sans Bold';
+                         }
+                         .gameBar {
+                           -fx-text-fill: white;
                          }
                          """;
         File cssFile = File.createTempFile("demo", "css");

@@ -69,7 +69,7 @@ public class Leikbord extends Pane {
     /**
      * Setur inn fjölda óvina
      *
-     * @param fjoldiOvina
+     * @param fjoldiOvina fjöldi óvina á borði
      */
     public void setFjoldiOvina(int fjoldiOvina) {
         erfidleikiController.setFjoldiOvina(fjoldiOvina);
@@ -256,7 +256,7 @@ public class Leikbord extends Pane {
     /**
      * Stöðvar grafarann þegar sleppt er örvatökkunum
      *
-     * @param event
+     * @param event örvatakkinn sem hefur verið sleppt
      */
     private void handleKeyRelease(KeyEvent event) {
         switch (event.getCode()) {
