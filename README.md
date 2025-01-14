@@ -30,5 +30,5 @@ til að betrumbæta leikinn.
 
 ## **Leikurinn í keyrslu:**
 ![Leikreglur](src/main/resources/vidmot/goldrush/myndir/leikreglur.png)
-![Velja karakter](src/main/resources/vidmot/goldrush/myndir/karakter-select.png)
+![Velja karakter](src/main/resources/vidmot/goldrush/myndir/karakter_select.png)
 ![Leikur](src/main/resources/vidmot/goldrush/myndir/leikur.png)
