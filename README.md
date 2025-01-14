@@ -29,6 +29,6 @@ til að betrumbæta leikinn.
   <br> _GoldApplication er mainClass_
 
 ## **Leikurinn í keyrslu:**
-![Leikreglur](src/main/resources/vidmot/goldrush/myndir/leikreglur.png)
-![Velja karakter](src/main/resources/vidmot/goldrush/myndir/karakter_select.png)
-![Leikur](src/main/resources/vidmot/goldrush/myndir/leikur.png)
+![Leikreglur](src/main/resources/vidmot/goldrush/myndir/leikreglur.png | width=100)
+![Velja karakter](src/main/resources/vidmot/goldrush/myndir/karakter_select.png | width=100)
+![Leikur](src/main/resources/vidmot/goldrush/myndir/leikur.png | width=100)
