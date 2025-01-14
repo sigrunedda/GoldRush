@@ -27,3 +27,8 @@ til að betrumbæta leikinn.
   Til þess að keyra forritið með Maven þá fer einstaklingur í Maven -> Plugins -> javafx -> javafx:run
   <br> annars er hægt að keyra það í gegnum GoldApplication og ýta á run current file. 
   <br> _GoldApplication er mainClass_
+
+## **Leikurinn í keyrslu:**
+![Leikreglur](src/main/resources/vidmot/goldrush/myndir/leikreglur.png)
+![Velja karakter](src/main/resources/vidmot/goldrush/myndir/karakter-select.png)
+![Leikur](src/main/resources/vidmot/goldrush/myndir/leikur.png)
